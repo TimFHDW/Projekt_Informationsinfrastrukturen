@@ -44,3 +44,7 @@ Doku, Versionierung und Commits passieren dann nach den Repo-Regeln automatisch.
 - [ ] Prof. Klünder + Jochen zum Repo einladen (Abgabe erfolgt über Git)
 - [ ] Besprechungstermin (09./13./14./15.07.) in Teams-Excel eintragen
 - [ ] PlantUML-Rendering-Weg festlegen (einheitlich, siehe `ergebnisse/README.md`)
+
+## Infos an Klünder
+
+- PlantUML4idea Plugin aus dem Marketplace herunterladen um .puml Datein lesen zu können. 
