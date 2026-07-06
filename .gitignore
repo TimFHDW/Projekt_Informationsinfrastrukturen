@@ -1,0 +1,10 @@
+# Betriebssystem
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Office-Sperrdateien
+~$*
+
+# PlantUML-Zwischendateien
+*.cmapx
