@@ -114,3 +114,49 @@ Methodik-Abweichungen wie bei EasyLib dokumentiert (keine frische Session; nur P
 v1-direkt.png; kein Rendering, daher K1/K4 offen; K2/K3 vorlaeufige Selbstbewertung gegen die
 offiziellen Lastenhefte). Noch offen je Zelle: frische Session, v1-direkt.png, Rendering +
 finale Evaluation, Commit.
+
+## 2026-07-06 | 21:10 | Claude (im Auftrag von Lewin)
+Schritt: Aktivitaetsdiagramm fuer die Zelle easylib/claude/aktivitaet als PlantUML generiert
+(Prompt: prompts/aktivitaet/easylib-v1.md, Szenario „Bibliothekar pflegt ein neues
+Buchexemplar ein"; Referenz: lastenhefte/easylib.md). Entwurf vorab von Lewin freigegeben,
+KI-Ausgabe dabei unveraendert. DoD-Dateien der Zelle angelegt, Matrix-Zelle auf
+„generiert" (v1) gesetzt.
+Ergebnis: ergebnisse/easylib/claude/aktivitaet/{v1.puml, notizen.md, evaluation.md};
+evaluation/ergebnismatrix.md aktualisiert
+Beobachtung: Gleiche Methodik-Abweichungen wie bei den Klassendiagramm-Zellen (laufende
+Cowork-Session statt frischer Session – diesmal zusaetzlich mit Vorkontext des bereits
+generierten EasyLib-Klassendiagramms derselben KI, moeglicher Kontext-Einfluss; nur
+PlantUML-Form, v1-direkt.png fehlt; kein Rendering moeglich: plantuml.jar-Download erneut
+blockiert, HTTP 403 vom Proxy bei Maven Central – K1/K4 offen). K2/K3 vorlaeufig
+selbstbewertet (je 5). Commit auf Wunsch von Lewin nicht durch den Agenten; steht aus.
+
+## 2026-07-06 | 21:25 | Claude (im Auftrag von Lewin)
+Schritt: Aktivitaetsdiagramm fuer die Zelle easyride/claude/aktivitaet als PlantUML generiert
+(Prompt: prompts/aktivitaet/easyride-v1.md, Szenario „Kunde bucht eine Fahrt"; Referenz:
+lastenhefte/easyride.md). Entwurf vorab von Lewin freigegeben, KI-Ausgabe dabei unveraendert.
+DoD-Dateien der Zelle angelegt, Matrix-Zelle auf „generiert" (v1) gesetzt.
+Ergebnis: ergebnisse/easyride/claude/aktivitaet/{v1.puml, notizen.md, evaluation.md};
+evaluation/ergebnismatrix.md aktualisiert
+Beobachtung: Fachregeln im Diagramm verankert (Kapazitaetspruefung vor Routenerweiterung;
+Zentrale als Beginn/Ende neuer Routen); „Neue Route anlegen" als duplizierter Knoten in
+beiden Nein-Zweigen (PlantUML ohne goto). Methodik-Abweichungen wie zuvor, zusaetzlich:
+unmittelbar zuvor wurde in derselben Session das easylib-Aktivitaetsdiagramm erzeugt ->
+moeglicher Struktur-Uebertrag zwischen Systemen (gleicher Diagrammtyp). Nur PlantUML-Form,
+v1-direkt.png fehlt; kein Rendering moeglich (plantuml.jar-Download blockiert), K1/K4 offen;
+K2/K3 vorlaeufig selbstbewertet (je 5). Commit macht Lewin selbst.
+
+## 2026-07-06 | 21:37 | Claude (im Auftrag von Lewin)
+Schritt: Aktivitaetsdiagramm fuer die Zelle easyscoot/claude/aktivitaet als PlantUML generiert
+(Prompt: prompts/aktivitaet/easyscoot-v1.md, Szenario „E-Scooter ausleihen und nutzen";
+Referenz: lastenhefte/easyscoot.md). Entwurf vorab von Lewin freigegeben, KI-Ausgabe dabei
+unveraendert. DoD-Dateien der Zelle angelegt, Matrix-Zelle auf „generiert" (v1) gesetzt.
+Damit liegen alle drei Aktivitaetsdiagramme der Claude-Spalte vor.
+Ergebnis: ergebnisse/easyscoot/claude/aktivitaet/{v1.puml, notizen.md, evaluation.md};
+evaluation/ergebnismatrix.md aktualisiert
+Beobachtung: Preisberechnung wie gefordert in der Rechnungssystem-Swimlane; genau eine
+Entscheidung (Mindestvorgabe) mit Nein-Zweig in eigenem Endknoten; Leihstatus „in Benutzung"
+als systemseitige Wirkung der Buchung. Methodik-Abweichungen wie zuvor, verschaerft:
+drittes Aktivitaetsdiagramm in derselben Session -> moeglicher Struktur-Uebertrag zwischen
+den Systemen. Nur PlantUML-Form, v1-direkt.png fehlt; kein Rendering moeglich (plantuml.jar-
+Download blockiert), K1/K4 offen; K2/K3 vorlaeufig selbstbewertet (je 5). Commit macht
+Lewin selbst.
