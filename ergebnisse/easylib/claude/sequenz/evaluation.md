@@ -51,4 +51,23 @@ Abgleich mit `lastenhefte/easylib.md` und Prompt-Szenario, konkrete Befunde:
   create-Nachricht und alt-Fragment sauber dargestellt; beide Notizen gut lesbar platziert.
   Abzuege: Antwortpfeil Nr. 9 unbeschriftet (void-Rueckgabe); Selbstaufrufe findeKunde/
   findeExemplar ohne sichtbares Ziel-Objekt (Fassaden-Entwurf, Geschmackssache).
-- Direktes Bild — Score: n. v., Befunde: keine direkt
+- Direktes Bild — Score: n. v., Befunde: keine direkt-Bildform erzeugt.
+
+## PlantUML vs. direkt - Unterschiede
+
+- Noch nicht bewertbar: nur PlantUML-Form vorhanden.
+
+## Was haetten wir anders modelliert?
+
+- Verfuegbarkeitspruefung explizit ausmodellieren (Aufrufe an Ausleihe-/
+  Reservierungsobjekte) statt in istVerfuegbar() zu kapseln - detaillierter,
+  aber unruhiger.
+- Ermittlung von Kunde/Exemplar an eine explizite Repository-/Katalogklasse
+  delegieren statt als Selbstaufrufe der Systemfassade.
+- Leihfrist als Parameter des Bibliothekars bzw. Konfigurationswert statt
+  fester Annahme.
+
+## Sonstige Beobachtungen
+
+- Methodik-Abweichungen (laufende Session, kein Zweischritt-Ablauf, kein
+  direkt-Bild): siehe `notizen.md`.
