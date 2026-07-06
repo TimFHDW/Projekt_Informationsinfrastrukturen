@@ -7,9 +7,9 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 
 | System | KI | Diagrammtyp | Status | Prompt | K1 Syntax | K2 Inhalt | K3 Vollst. | K4 Lesbarkeit |
 |---|---|---|---|---|---|---|---|---|
-| easyride | claude | klassendiagramm | offen | – | – | – | – | – |
+| easyride | claude | klassendiagramm | generiert | v1 | – | – | – | – |
 | easyride | claude | use-case | offen | – | – | – | – | – |
-| easyride | claude | aktivitaet | offen | – | – | – | – | – |
+| easyride | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easyride | claude | sequenz | offen | – | – | – | – | – |
 | easyride | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easyride | chatgpt | use-case | offen | – | – | – | – | – |
@@ -19,9 +19,9 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyride | gemini | use-case | offen | – | – | – | – | – |
 | easyride | gemini | aktivitaet | offen | – | – | – | – | – |
 | easyride | gemini | sequenz | offen | – | – | – | – | – |
-| easyscoot | claude | klassendiagramm | offen | – | – | – | – | – |
+| easyscoot | claude | klassendiagramm | generiert | v1 | – | – | – | – |
 | easyscoot | claude | use-case | offen | – | – | – | – | – |
-| easyscoot | claude | aktivitaet | offen | – | – | – | – | – |
+| easyscoot | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easyscoot | claude | sequenz | offen | – | – | – | – | – |
 | easyscoot | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easyscoot | chatgpt | use-case | offen | – | – | – | – | – |
@@ -31,9 +31,9 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyscoot | gemini | use-case | offen | – | – | – | – | – |
 | easyscoot | gemini | aktivitaet | offen | – | – | – | – | – |
 | easyscoot | gemini | sequenz | offen | – | – | – | – | – |
-| easylib | claude | klassendiagramm | offen | – | – | – | – | – |
+| easylib | claude | klassendiagramm | generiert | v1 | – | – | – | – |
 | easylib | claude | use-case | offen | – | – | – | – | – |
-| easylib | claude | aktivitaet | offen | – | – | – | – | – |
+| easylib | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easylib | claude | sequenz | offen | – | – | – | – | – |
 | easylib | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easylib | chatgpt | use-case | offen | – | – | – | – | – |

@@ -1,0 +1,128 @@
+@startuml EasyScoot-Klassendiagramm
+' EasyScoot - Klassendiagramm (KI: Claude, Prompt v1)
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+left to right direction
+
+' ----- Enumerationen -----
+enum Fahrstatus {
+  STEHEND
+  FAHREND
+}
+
+enum Leihstatus {
+  IN_BENUTZUNG
+  NICHT_IN_BENUTZUNG
+}
+
+enum Wartungsstatus {
+  IN_WARTUNG
+  NICHT_IN_WARTUNG
+}
+
+' ----- Nutzerrollen -----
+abstract class Nutzer {
+  - nutzername : String
+}
+
+class Kunde {
+  - vorname : String
+  - name : String
+  - strasse : String
+  - hausnummer : String
+  - plz : String
+  - ort : String
+  - email : String
+  + escooterInDerNaeheAbfragen() : List<EScooter>
+  + buchen(escooter : EScooter) : void
+  + freischalten(escooter : EScooter) : void
+  + nutzungBeenden() : Fahrt
+}
+
+class Flottenmanager {
+  + listeAlleEScooter() : List<EScooter>
+}
+
+class "Service-Mitarbeiter" as Servicemitarbeiter {
+  + listeAlleEScooter() : List<EScooter>
+  + listeSchwachgeladene() : List<EScooter>
+  + wartungStarten(escooter : EScooter) : void
+  + wartungBeenden(escooter : EScooter) : void
+  + escooterAufnehmen(escooter : EScooter) : void
+  + escooterAusmustern(escooter : EScooter) : void
+}
+
+' ----- Domaene -----
+class Flotte {
+}
+
+class EScooter {
+  - id : String
+  - marke : String
+  - modell : String
+  - batteriekapazitaet : int
+  - verbrauchskoeffizient : double
+  - position : Position
+  - ladestand : int
+  - fahrstatus : Fahrstatus
+  - leihstatus : Leihstatus
+  - wartungsstatus : Wartungsstatus
+  - /geschaetzteRestfahrzeit : int
+}
+
+class Position {
+  - breitengrad : double
+  - laengengrad : double
+}
+
+class Ladestation {
+  - standort : Position
+}
+
+class Fahrt {
+  - dauer : int
+  - gefahreneKilometer : double
+  - verbrauchteWattstunden : double
+  - preis : double
+}
+
+class Rechnungssystem <<external system>> {
+  + berechnePreis(fahrt : Fahrt) : double
+}
+
+' ----- Vererbung -----
+Nutzer <|-- Kunde
+Nutzer <|-- Flottenmanager
+Nutzer <|-- Servicemitarbeiter
+
+' ----- Assoziationen -----
+Flotte "1" o-- "0..*" EScooter : umfasst
+Kunde "1" -- "0..*" Fahrt : taetigt >
+EScooter "1" -- "0..*" Fahrt : genutzt in >
+EScooter "1" *-- "1" Position : steht an
+Ladestation "0..1" -- "0..*" EScooter : laedt >
+Flottenmanager "0..*" -- "1" Flotte : ueberwacht >
+Servicemitarbeiter "0..*" -- "1" Flotte : wartet >
+Fahrt ..> Rechnungssystem : Preisberechnung
+
+' ----- Constraints / Regeln -----
+note bottom of Servicemitarbeiter
+  Gefilterte Liste (listeSchwachgeladene):
+  nur E-Scooter mit ladestand <= 50 %.
+end note
+
+note right of EScooter
+  Ein E-Scooter ist zu einem Zeitpunkt
+  hoechstens einer aktiven Fahrt zugeordnet
+  (leihstatus = IN_BENUTZUNG).
+  Position, Ladezustand und Fahrstatus
+  werden per Mobilfunk gemeldet.
+end note
+
+note top of Rechnungssystem
+  Externes System – nur angebunden.
+  EasyScoot berechnet den Preis nicht selbst.
+end note
+
+@enduml

@@ -1,0 +1,96 @@
+@startuml EasyRide-Klassendiagramm
+' EasyRide - Klassendiagramm (KI: Claude, Prompt v1)
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+left to right direction
+
+class Flotte {
+}
+
+class Fahrzeug {
+  - kennzeichen : String
+  - anzahlSitzplaetze : int
+}
+
+class Fahrer {
+  - name : String
+  + naechstenHaltepunktAbfragen() : Haltepunkt
+  + ankunftBestaetigen() : void
+}
+
+class Tablet {
+  - geraeteId : String
+}
+
+class Fahrgast {
+  - name : String
+  + fahrtBuchen(start : Haltepunkt, ziel : Haltepunkt) : Fahrt
+}
+
+class Haltepunkt {
+  - name : String
+  - istZentrale : boolean
+}
+
+class Verbindung {
+  - durchschnittlicheFahrzeit : int
+}
+
+class Route {
+  - bezeichnung : String
+}
+
+class Routenhalt {
+  - reihenfolge : int
+}
+
+class Fahrt {
+  - startzeit : DateTime
+  + wartezeitBerechnen() : int
+  + restfahrzeitBerechnen() : int
+}
+
+' ----- Aggregation / Komposition -----
+Flotte "1" o-- "1..*" Fahrzeug : umfasst
+Route "1" *-- "1..* {ordered}" Routenhalt : besteht aus
+
+' ----- Assoziationen -----
+Fahrzeug "1" -- "0..*" Route : faehrt >
+Fahrzeug "1" -- "1" Fahrer : gesteuert von
+Fahrzeug "1" -- "1" Tablet : ausgestattet mit
+
+Verbindung "0..*" -- "2" Haltepunkt : verbindet
+Routenhalt "0..*" -- "1" Haltepunkt : an
+Routenhalt "0..*" -- "0..*" Fahrgast : nimmt auf >
+Routenhalt "0..*" -- "0..*" Fahrgast : setzt ab >
+
+Fahrgast "1" -- "0..*" Fahrt : bucht >
+Fahrt "0..*" -- "1" Haltepunkt : Start >
+Fahrt "0..*" -- "1" Haltepunkt : Ziel >
+Fahrt "0..*" -- "0..1" Fahrzeug : zugeteilt >
+
+' ----- Constraints / Regeln -----
+note top of Verbindung
+  Ungerichtete Kante: keine Fahrtrichtung,
+  verbindet genau zwei Haltepunkte.
+end note
+
+note top of Route
+  {Jede Route beginnt und endet an einem
+  Haltepunkt mit istZentrale = true;
+  an der Zentrale kein Ein-/Ausstieg.}
+end note
+
+note bottom of Routenhalt
+  {Summe gleichzeitig befoerderter Fahrgaeste
+  <= anzahlSitzplaetze des Fahrzeugs}
+end note
+
+note right of Tablet
+  Bedienschnittstelle des Fahrers:
+  naechsten Haltepunkt abfragen und
+  Ankunft bestaetigen.
+end note
+
+@enduml
