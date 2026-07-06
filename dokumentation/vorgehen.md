@@ -50,3 +50,19 @@ Behoben durch Freigabe der Lösch-Berechtigung, Entfernen der Locks und Index-Ne
 (git reset); Objektdatenbank und Historie blieben unbeschädigt, kein Datenverlust.
 Lehre für kommende Sessions: Git-Operationen auf dem Sync-Laufwerk einzeln und mit kurzen
 Pausen ausführen, Zustand nach jedem Commit prüfen.
+
+## 2026-07-06 | 18:20 | Claude (im Auftrag von Linus)
+Schritt: Prompt-Bibliothek auf Wunsch von Linus umgestellt: statt eines generischen Prompts
+je Typ jetzt je Typ-Ordner drei systemspezifische Dateien (easyscoot/easyride/easylib-v1.md),
+Inhalt jeweils Basis-Prompt (mit Systembeschreibung) + Diagramm-Prompt im Original-Wortlaut
+der Quelle. Einzige inhaltliche Änderung: beide Ausgabeformen (direktes Bild + PlantUML)
+werden gefordert, sonst wären die DoD-Artefakte vN-direkt.png nicht erzeugbar. Generische
+v1.md entfernt (bleiben über Git-Historie nachvollziehbar), prompts/README.md an die neue
+Struktur angepasst.
+Ergebnis: 12 Dateien prompts/<typ>/<system>-v1.md; prompts/README.md aktualisiert;
+generische prompts/<typ>/v1.md entfernt
+Beobachtung: templates/prompt-template.md passt nicht mehr zur neuen Struktur
+(Metadaten-Tabelle, {LASTENHEFT}-Platzhalter) – Anpassung noch offen. Methodik: Die zwei
+Schritte einer Datei (Basis + Diagramm) laufen in EINER frischen Session; Regel „frische
+Session pro Generierung" (AGENTS.md) bleibt gewahrt, solange je Typ-Durchlauf eine neue
+Session genutzt wird.
