@@ -1,0 +1,48 @@
+@startuml EasyScoot-Sequenz-NutzungBeenden
+' EasyScoot – Sequenzdiagramm: "Kunde beendet die Nutzung eines E-Scooters"
+' (KI: Claude, Prompt v1)
+skinparam shadowing false
+autonumber
+
+actor "Kunde (Smartphone-App)" as kunde
+participant ":EasyScoot" as sys
+participant "escooter : EScooter\n(Mobilfunk-Software)" as sc
+participant "fahrt : Fahrt" as fahrt
+participant "Rechnungssystem" as rs <<external system>>
+
+kunde -> sys : nutzungBeenden(escooterId : String)
+activate sys
+
+sys -> sc : sperren()
+activate sc
+sc --> sys : gesperrt (fahrstatus = STEHEND)
+deactivate sc
+
+sys -> sys : aktualisiereLeihstatus(escooterId,\nLeihstatus.NICHT_IN_BENUTZUNG)
+
+sys -> fahrt : ermittleFahrtdaten()
+activate fahrt
+fahrt --> sys : dauer, gefahreneKilometer,\nverbrauchteWattstunden
+deactivate fahrt
+
+sys -> rs : berechnePreis(fahrt : Fahrt) : double
+activate rs
+rs --> sys : preis
+deactivate rs
+
+sys -> fahrt : setzePreis(preis : double)
+activate fahrt
+fahrt --> sys : ok
+deactivate fahrt
+
+sys --> kunde : Zusammenfassung (dauer, kilometer,\nwattstunden, preis)
+deactivate sys
+
+note over sys, rs
+  Im Klassendiagramm v1 gedanklich zu ergaenzen:
+  Systemfassade EasyScoot mit nutzungBeenden/aktualisiereLeihstatus
+  (nutzungBeenden liegt dort beim Kunden), EScooter.sperren(),
+  Fahrt.ermittleFahrtdaten(), Fahrt.setzePreis().
+  Rechnungssystem.berechnePreis(fahrt) existiert bereits.
+end note
+@enduml
