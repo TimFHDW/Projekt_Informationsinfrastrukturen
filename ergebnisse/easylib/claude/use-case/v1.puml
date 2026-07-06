@@ -1,0 +1,54 @@
+@startuml EasyLib-Use-Case-Diagramm
+' EasyLib - Use-Case-Diagramm (KI: Claude, Prompt v1)
+left to right direction
+skinparam shadowing false
+skinparam actorStyle awesome
+title Use-Case-Diagramm EasyLib
+
+actor "Bibliothekar" as bibliothekar
+actor "Kunde" as kunde
+actor "Buchhalter" as buchhalter
+actor "Verbundkatalog" as verbundkatalog <<externes System>>
+actor "Vernetzte Bibliotheken" as vernetzt <<externes System>>
+
+rectangle "EasyLib" {
+  usecase "Exemplar einpflegen" as UC1
+  usecase "Buchdaten aus\nVerbundkatalog importieren" as UC2
+  usecase "Exemplar auspflegen" as UC3
+  usecase "Exemplar verleihen" as UC4
+  usecase "Rueckgabe entgegennehmen" as UC5
+  usecase "Bestand durchsuchen" as UC6
+  usecase "Bestand vernetzter\nBibliotheken durchsuchen" as UC7
+  usecase "Standort und Status eines\nExemplars einsehen" as UC8
+  usecase "Kundendaten einsehen" as UC9
+  usecase "Kundenkonto anlegen" as UC10
+  usecase "Kundenkonto loeschen" as UC11
+  usecase "Buch reservieren" as UC12
+  usecase "Reservierung stornieren" as UC13
+  usecase "Leihfrist verlaengern" as UC14
+  usecase "Ueberfaellige Ausleihen einsehen" as UC15
+}
+
+bibliothekar -- UC1
+bibliothekar -- UC3
+bibliothekar -- UC4
+bibliothekar -- UC5
+bibliothekar -- UC6
+bibliothekar -- UC7
+bibliothekar -- UC8
+bibliothekar -- UC9
+
+kunde -- UC6
+kunde -- UC8
+kunde -- UC10
+kunde -- UC11
+kunde -- UC12
+kunde -- UC13
+kunde -- UC14
+
+buchhalter -- UC15
+
+UC2 .> UC1 : <<extend>>
+UC2 -- verbundkatalog
+UC7 -- vernetzt
+@enduml
