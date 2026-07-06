@@ -34,7 +34,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easylib | claude | klassendiagramm | generiert | v1 | – | – | – | – |
 | easylib | claude | use-case | offen | – | – | – | – | – |
 | easylib | claude | aktivitaet | generiert | v1 | – | – | – | – |
-| easylib | claude | sequenz | offen | – | – | – | – | – |
+| easylib | claude | sequenz | generiert | v1 | – | – | – | – |
 | easylib | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easylib | chatgpt | use-case | offen | – | – | – | – | – |
 | easylib | chatgpt | aktivitaet | offen | – | – | – | – | – |

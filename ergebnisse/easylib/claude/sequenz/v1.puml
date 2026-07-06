@@ -1,0 +1,66 @@
+@startuml EasyLib-Sequenz-Ausleihe
+' EasyLib – Sequenzdiagramm: "Bibliothekar verleiht ein Buchexemplar an einen Kunden"
+' (KI: Claude, Prompt v1)
+skinparam shadowing false
+autonumber
+
+actor Bibliothekar as bib
+participant ":EasyLib" as sys
+participant "kunde : Kunde" as kunde
+participant "exemplar : Exemplar" as ex
+
+bib -> sys : verleiheExemplar(kundenID : String, exemplarID : String)
+activate sys
+
+sys -> sys : findeKunde(kundenID) : Kunde
+sys -> sys : findeExemplar(exemplarID) : Exemplar
+
+sys -> ex : istVerfuegbar() : boolean
+activate ex
+ex --> sys : verfuegbar
+deactivate ex
+
+note right
+  Prueft: nicht verliehen UND keine
+  entgegenstehende Reservierung
+  (Reservierung liegt gemaess
+  Klassendiagramm auf Medium-Ebene)
+end note
+
+alt verfuegbar == true
+
+  sys -> ex : ausleihen(kunde : Kunde) : Ausleihe
+  activate ex
+
+  create participant "ausleihe : Ausleihe" as aus
+  ex -> aus : <<create>> Ausleihe(kunde, exemplar,\nausleihdatum = heute, leihfrist = heute + 28 Tage)
+  activate aus
+  aus -> kunde : registriereAusleihe(ausleihe : Ausleihe)
+  activate kunde
+  kunde --> aus
+  deactivate kunde
+  aus --> ex : ausleihe
+  deactivate aus
+
+  ex -> ex : aktualisiereStatus()
+
+  ex --> sys : ausleihe
+  deactivate ex
+
+  sys --> bib : Bestaetigung: Ausleihe angelegt (inkl. Leihfrist)
+
+else verfuegbar == false
+
+  sys --> bib : Fehlermeldung: Exemplar nicht verfuegbar
+
+end
+
+deactivate sys
+
+note over kunde, aus
+  Im Klassendiagramm v1 gedanklich zu ergaenzen:
+  EasyLib (Systemfassade) mit verleiheExemplar/findeKunde/findeExemplar,
+  Kunde.registriereAusleihe(), Exemplar.aktualisiereStatus(),
+  Konstruktor Ausleihe(kunde, exemplar, ausleihdatum, leihfrist)
+end note
+@enduml
