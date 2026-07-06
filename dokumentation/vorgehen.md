@@ -66,3 +66,51 @@ Beobachtung: templates/prompt-template.md passt nicht mehr zur neuen Struktur
 Schritte einer Datei (Basis + Diagramm) laufen in EINER frischen Session; Regel „frische
 Session pro Generierung" (AGENTS.md) bleibt gewahrt, solange je Typ-Durchlauf eine neue
 Session genutzt wird.
+
+## 2026-07-06 | 20:10 | Claude (im Auftrag von Tim)
+Schritt: Klassendiagramm fuer die Zelle easylib/claude/klassendiagramm als PlantUML generiert
+(Quelle: Systembeschreibung in prompts/klassendiagramm/easylib-v1.md, da kein
+lastenhefte/easylib.md existiert). Vorschlag vorab von Tim freigegeben. DoD-Dateien der Zelle
+angelegt und Matrix-Zelle auf „generiert" (Prompt v1) gesetzt.
+Ergebnis: ergebnisse/easylib/claude/klassendiagramm/{v1.puml, notizen.md, evaluation.md};
+evaluation/ergebnismatrix.md aktualisiert
+Beobachtung: Abweichungen von der Methodik dokumentiert (siehe notizen.md): (1) Generierung in
+laufender Cowork-Session statt frischer, isolierter Chat-Session – moeglicher Kontext-Einfluss;
+(2) nur PlantUML-Form erzeugt, geforderte „direkt"-Bildform (v1-direkt.png) fehlt noch;
+(3) Rendering (K1) und Lesbarkeit (K4) nicht bewertet, da in dieser Umgebung kein PlantUML-
+Rendering moeglich war. K2/K3 nur vorlaeufig selbstbewertet gegen die Paraphrase (kein
+offizielles Lastenheft easylib). Noch offen: Reproduktion in frischer Session, v1-direkt.png,
+Rendering + finale Evaluation, Commit. Nebenbefund: Nutzer verwies auf „lastenheft/easyride.md"
+als Quelle – das ist jedoch das EasyRide-Lastenheft; fuer EasyLib bleibt die Paraphrase im
+Prompt die einzige Quelle.
+
+## 2026-07-06 | 20:25 | Claude (im Auftrag von Tim)
+Schritt: Offizielles EasyLib-Lastenheft aus den hochgeladenen Vorlesungsfolien
+(2025-Q3-OOSE-I-Kapitel 4, Folien 24–27 = Seite 180–183) transkribiert und als
+lastenhefte/easylib.md angelegt (Stil wie easyride.md/easyscoot.md). Damit ist die zuvor im
+Journal notierte Luecke geschlossen. Anschliessend v1.puml der Zelle
+easylib/claude/klassendiagramm gegen das nun offizielle Lastenheft geprueft.
+Ergebnis: lastenhefte/easylib.md (neu); evaluation.md und notizen.md der Zelle aktualisiert
+(Quellbezug jetzt lastenhefte/easylib.md, K2 auf 4 praezisiert).
+Beobachtung: Diagramm inhaltlich deckungsgleich mit dem Lastenheft – keine Korrektur an
+v1.puml noetig, Original bleibt unveraendert (Regel 7). Zwei dokumentierte Nuancen: (a)
+Leihfrist-Verlaengerung bewusst gegen den woertlichen (unplausiblen) Text modelliert; (b)
+Ausleihe/Reservierung auf Exemplar-/Medium-Ebene statt streng „Buchexemplar"/„Buch". Prompt-
+Paraphrase stichprobenartig gegen das Original geprueft: inhaltlich konsistent, kein v2 noetig.
+
+## 2026-07-06 | 20:45 | Claude (im Auftrag von Tim)
+Schritt: Analog zur EasyLib-Zelle die Klassendiagramme fuer easyride/claude/klassendiagramm und
+easyscoot/claude/klassendiagramm als PlantUML generiert (gemaess Schritt-2-Vorgaben der Prompts
+prompts/klassendiagramm/easyride-v1.md bzw. easyscoot-v1.md; Referenz-Lastenhefte
+lastenhefte/easyride.md und lastenhefte/easyscoot.md). Je Zelle DoD-Dateien angelegt und
+Matrix-Zellen auf „generiert" (Prompt v1) gesetzt.
+Ergebnis: ergebnisse/easyride/claude/klassendiagramm/{v1.puml, notizen.md, evaluation.md};
+ergebnisse/easyscoot/claude/klassendiagramm/{v1.puml, notizen.md, evaluation.md};
+evaluation/ergebnismatrix.md aktualisiert
+Beobachtung: EasyRide mit eigener Routenhalt-Klasse ({ordered}), ungerichteter Verbindung
+(Multiplizitaet 2) sowie Kapazitaets- und Zentrale-Regel als Constraints. EasyScoot mit
+Nutzer-Oberklasse, drei Status-Enums und Rechnungssystem als «external system». Gleiche
+Methodik-Abweichungen wie bei EasyLib dokumentiert (keine frische Session; nur PlantUML, keine
+v1-direkt.png; kein Rendering, daher K1/K4 offen; K2/K3 vorlaeufige Selbstbewertung gegen die
+offiziellen Lastenhefte). Noch offen je Zelle: frische Session, v1-direkt.png, Rendering +
+finale Evaluation, Commit.

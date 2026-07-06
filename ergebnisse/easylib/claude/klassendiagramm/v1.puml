@@ -1,0 +1,138 @@
+@startuml EasyLib-Klassendiagramm
+' EasyLib - Klassendiagramm (KI: Claude, Prompt v1)
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+left to right direction
+
+' ---------- Aufzaehlung ----------
+enum Genre {
+  ROMAN
+  FANTASY
+  HORROR
+  HUMOR
+  KRIMI
+  SCIENCE_FICTION
+  BIOGRAFIE
+  RATGEBER
+  SACHBUCH
+}
+
+' ---------- Werk-Ebene (bibliografisch) ----------
+abstract class Medium {
+  - titel : String
+  - verlag : String
+  - auflage : int
+  - erscheinungsdatum : Date
+  - isbn : String
+  - genre : Genre
+}
+
+class Buch {
+  - seitenzahl : int
+}
+
+class "Hörbuch" as Hoerbuch {
+  - anzahlDatentraeger : int
+  - spiellaengeMinuten : int
+}
+
+class Autor {
+  - name : String
+  - vorname : String
+  - mittelname : String [0..1]
+  - namenszusatz : String [0..1]
+}
+
+' ---------- Exemplar-Ebene (physisch) ----------
+class Exemplar {
+  - id : String {unique}
+  - etage : int
+  - regalnummer : String
+  + ausleihen(kunde : Kunde) : Ausleihe
+  + zurueckgeben() : void
+  + istVerfuegbar() : boolean
+}
+
+' ---------- Kunde & Vorgaenge ----------
+class Kunde {
+  - kundenID : String {unique}
+  - name : String
+  - strasse : String
+  - hausnummer : String
+  - plz : String
+  - ort : String
+  - lichtbild : Bild
+  + reserviere(medium : Medium) : Reservierung
+  + istKontoLoeschbar() : boolean
+  + loescheKonto() : void
+}
+
+class Ausleihe {
+  - ausleihdatum : Date
+  - leihfrist : Date
+  - rueckgabedatum : Date [0..1]
+  + verlaengern() : boolean
+  + istUeberfaellig() : boolean
+}
+
+class Reservierung {
+  - reservierungsdatum : Date
+  + stornieren() : void
+}
+
+' ---------- Externe Systeme ----------
+class Verbundkatalog <<external system>> {
+  + importiereBuchdaten(isbn : String) : Buchdaten
+}
+
+class "Vernetzte Bibliothek" as VernetzteBibliothek <<external system>> {
+  + durchsucheBestand(kriterium : String) : List<Exemplar>
+}
+
+' ---------- Vererbung ----------
+Medium <|-- Buch
+Medium <|-- Hoerbuch
+
+' ---------- Assoziationen ----------
+Medium "0..*" -- "1..*" Autor : verfasst von
+Medium "1" *-- "1..*" Exemplar : umfasst
+
+Kunde "1" -- "0..*" Ausleihe : tätigt
+Exemplar "1" -- "0..*" Ausleihe : betrifft
+
+Kunde "1" -- "0..*" Reservierung : tätigt
+Medium "1" -- "0..*" Reservierung : betrifft
+
+' ---------- Externe Schnittstellen ----------
+Medium ..> Verbundkatalog : Buchdaten-Import
+Exemplar ..> VernetzteBibliothek : Bestandseinsicht
+
+' ---------- Fachliche Hinweise / Annahmen ----------
+note top of Medium
+  Abstrakte Oberklasse = „Werk"-Ebene.
+  Gemeinsame bibliografische Merkmale
+  liegen ausschließlich hier.
+end note
+
+note right of Reservierung
+  Reservierung auf Werk-/Medium-Ebene:
+  Der Kunde reserviert das Werk, nicht
+  ein bestimmtes physisches Exemplar.
+end note
+
+note bottom of Ausleihe
+  Annahme (Aufloesung der Mehrdeutigkeit im
+  Lastenheft): verlaengern() ist nur moeglich,
+  wenn fuer das zugehoerige Medium KEINE andere
+  Reservierung vorliegt.
+end note
+
+note as N1
+  Bibliothekar und Buchhalter werden als
+  Akteure (Use-Case-Diagramm) modelliert,
+  nicht als Fachklassen: Das Lastenheft nennt
+  fuer sie keine zu speichernden Daten.
+end note
+
+@enduml
