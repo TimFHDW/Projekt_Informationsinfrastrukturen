@@ -1,0 +1,48 @@
+@startuml EasyScoot-Use-Case-Diagramm
+' EasyScoot - Use-Case-Diagramm (KI: Claude, Prompt v1)
+left to right direction
+skinparam shadowing false
+skinparam actorStyle awesome
+title Use-Case-Diagramm EasyScoot
+
+actor "Kunde" as kunde
+actor "Flottenmanager" as flottenmanager
+actor "Service-Mitarbeiter" as service
+actor "E-Scooter\n(Mobilfunk-Software)" as scooter <<externes System>>
+actor "Rechnungssystem" as rechnung <<externes System>>
+
+rectangle "EasyScoot" {
+  usecase "Kundenkonto erstellen" as UC1
+  usecase "Verfuegbare E-Scooter\nin der Naehe abfragen" as UC2
+  usecase "E-Scooter buchen\nund freischalten" as UC3
+  usecase "Nutzung beenden" as UC4
+  usecase "Liste aller\nE-Scooter einsehen" as UC5
+  usecase "Gefilterte Liste einsehen\n(Ladestand <= 50 %)" as UC6
+  usecase "Wartungsmodus starten" as UC7
+  usecase "Wartungsmodus beenden" as UC8
+  usecase "E-Scooter in\nFlotte aufnehmen" as UC9
+  usecase "E-Scooter ausmustern" as UC10
+  usecase "Statusdaten uebermitteln" as UC11
+}
+
+kunde -- UC1
+kunde -- UC2
+kunde -- UC3
+kunde -- UC4
+
+flottenmanager -- UC5
+
+service -- UC5
+service -- UC6
+service -- UC7
+service -- UC8
+service -- UC9
+service -- UC10
+
+UC3 -- scooter
+UC4 -- scooter
+UC4 -- rechnung
+UC7 -- scooter
+UC8 -- scooter
+scooter -- UC11
+@enduml
