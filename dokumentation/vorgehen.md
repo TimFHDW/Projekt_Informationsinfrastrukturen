@@ -174,3 +174,37 @@ Vorkontext statt frischer Session, Zweischritt-Prompt nicht getrennt ausgefuehrt
 v1-direkt.png fehlt) in notizen.md dokumentiert. Annahme Leihfrist 28 Tage (Lastenheft nennt
 keine Dauer). K1=5/K2=4/K3=5/K4-PlantUML=4 als vorlaeufige Selbstbewertung; unabhaengige
 Pruefung durch Teammitglied und Rendern mit einheitlichem Team-Renderweg stehen aus.
+
+## 2026-07-06 | 22:30 | Claude (im Auftrag von Basti)
+Schritt: Sequenzdiagramme easyride/claude v1 („Fahrer bestaetigt Erreichen eines
+Haltepunkts") und easyscoot/claude v1 („Kunde beendet Nutzung eines E-Scooters") generiert
+(Prompts `prompts/sequenz/easyride-v1.md` / `easyscoot-v1.md`), Entwuerfe vor Ablage von
+Basti freigegeben; beide in der Cowork-Sandbox gerendert (plantuml.jar 1.2019.06 aus npm
+node-plantuml) – beide kompilierten ohne Korrektur.
+Ergebnis: ergebnisse/easyride/claude/sequenz/ und ergebnisse/easyscoot/claude/sequenz/
+(je v1.puml, v1-plantuml.png, notizen.md, evaluation.md); Matrix: beide Zellen generiert/v1.
+Beobachtung: Gleiche Methodik-Abweichungen wie bei easylib (laufende Session, kein
+Zweischritt-Prompt, v1-direkt.png fehlt); zusaetzlich Typ-interner Kontext-Bleed moeglich,
+da alle drei Sequenz-Zellen in einer Sitzung entstanden (aehnliche Fassaden-Struktur).
+easyscoot: Signaturkonflikt Prompt-Beispiel vs. Klassendiagramm bei berechnePreis –
+zugunsten der Konsistenzregel entschieden (berechnePreis(fahrt)). Vorlaeufige
+Selbstbewertung je K1=5/K2=4/K3=5/K4-PlantUML=4; unabhaengige Pruefung ausstehend.
+
+## 2026-07-06 | 22:40 | Claude (im Auftrag von Basti)
+Schritt: Git-/Sync-Zwischenfall behoben: Nach dem easyscoot-Commit war der Index korrupt
+(bad signature); zudem hatte die Sync-Verzoegerung dazu gefuehrt, dass (a) der Commit 3323a80
+einen veralteten Matrix-Stand erfasste (easyscoot-Zeile noch „offen") und (b) die
+Arbeitskopien von ergebnismatrix.md und den easylib-Sequenz-Dateien abgeschnitten auf der
+Platte lagen (Dateiende mitten in der Zeile, defektes UTF-8-Byte). Parallel dazu existiert
+ein manueller IntelliJ-Commit bf32283 („Sequenzdiagramm") mit den vollstaendigen
+easylib-Dateien.
+Ergebnis: Index neu aufgebaut (rm .git/index + git reset); easylib-Dateien aus HEAD
+wiederhergestellt; ergebnismatrix.md aus HEAD wiederhergestellt, easyscoot-Zeile erneut auf
+generiert/v1 gesetzt und defekte Schlusszeile repariert (36 Zeilen verifiziert). Alle sechs
+committeten easyride-/easyscoot-Zelldateien gegen HEAD geprueft: intakt.
+Beobachtung: Bestaetigt die Lehre vom Nachmittag - Git-Operationen auf dem Sync-Laufwerk
+einzeln ausfuehren und Zustand nach jedem Commit pruefen; zusaetzlich neu: nach jedem
+Datei-Schreibvorgang kurz warten, bevor git add laeuft (Sync-Latenz), und Arbeitskopien
+nach Commits stichprobenartig auf Truncation pruefen. Commit-Konvention: bf32283 folgt
+nicht dem Schema `bereich(zelle): beschreibung` - fuer die Historien-Bewertung im Team
+ansprechen, nicht umschreiben (Regel: keine History-Umschreibung).
