@@ -160,3 +160,17 @@ drittes Aktivitaetsdiagramm in derselben Session -> moeglicher Struktur-Uebertra
 den Systemen. Nur PlantUML-Form, v1-direkt.png fehlt; kein Rendering moeglich (plantuml.jar-
 Download blockiert), K1/K4 offen; K2/K3 vorlaeufig selbstbewertet (je 5). Commit macht
 Lewin selbst.
+
+## 2026-07-06 | 22:03 | Claude (im Auftrag von Basti)
+Schritt: Sequenzdiagramm easylib/claude v1 generiert (Prompt `prompts/sequenz/easylib-v1.md`,
+Szenario „Bibliothekar verleiht ein Buchexemplar an einen Kunden"), Entwurf vor Ablage von
+Basti freigegeben. Danach in der Cowork-Sandbox gerendert: plantuml.jar 1.2019.06 aus dem
+npm-Paket node-plantuml (direkte Downloads/apt in der Sandbox blockiert, npm funktioniert);
+`v1.puml` kompilierte ohne Korrektur.
+Ergebnis: ergebnisse/easylib/claude/sequenz/ (v1.puml, v1-plantuml.png, notizen.md,
+evaluation.md); evaluation/ergebnismatrix.md: Zelle auf generiert/v1.
+Beobachtung: Methodik-Abweichungen wie beim Klassendiagramm (laufende Cowork-Session mit
+Vorkontext statt frischer Session, Zweischritt-Prompt nicht getrennt ausgefuehrt,
+v1-direkt.png fehlt) in notizen.md dokumentiert. Annahme Leihfrist 28 Tage (Lastenheft nennt
+keine Dauer). K1=5/K2=4/K3=5/K4-PlantUML=4 als vorlaeufige Selbstbewertung; unabhaengige
+Pruefung durch Teammitglied und Rendern mit einheitlichem Team-Renderweg stehen aus.
