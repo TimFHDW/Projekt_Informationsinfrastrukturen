@@ -1,0 +1,26 @@
+@startuml
+interface Zahlbar {
+    +bezahlen(betrag: double): boolean
+}
+
+abstract class Konto {
+    -kontonummer: String
+    -saldo: double
+    +einzahlen(betrag: double): void
+    +abheben(betrag: double): boolean
+    {abstract} +getKontotyp(): String
+}
+
+class Girokonto extends Konto implements Zahlbar {
+    -dispoLimit: double
+    +getKontotyp(): String
+    +bezahlen(betrag: double): boolean
+}
+
+class Kunde {
+    -name: String
+    -kundennummer: int
+}
+
+Kunde "1" --> "0..*" Konto : besitzt
+@enduml
