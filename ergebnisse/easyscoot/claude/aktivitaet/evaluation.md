@@ -17,7 +17,7 @@ Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 - Struktur-Vorpruefung (ersetzt kein Rendering): @startuml/@enduml paarig, 1x if/else/endif
   paarig, 3 Swimlanes, ein start und zwei stop (Nein-Zweig + regulaeres Ende – in
   UML zulaessig, mehrere Endknoten), alle Aktionen als :...;
-- Direktes Bild – UML-Notation korrekt?: n. v. – keine "direkt"-Bildform erzeugt (nur PlantUML).
+- Direktes Bild – UML-Notation korrekt?: v1-direkt.png ergaenzt (2026-07-06). Sichtpruefung: korrekte Aktivitaetsdiagramm-Notation (Start-/Endknoten inkl. zweitem Endknoten im Nein-Zweig, Aktionen, Entscheidung mit beschrifteten Kanten, 3 Swimlanes). Formale Bewertung durch Teammitglied ausstehend.
 
 ## K2 – Inhaltliche Korrektheit — Score: 5 (vorlaeufig)
 
@@ -52,7 +52,7 @@ Abgleich mit `lastenhefte/easyscoot.md`, konkrete Befunde:
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
 - PlantUML-Rendering — Score: offen, Befunde: noch nicht gerendert.
-- Direktes Bild — Score: n. v., Befunde: keine "direkt"-Bildform erzeugt.
+- Direktes Bild — Score: 5 (vorlaeufig), Befunde: v1-direkt.png sauber lesbar – klare Swimlanes (inkl. Rechnungssystem), keine Ueberlappungen; unabhaengige Bestaetigung ausstehend.
 
 ## PlantUML vs. direkt – Unterschiede
 

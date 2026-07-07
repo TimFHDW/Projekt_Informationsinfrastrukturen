@@ -16,7 +16,7 @@ Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
   (plantuml.jar-Download blockiert, HTTP 403). Im Team-Renderweg pruefen, Ergebnis eintragen.
 - Struktur-Vorpruefung (ersetzt kein Rendering): @startuml/@enduml paarig, 2x if/else/endif
   paarig, 3 Swimlanes, genau ein start und ein stop, alle Aktionen als :...;
-- Direktes Bild – UML-Notation korrekt?: n. v. – keine "direkt"-Bildform erzeugt (nur PlantUML).
+- Direktes Bild – UML-Notation korrekt?: v1-direkt.png ergaenzt (2026-07-06). Sichtpruefung: korrekte Aktivitaetsdiagramm-Notation (Start-/Endknoten, Aktionen, zwei Rauten-Entscheidungen mit beschrifteten Kanten, 3 Swimlanes). Formale Bewertung durch Teammitglied ausstehend.
 
 ## K2 – Inhaltliche Korrektheit — Score: 5 (vorlaeufig)
 
@@ -47,7 +47,7 @@ Abgleich mit `lastenhefte/easylib.md`, konkrete Befunde:
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
 - PlantUML-Rendering — Score: offen, Befunde: noch nicht gerendert.
-- Direktes Bild — Score: n. v., Befunde: keine "direkt"-Bildform erzeugt.
+- Direktes Bild — Score: 5 (vorlaeufig), Befunde: v1-direkt.png sauber lesbar – klare Swimlanes, keine Ueberlappungen, beide Entscheidungen mit beschrifteten Kanten; unabhaengige Bestaetigung ausstehend.
 
 ## PlantUML vs. direkt – Unterschiede
 

@@ -208,3 +208,19 @@ Datei-Schreibvorgang kurz warten, bevor git add laeuft (Sync-Latenz), und Arbeit
 nach Commits stichprobenartig auf Truncation pruefen. Commit-Konvention: bf32283 folgt
 nicht dem Schema `bereich(zelle): beschreibung` - fuer die Historien-Bewertung im Team
 ansprechen, nicht umschreiben (Regel: keine History-Umschreibung).
+
+## 2026-07-06 | 22:55 | Claude (im Auftrag von Tim)
+Schritt: Die drei „direkt gezeichneten" Aktivitaetsdiagramme (Szenarien gemaess
+prompts/aktivitaet/*-v1.md) als SVG in Cowork erzeugt, von Tim visuell freigegeben und via
+librsvg-2 + cairo (ctypes; plantuml.jar/pip in dieser Umgebung blockiert) zu PNG gerendert und
+als v1-direkt.png in die drei Aktivitaets-Zellen gelegt (Ablageort mit Tim geklaert: DoD-Zellen,
+nicht prompts/aktivitaet/).
+Ergebnis: ergebnisse/{easyride,easyscoot,easylib}/claude/aktivitaet/v1-direkt.png (je 1360px,
+2x); je Zelle notizen.md (Checkbox) und evaluation.md (K1/K4 Direktbild) aktualisiert.
+Beobachtung: Die Bilder zeigen dieselben Szenarien wie die vorhandenen v1.puml, sind aber in
+einzelnen Labels/Schritten leicht verdichtet (z. B. EasyRide ohne separaten Schritt „Buchung
+starten/bestaetigen"; EasyScoot Rechnungs-Uebermittlung als Abhaengigkeitspfeil; EasyLib
+[ja]-Zweig direkt zu „Exemplar anlegen"). Fuer strikte 1:1-Deckung beide Formen in einer
+frischen Session neu erzeugen. Der Direktbild-Weg nutzt librsvg (nicht PlantUML); fuer die noch
+fehlenden v1-plantuml.png der Aktivitaets-Zellen steht laut Journal 22:03 der node-plantuml-Weg
+(npm) bereit.
