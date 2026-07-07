@@ -209,6 +209,30 @@ nach Commits stichprobenartig auf Truncation pruefen. Commit-Konvention: bf32283
 nicht dem Schema `bereich(zelle): beschreibung` - fuer die Historien-Bewertung im Team
 ansprechen, nicht umschreiben (Regel: keine History-Umschreibung).
 
+## 2026-07-07 | 18:45 | Claude (im Auftrag von Linus)
+Schritt: Fehlende „direkt"-Bildform der drei Klassendiagramm-Zellen der Claude-Spalte
+nachgeliefert. Je Zelle das Klassendiagramm von der KI direkt als Bild gezeichnet (eigenes
+Python/Pillow-Zeichenskript der KI, Layout/Koordinaten von der KI bestimmt, KEINE
+PlantUML-Beteiligung), inhaltsgleich zum jeweils abgelegten v1.puml (Prompt-Regel: beide
+Ausgabeformen muessen uebereinstimmen). Alle drei PNGs visuell verifiziert; zwei
+Layout-Korrekturen vor Ablage (easyride: Kantenfuehrung „zugeteilt" kreuzte Notiz;
+easylib: Kantenfuehrung „umfasst" und Label „betrifft").
+Ergebnis: ergebnisse/easyride/claude/klassendiagramm/v1-direkt-easyride.png;
+ergebnisse/easyscoot/claude/klassendiagramm/v1-direkt-easyscoot.png;
+ergebnisse/easylib/claude/klassendiagramm/v1-direkt-easylib.png; notizen.md (Nachtrag +
+DoD-Checkliste) und evaluation.md (K1-direkt, K3-Artefaktebene, K4-direkt je Score 4
+vorlaeufig, Abschnitt PlantUML vs. direkt) der drei Zellen aktualisiert.
+Beobachtung: (1) Namensabweichung von AGENTS.md (vN-direkt.png) auf ausdruecklichen Wunsch
+von Linus: Dateinamen mit Systemnamen (v1-direkt-<system>.png); Zellpfad unveraendert.
+(2) Methodik: Bilder nachtraeglich aus v1.puml abgeleitet statt im selben
+Generierungsdurchlauf – inhaltliche Uebereinstimmung PlantUML vs. direkt damit
+konstruktionsbedingt, fuer vergleiche/plantuml-vs-direkt.md nur K4 (Zeichenqualitaet)
+verwertbar; zudem alle drei Bilder in einer Cowork-Session (Struktur-Uebertrag moeglich,
+keine frische Session). (3) ergebnismatrix.md unveraendert (Status bleibt „generiert",
+keine Statusaenderung). (4) Erneut Sync-Latenz beobachtet: Zeichenskript kam in der Sandbox
+abgeschnitten an, Ausfuehrung ueber /tmp-Kopie; PNGs nach Ablage per Integritaetspruefung
+(PIL verify) bestaetigt. Commits macht Linus selbst.
+
 ## 2026-07-06 | 22:55 | Claude (im Auftrag von Tim)
 Schritt: Die drei „direkt gezeichneten" Aktivitaetsdiagramme (Szenarien gemaess
 prompts/aktivitaet/*-v1.md) als SVG in Cowork erzeugt, von Tim visuell freigegeben und via

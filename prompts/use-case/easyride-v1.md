@@ -47,7 +47,7 @@ sowie die zentralen Fachbegriffe (Haltepunkt, Verbindung, Route, Fahrzeug,
 Fahrgast), wie du sie verstanden hast. Erstelle noch kein Diagramm.
 
 ---
-SYSTEMBESCHREIBUNG „EasyRide" (Inhalt des Lastenhefts in eigenen Worten):
+SYSTEMBESCHREIBUNG „EasyRide":
 
 EasyRide ist die zu entwickelnde Software für ein städtisches
 Ridesharing-System: Eine Flotte von Fahrzeugen befördert Fahrgäste zwischen
