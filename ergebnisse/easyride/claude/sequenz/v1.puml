@@ -1,0 +1,53 @@
+@startuml EasyRide-Sequenz-Ankunft
+' EasyRide – Sequenzdiagramm: "Fahrer bestaetigt das Erreichen eines Haltepunkts"
+' (KI: Claude, Prompt v1)
+skinparam shadowing false
+autonumber
+
+actor "Fahrer (Tablet)" as fahrer
+participant ":EasyRide" as sys
+participant "route : Route" as route
+participant "fahrt : Fahrt" as fahrt
+
+fahrer -> sys : ankunftBestaetigen(haltepunkt : Haltepunkt)
+activate sys
+
+sys -> route : fortschrittAktualisieren(haltepunkt : Haltepunkt)
+activate route
+route --> sys : ok
+deactivate route
+
+sys -> route : naechsterHalt() : Routenhalt
+activate route
+route --> sys : naechsterHalt
+deactivate route
+
+sys -> route : fahrgaesteAmHalt(naechsterHalt : Routenhalt)
+activate route
+route --> sys : einsteiger, aussteiger
+deactivate route
+
+loop fuer jede Fahrt der betroffenen Fahrgaeste
+  sys -> fahrt : restfahrzeitBerechnen() : int
+  activate fahrt
+  fahrt --> sys : restfahrzeitMinuten
+  deactivate fahrt
+end
+
+note right
+  Neuberechnung ausgehend vom zuletzt
+  erreichten Haltepunkt (Lastenheft)
+end note
+
+sys --> fahrer : naechster Haltepunkt inkl. Namen\nder Ein- und Aussteiger
+deactivate sys
+
+note over sys, fahrt
+  Im Klassendiagramm v1 gedanklich zu ergaenzen:
+  Systemfassade EasyRide mit ankunftBestaetigen(haltepunkt)
+  (bisher als Methode beim Fahrer angesiedelt),
+  Route.fortschrittAktualisieren(), Route.naechsterHalt(),
+  Route.fahrgaesteAmHalt().
+  Fahrt.restfahrzeitBerechnen() existiert bereits.
+end note
+@enduml

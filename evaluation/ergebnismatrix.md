@@ -10,7 +10,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyride | claude | klassendiagramm | generiert | v1 | – | – | – | – |
 | easyride | claude | use-case | offen | – | – | – | – | – |
 | easyride | claude | aktivitaet | generiert | v1 | – | – | – | – |
-| easyride | claude | sequenz | offen | – | – | – | – | – |
+| easyride | claude | sequenz | generiert | v1 | – | – | – | – |
 | easyride | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easyride | chatgpt | use-case | offen | – | – | – | – | – |
 | easyride | chatgpt | aktivitaet | offen | – | – | – | – | – |
@@ -22,7 +22,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyscoot | claude | klassendiagramm | generiert | v1 | – | – | – | – |
 | easyscoot | claude | use-case | offen | – | – | – | – | – |
 | easyscoot | claude | aktivitaet | generiert | v1 | – | – | – | – |
-| easyscoot | claude | sequenz | offen | – | – | – | – | – |
+| easyscoot | claude | sequenz | generiert | v1 | – | – | – | – |
 | easyscoot | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easyscoot | chatgpt | use-case | offen | – | – | – | – | – |
 | easyscoot | chatgpt | aktivitaet | offen | – | – | – | – | – |
