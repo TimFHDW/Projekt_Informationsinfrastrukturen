@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| Bewertet von | Alex (mit Claude/Cowork) |
-| Datum | 2026-07-06 |
+| Bewertet von | Alex (mit Claude/Cowork); Direktbild-Abschnitte: Claude-Selbstbewertung (vorlaeufig) |
+| Datum | 2026-07-06 (v1.puml); Nachtrag direktes Bild: 2026-07-07 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyscoot-v1.md` |
 | Rendering-Weg | noch offen (jar-Download blockiert, s. notizen.md) |
@@ -15,7 +15,11 @@ Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 - PlantUML kompiliert ohne Korrektur: noch nicht geprueft (kein Renderer verfuegbar)
 - Fehlerliste (aus `notizen.md` / `vN-korrigiert.puml`): Sichtpruefung ohne Befund;
   verbindliche Bewertung erst nach Rendering
-- Direktes Bild – UML-Notation korrekt?: n. a., v1-direkt.png liegt nicht vor
+- Direktes Bild (`v1-direkt-easyscoot.png`, Nachtrag 2026-07-07) – UML-Notation korrekt?:
+  ja (vorlaeufige Selbstbewertung): Akteure als Strichmaennchen ausserhalb der benannten
+  Systemgrenze "EasyScoot", Sekundaerakteure mit Stereotyp «externes System», Use Cases
+  als Ellipsen, ungerichtete Assoziationen; keine include/extend (wie im Modell).
+  Einschraenkung: Bild nachtraeglich aus `v1.puml` abgeleitet (s. notizen.md, Nachtrag).
 
 ## K2 – Inhaltliche Korrektheit — Score: 5/5 (vorlaeufig)
 
@@ -40,15 +44,24 @@ Abgleich mit `lastenhefte/easyscoot.md`, konkrete Befunde:
   vorhanden; zusaetzlich die im Lastenheft geforderte Statusmeldung der Scooter.
   Die Fahrtzusammenfassung ist Teil von "Nutzung beenden" (Systemreaktion, kein
   eigener Use Case).
+- Artefakt-Ebene (DoD): direktes Bild liegt vor (`v1-direkt-easyscoot.png`, 2026-07-07);
+  PlantUML-Rendering steht weiterhin aus.
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
 - PlantUML-Rendering — Score: _/5 (offen), Befunde: Rendering steht aus
-- Direktes Bild — Score: _/5 (offen), Befunde: liegt nicht vor
+- Direktes Bild — Score: 4/5 (vorlaeufig, Selbstbewertung 2026-07-07). Befunde: alle 11
+  Ellipsen und 5 Akteure ueberlappungsfrei, Beschriftungen lesbar; Abzuege: die Kante
+  Rechnungssystem–"Nutzung beenden" kreuzt die E-Scooter-Kanten rechts der Systemgrenze,
+  und die langen Faecherkanten von Service-Mitarbeiter und E-Scooter wirken unruhig.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar: direkte Bildform fehlt (s. notizen.md).
+- Direktes Bild liegt vor (2026-07-07); PlantUML-Rendering weiterhin offen, ein
+  Layout-Vergleich ist daher noch nicht moeglich. Wichtig: Das direkte Bild wurde
+  nachtraeglich aus `v1.puml` abgeleitet – inhaltliche Uebereinstimmung ist
+  konstruktionsbedingt und kein unabhaengiger Befund; fuer
+  `vergleiche/plantuml-vs-direkt.md` nur die Zeichenqualitaet (K4) heranziehen.
 
 ## Was haetten wir anders modelliert?
 

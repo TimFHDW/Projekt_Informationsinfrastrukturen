@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| Bewertet von | Alex (mit Claude/Cowork) |
-| Datum | 2026-07-06 |
+| Bewertet von | Alex (mit Claude/Cowork); Direktbild-Abschnitte: Claude-Selbstbewertung (vorlaeufig) |
+| Datum | 2026-07-06 (v1.puml); Nachtrag direktes Bild: 2026-07-07 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easylib-v1.md` |
 | Rendering-Weg | noch offen (jar-Download blockiert, s. notizen.md) |
@@ -15,7 +15,12 @@ Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 - PlantUML kompiliert ohne Korrektur: noch nicht geprueft (kein Renderer verfuegbar)
 - Fehlerliste (aus `notizen.md` / `vN-korrigiert.puml`): Sichtpruefung ohne Befund;
   verbindliche Bewertung erst nach Rendering
-- Direktes Bild – UML-Notation korrekt?: n. a., v1-direkt.png liegt nicht vor
+- Direktes Bild (`v1-direkt-easylib.png`, Nachtrag 2026-07-07) – UML-Notation korrekt?:
+  ja (vorlaeufige Selbstbewertung): Akteure als Strichmaennchen ausserhalb der benannten
+  Systemgrenze "EasyLib", Sekundaerakteure mit Stereotyp «externes System», Use Cases als
+  Ellipsen, ungerichtete Assoziationen, extend als gestrichelter offener Pfeil mit
+  «extend»-Label in Richtung Basis-Use-Case "Exemplar einpflegen". Einschraenkung: Bild
+  nachtraeglich aus `v1.puml` abgeleitet (s. notizen.md, Nachtrag).
 
 ## K2 – Inhaltliche Korrektheit — Score: 5/5 (vorlaeufig)
 
@@ -37,15 +42,25 @@ Abgleich mit `lastenhefte/easylib.md`, konkrete Befunde:
 - Fehlende zentrale Elemente: keine gefunden. Alle Aufzaehlungspunkte der drei
   Nutzergruppen sind abgebildet; "Mahnbescheide ausstellen" bewusst nicht als
   Use Case (Systemleistung ist nur die Uebersicht, s. notizen.md).
+- Artefakt-Ebene (DoD): direktes Bild liegt vor (`v1-direkt-easylib.png`, 2026-07-07);
+  PlantUML-Rendering steht weiterhin aus.
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
 - PlantUML-Rendering — Score: _/5 (offen), Befunde: Rendering steht aus
-- Direktes Bild — Score: _/5 (offen), Befunde: liegt nicht vor
+- Direktes Bild — Score: 4/5 (vorlaeufig, Selbstbewertung 2026-07-07). Befunde: alle 15
+  Ellipsen ueberlappungsfrei, extend-Pfeil samt «extend»-Label erkennbar, Beschriftungen
+  lesbar; Abzuege: mehrere Kreuzungen zwischen Bibliothekar- und Kunde-Kanten (geteilte
+  Use Cases "Bestand durchsuchen" / "Standort und Status") und sehr kurzer extend-Pfeil
+  zwischen den eng stehenden Ellipsen UC1/UC2.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar: direkte Bildform fehlt (s. notizen.md).
+- Direktes Bild liegt vor (2026-07-07); PlantUML-Rendering weiterhin offen, ein
+  Layout-Vergleich ist daher noch nicht moeglich. Wichtig: Das direkte Bild wurde
+  nachtraeglich aus `v1.puml` abgeleitet – inhaltliche Uebereinstimmung ist
+  konstruktionsbedingt und kein unabhaengiger Befund; fuer
+  `vergleiche/plantuml-vs-direkt.md` nur die Zeichenqualitaet (K4) heranziehen.
 
 ## Was haetten wir anders modelliert?
 

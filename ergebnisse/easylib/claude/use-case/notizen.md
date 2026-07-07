@@ -51,9 +51,31 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
   (@startuml/@enduml, rectangle-Block, Alias-Referenzen).
 - Renderweg des Teams festlegen und hier nachtragen.
 
+## Nachtrag 2026-07-07: direkt generiertes Bild (`v1-direkt-easylib.png`)
+- Erzeugt am 2026-07-07 (~17:25 CEST) in laufender Cowork-Session (Claude, im Auftrag von
+  Lewin). Grundlage: Schritt-2-Vorgaben aus `prompts/use-case/easylib-v1.md` und das bereits
+  abgelegte `v1.puml` als Modellbasis (Prompt-Regel: beide Ausgabeformen muessen inhaltlich
+  uebereinstimmen).
+- Tooling: Claude hat das Bild selbst gezeichnet (eigenes Python/Pillow-Zeichenskript der KI,
+  Layout/Koordinaten von der KI bestimmt, KEINE PlantUML-Beteiligung). Skript wegen
+  Sync-Latenz aus /tmp ausgefuehrt; Ablage per MD5-Vergleich + PIL-verify bestaetigt, Bild
+  visuell geprueft (15 Use Cases, 5 Akteure inkl. zweier Sekundaerakteure mit Stereotyp
+  «externes System», Systemgrenze "EasyLib", extend-Pfeil UC2 -> UC1 mit «extend»-Label).
+- Methodik-Einschraenkungen: (1) Bild nachtraeglich aus v1.puml abgeleitet statt im selben
+  Generierungsdurchlauf -> inhaltliche Uebereinstimmung PlantUML vs. direkt ist
+  konstruktionsbedingt und NICHT als unabhaengiger Befund fuer
+  `vergleiche/plantuml-vs-direkt.md` verwertbar (dort nur Zeichenqualitaet/K4 vergleichen);
+  (2) alle drei Use-Case-Bilder in einer Sitzung erzeugt -> moeglicher Struktur-Uebertrag
+  zwischen den Systemen (identisches Layoutschema: UC-Spalte, Primaerakteure links,
+  Sekundaerakteure rechts).
+- Namensabweichung: AGENTS.md/DoD sieht `v1-direkt.png` vor; auf ausdruecklichen Wunsch von
+  Lewin analog zu den Klassendiagramm-Zellen mit Systemnamen benannt
+  (`v1-direkt-easylib.png`).
+
 ## Noch zu tun (DoD)
 - [ ] Reproduktion in frischer, isolierter Session (Methodik)
-- [ ] v1-direkt.png (direkt generiertes Bild) nachliefern
+- [x] v1-direkt-easylib.png (direkt generiertes Bild) – nachgeliefert am 2026-07-07,
+      siehe Nachtrag oben
 - [ ] PlantUML rendern -> v1-plantuml.png/.svg; Renderweg hier notieren
 - [ ] K1/K4 in evaluation.md finalisieren; K2/K3 unabhaengig bestaetigen
 - [ ] evaluation/ergebnismatrix.md aktualisieren

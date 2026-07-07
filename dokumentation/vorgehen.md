@@ -248,3 +248,28 @@ starten/bestaetigen"; EasyScoot Rechnungs-Uebermittlung als Abhaengigkeitspfeil;
 frischen Session neu erzeugen. Der Direktbild-Weg nutzt librsvg (nicht PlantUML); fuer die noch
 fehlenden v1-plantuml.png der Aktivitaets-Zellen steht laut Journal 22:03 der node-plantuml-Weg
 (npm) bereit.
+
+## 2026-07-07 | 17:30 | Claude (im Auftrag von Lewin)
+Schritt: Fehlende „direkt"-Bildform der drei Use-Case-Zellen der Claude-Spalte nachgeliefert
+(Auftrag: Prompts aus prompts/use-case/*-v1.md ausfuehren und die Direktbilder in den
+DoD-Zellen ablegen). Je Zelle das Use-Case-Diagramm von der KI direkt als Bild gezeichnet
+(eigenes Python/Pillow-Zeichenskript der KI, Layout/Koordinaten von der KI bestimmt, KEINE
+PlantUML-Beteiligung), inhaltsgleich zum jeweils abgelegten v1.puml (Prompt-Regel: beide
+Ausgabeformen muessen uebereinstimmen). Alle drei PNGs visuell verifiziert und per
+MD5-Vergleich + PIL-verify auf Integritaet geprueft (Sync-Latenz-Lektion vom 06./07.07.).
+Ergebnis: ergebnisse/easyride/claude/use-case/v1-direkt-easyride.png;
+ergebnisse/easyscoot/claude/use-case/v1-direkt-easyscoot.png;
+ergebnisse/easylib/claude/use-case/v1-direkt-easylib.png; je Zelle notizen.md (Nachtrag +
+DoD-Checkliste) und evaluation.md (K1-direkt, K3-Artefaktebene, K4-direkt, Abschnitt
+PlantUML vs. direkt) aktualisiert; evaluation/ergebnismatrix.md: die drei
+use-case/claude-Zeilen von „offen" auf „generiert" (v1) gesetzt – diese Aktualisierung
+stand seit dem 06.07. aus (offener DoD-Punkt der drei Zellen).
+Beobachtung: (1) Namensabweichung von AGENTS.md (vN-direkt.png) auf Wunsch von Lewin:
+Dateinamen mit Systemnamen (v1-direkt-<system>.png), analog zu den Klassendiagramm-Zellen.
+(2) Methodik wie beim Klassendiagramm-Nachtrag vom 07.07.: Bilder nachtraeglich aus v1.puml
+abgeleitet statt im selben Generierungsdurchlauf -> Uebereinstimmung PlantUML vs. direkt
+konstruktionsbedingt, fuer vergleiche/plantuml-vs-direkt.md nur K4 verwertbar; alle drei
+Bilder in einer Cowork-Session (Struktur-Uebertrag moeglich: identisches Spaltenlayout).
+(3) K4-Selbstbewertung direkt (vorlaeufig): easyride 5 (keine Kreuzungen), easyscoot 4
+(Kreuzung der Sekundaerakteur-Kanten), easylib 4 (Kreuzungen durch geteilte Use Cases,
+kurzer extend-Pfeil). Commits macht Lewin selbst.
