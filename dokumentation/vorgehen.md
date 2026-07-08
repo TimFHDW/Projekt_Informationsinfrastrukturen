@@ -233,7 +233,7 @@ keine Statusaenderung). (4) Erneut Sync-Latenz beobachtet: Zeichenskript kam in 
 abgeschnitten an, Ausfuehrung ueber /tmp-Kopie; PNGs nach Ablage per Integritaetspruefung
 (PIL verify) bestaetigt. Commits macht Linus selbst.
 
-## 2026-07-06 | 22:55 | Claude (im Auftrag von Tim)
+## 2026-07-07 | 15:52 | Claude (im Auftrag von Tim)
 Schritt: Die drei „direkt gezeichneten" Aktivitaetsdiagramme (Szenarien gemaess
 prompts/aktivitaet/*-v1.md) als SVG in Cowork erzeugt, von Tim visuell freigegeben und via
 librsvg-2 + cairo (ctypes; plantuml.jar/pip in dieser Umgebung blockiert) zu PNG gerendert und
@@ -273,3 +273,28 @@ Bilder in einer Cowork-Session (Struktur-Uebertrag moeglich: identisches Spalten
 (3) K4-Selbstbewertung direkt (vorlaeufig): easyride 5 (keine Kreuzungen), easyscoot 4
 (Kreuzung der Sekundaerakteur-Kanten), easylib 4 (Kreuzungen durch geteilte Use Cases,
 kurzer extend-Pfeil). Commits macht Lewin selbst.
+
+## 2026-07-08 | 12:09 | Claude (im Auftrag von Tim)
+Schritt: Fehlende „direkt"-Bildform der drei Sequenz-Zellen der Claude-Spalte nachgeliefert
+(Prompts aus prompts/sequenz/*-v1.md). WICHTIGER UNTERSCHIED zu den Klassendiagramm-/Use-Case-
+Nachtraegen (07.07.): Auf ausdrueckliche Anweisung von Tim wurden die zugehoerigen v1.puml
+BEWUSST NICHT angesehen; jedes Sequenzbild ist eine UNABHAENGIGE Generierung allein aus dem
+Prompt (Schritt-1-Systembeschreibung + Schritt-2-Szenario). Damit ist der Vergleich PlantUML
+vs. direkt hier auch inhaltlich (nicht nur K4) belastbar. Bilder von der KI direkt gezeichnet
+ueber einen eigenen Sequenzdiagramm-Generator (Python) -> SVG -> PNG via librsvg-2 + cairo
+(ctypes); KEINE PlantUML-Beteiligung. easylib und easyride visuell verifiziert.
+Ergebnis: ergebnisse/easyride/claude/sequenz/v1-direkt-easyride.png;
+ergebnisse/easyscoot/claude/sequenz/v1-direkt-easyscoot.png;
+ergebnisse/easylib/claude/sequenz/v1-direkt-easylib.png; je Zelle notizen.md (Nachtrag +
+DoD-Checkliste) und evaluation.md (Datum, K1-direkt, K4-direkt) aktualisiert.
+Beobachtung: (1) Namensabweichung von AGENTS.md (vN-direkt.png) auf Wunsch von Tim: Dateinamen
+mit Systemnamen (v1-direkt-<system>.png), analog zu den anderen Direktbild-Nachtraegen.
+(2) Szenarien: easyride „Fahrer bestaetigt Erreichen eines Haltepunkts" (6 Aufrufe); easyscoot
+„Kunde beendet Nutzung" (5 Aufrufe, Preis in der Rechnungssystem-Lebenslinie); easylib
+„Bibliothekar verleiht Buchexemplar" (6 Aufrufe inkl. «create» der Ausleihe). Alle mit
+synchronen Aufrufen + Antwortpfeilen, >= 5 Methodenaufrufe. (3) Methodik-Abweichungen: keine
+frische Session, Zweischritt-Prompt nicht getrennt, alle drei Bilder in einer Session.
+(4) K4-direkt vorlaeufig je 4 (einzelne lange Methodensignaturen ragen in enge Nachbar-Spalten).
+ergebnismatrix.md: Sequenz-Zellen stehen bereits auf „generiert" (v1), keine Statusaenderung.
+(5) Umgebungshinweis: Der bash-Mount der Sandbox zeigte vorgehen.md veraltet (68 Zeilen) –
+Abgleich/Anhaengen daher ueber die Datei-Tools (aktueller Workspace-Stand).

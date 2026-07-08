@@ -51,9 +51,27 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
 - Kleine Beobachtung im Rendering: Antwortpfeil Nr. 9 (kunde --> ausleihe) ist unbeschriftet
   (so im Original-Code, void-Rueckgabe) - kein Fehler, nur kosmetisch.
 
+## Nachtrag 2026-07-07: direkt generiertes Bild (`v1-direkt-easylib.png`)
+- Erzeugt am 2026-07-07 in laufender Cowork-Session (Claude, im Auftrag von Tim), allein aus
+  `prompts/sequenz/easylib-v1.md` (Schritt-1-Systembeschreibung + Schritt-2-Szenario). Die
+  zugehoerige `v1.puml` wurde auf Anweisung von Tim BEWUSST NICHT angesehen.
+- Folge (wichtig): Das Bild ist eine UNABHAENGIGE Generierung aus dem Prompt, NICHT aus der
+  `v1.puml` abgeleitet (anders als die Klassendiagramm-/Use-Case-Direktbilder vom 07.07.).
+  Damit ist `vergleiche/plantuml-vs-direkt.md` fuer diese Zelle auch inhaltlich belastbar,
+  nicht nur bei der Zeichenqualitaet (K4).
+- Tooling: eigener Sequenzdiagramm-Generator (Python) -> SVG -> PNG via librsvg-2 + cairo
+  (ctypes), 1360 px breit (2x), weisser Hintergrund. Visuell verifiziert.
+- Inhalt: Szenario „Bibliothekar verleiht ein Buchexemplar an einen Kunden", 5 Lebenslinien
+  (Bibliothekar, EasyLib-System, Kunde, Exemplar, Ausleihe), 6 Aufrufe inkl. «create» der
+  Ausleihe; verliehen wird das Exemplar (nicht das Buch).
+- Methodik-Abweichungen: (1) keine frische, isolierte Session; (2) Zweischritt-Prompt nicht als
+  getrennte Nachrichten; (3) alle drei Sequenzbilder in einer Session.
+- Namensabweichung: AGENTS.md/DoD nennt `vN-direkt.png`; auf Wunsch von Tim mit Systemnamen
+  (`v1-direkt-easylib.png`).
+
 ## Noch zu tun (DoD)
 - [ ] Reproduktion in frischer, isolierter Session (Methodik)
-- [ ] `v1-direkt.png` nachliefern
+- [x] `v1-direkt-easylib.png` ergaenzt am 2026-07-07 (unabhaengig aus Prompt, siehe Nachtrag)
 - [x] PlantUML rendern -> `v1-plantuml.png` (Weg siehe oben)
 - [ ] K4 fuer direktes Bild offen; K1/K4-PlantUML vorlaeufig bewertet; K2/K3 unabhaengig bestaetigen
 - [ ] Matrix + Journal + Commit
