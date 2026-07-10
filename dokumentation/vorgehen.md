@@ -298,3 +298,39 @@ frische Session, Zweischritt-Prompt nicht getrennt, alle drei Bilder in einer Se
 ergebnismatrix.md: Sequenz-Zellen stehen bereits auf „generiert" (v1), keine Statusaenderung.
 (5) Umgebungshinweis: Der bash-Mount der Sandbox zeigte vorgehen.md veraltet (68 Zeilen) –
 Abgleich/Anhaengen daher ueber die Datei-Tools (aktueller Workspace-Stand).
+
+## 2026-07-10 | 14:33 | ChatGPT (im Auftrag von Tim)
+
+Schritt: Die drei systemspezifischen Aktivitaetsdiagramm-Prompts fuer EasyRide, EasyScoot und
+EasyLib aus `prompts/aktivitaet/*-v1.md` sowie die zugehoerigen Projektanweisungen aus den
+hochgeladenen README- und AGENTS-Dateien gelesen. Anschliessend auf Wunsch von Tim zunaechst
+ausschliesslich die direkt generierten Diagrammbilder erstellt; die PlantUML-Ausgaben sollen
+zu einem spaeteren Zeitpunkt separat erzeugt werden. Der erste Generierungsdurchlauf lieferte
+alle drei Aktivitaetsdiagramme gemeinsam in einer Gesamtgrafik. Diese wurden anschliessend
+zwar technisch in drei einzelne PNG-Dateien getrennt, auf Wunsch von Tim jedoch nochmals als
+vollstaendig eigenstaendige Diagrammgrafiken neu generiert. Dabei entstanden zunaechst
+EasyRide und EasyScoot separat. EasyLib wurde beim ersten Nachgenerierungsversuch
+versehentlich erneut gemeinsam mit EasyScoot ausgegeben und deshalb anschliessend nochmals
+allein als eigenstaendige Grafik erzeugt.
+
+Ergebnis: Drei separat generierte Aktivitaetsdiagramme als PNG fuer die Szenarien
+`easyride`: „Kunde bucht eine Fahrt",
+`easyscoot`: „E-Scooter ausleihen und nutzen" und
+`easylib`: „Bibliothekar pflegt ein neues Buchexemplar ein".
+Die PlantUML-Codes und daraus gerenderten PlantUML-Bilder wurden in diesem Arbeitsschritt
+bewusst noch nicht erstellt.
+
+Beobachtung: Der Generierungsablauf wich von der in `AGENTS.md` und den Prompt-Dateien
+vorgesehenen Methodik ab, da alle drei Systeme in derselben laufenden Chat-Session bearbeitet
+wurden und damit ein moeglicher Kontext- bzw. Struktur-Uebertrag zwischen den Diagrammen
+besteht. Zusaetzlich wurden die in den Prompt-Dateien vorgesehenen zwei Schritte
+(Basis-Prompt mit Verstaendnis-Check und anschliessender Diagramm-Prompt) nicht als getrennte
+Nachrichten mit dazwischenliegender Bestaetigung ausgefuehrt. Der erste Durchlauf erzeugte
+eine gemeinsame Gesamtgrafik statt drei separater Einzelbilder; diese Darstellung wurde
+verworfen und die Diagramme danach einzeln neu generiert. Beim EasyLib-Nachtrag trat erneut
+eine fehlerhafte gemeinsame Ausgabe mit EasyScoot auf, weshalb EasyLib nochmals separat
+erzeugt wurde. Fuer die spaetere Evaluation muss ausserdem geprueft werden, ob jede finale
+Direktgrafik alle formalen Mindestanforderungen des jeweiligen Prompts vollstaendig erfuellt,
+insbesondere die geforderten Entscheidungen, beschrifteten Kanten und Swimlanes. Die
+Direktbilder wurden unabhaengig von PlantUML erzeugt; ein spaeterer Vergleich zwischen
+Direktbild und PlantUML-Ausgabe bleibt damit grundsaetzlich moeglich.
