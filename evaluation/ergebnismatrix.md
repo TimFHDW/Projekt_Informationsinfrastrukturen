@@ -11,7 +11,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyride | claude | use-case | generiert | v1 | – | – | – | – |
 | easyride | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easyride | claude | sequenz | generiert | v1 | – | – | – | – |
-| easyride | chatgpt | klassendiagramm | offen | – | – | – | – | – |
+| easyride | chatgpt | klassendiagramm | generiert | v1 | offen (direkt 5) | 2 (direkt) | 3 (direkt) | direkt 5 / PU offen |
 | easyride | chatgpt | use-case | offen | – | – | – | – | – |
 | easyride | chatgpt | aktivitaet | generiert | v1 | offen (direkt 3) | 5 (direkt) | 4 (direkt) | direkt 5 / PU offen |
 | easyride | chatgpt | sequenz | offen | – | – | – | – | – |
@@ -23,7 +23,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyscoot | claude | use-case | generiert | v1 | – | – | – | – |
 | easyscoot | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easyscoot | claude | sequenz | generiert | v1 | – | – | – | – |
-| easyscoot | chatgpt | klassendiagramm | offen | – | – | – | – | – |
+| easyscoot | chatgpt | klassendiagramm | generiert | v1 | offen (direkt 5) | 4 (direkt) | 4 (direkt) | direkt 5 / PU offen |
 | easyscoot | chatgpt | use-case | offen | – | – | – | – | – |
 | easyscoot | chatgpt | aktivitaet | generiert | v1 | offen (direkt 3) | 3 (direkt) | 3 (direkt) | direkt 5 / PU offen |
 | easyscoot | chatgpt | sequenz | offen | – | – | – | – | – |
@@ -35,7 +35,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easylib | claude | use-case | generiert | v1 | – | – | – | – |
 | easylib | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easylib | claude | sequenz | generiert | v1 | – | – | – | – |
-| easylib | chatgpt | klassendiagramm | offen | – | – | – | – | – |
+| easylib | chatgpt | klassendiagramm | generiert | v1 | offen (direkt 5) | 4 (direkt) | 4 (direkt) | direkt 5 / PU offen |
 | easylib | chatgpt | use-case | offen | – | – | – | – | – |
 | easylib | chatgpt | aktivitaet | generiert | v1 | offen (direkt 3) | 4 (direkt) | 3 (direkt) | direkt 5 / PU offen |
 | easylib | chatgpt | sequenz | offen | – | – | – | – | – |

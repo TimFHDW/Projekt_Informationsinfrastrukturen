@@ -368,3 +368,32 @@ Entscheidungen, die Mindestaktivitaeten sowie die Trennung von Werk und Exemplar
 enthalten. Statt der geforderten drei Swimlanes existiert jedoch nur die Lane Bibliothekar.
 Ein vorgeschriebener Git-Commit war nicht moeglich, weil der Schreibzugriff auf den
 Git-Index nicht freigegeben wurde; die Aenderungen bleiben deshalb uncommitted.
+
+## 2026-07-11 | 14:35 | Codex (im Auftrag von Tim)
+Schritt: `prompts/klassendiagramm/easyride-v1.md` als strukturierte Bildspezifikation in
+einem eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das Original-PNG unveraendert
+als `ergebnisse/easyride/chatgpt/klassendiagramm/v1-direkt-chatgpt.png` abgelegt, visuell
+gegen Lastenheft und Kriterien geprueft sowie Evaluation, Notizen und Matrix aktualisiert.
+Ergebnis: Direktbild, `evaluation.md`, `notizen.md`; Matrixstatus `generiert`, Prompt v1.
+Beobachtung: Das Bild ist sehr gut lesbar, ordnet aber Fahrzeug dem Routenhalt und den
+Routenhalt der Verbindung statt den fachlich richtigen Klassen Route bzw. Haltepunkt zu;
+ausserdem fehlt Buchung–Fahrgast. PlantUML-Code und -Rendering bleiben offen.
+
+## 2026-07-11 | 14:36 | Codex (im Auftrag von Tim)
+Schritt: `prompts/klassendiagramm/easyscoot-v1.md` in einem frischen, eigenstaendigen
+Built-in-Imagegen-Durchlauf ausgefuehrt, das Original-PNG unveraendert als
+`ergebnisse/easyscoot/chatgpt/klassendiagramm/v1-direkt-chatgpt.png` abgelegt, visuell
+geprueft sowie Evaluation, Notizen und Matrix aktualisiert.
+Ergebnis: Direktbild, `evaluation.md`, `notizen.md`; Matrixstatus `generiert`, Prompt v1.
+Beobachtung: Klassen, Attribute, Vererbung und Enumerationen sind weitgehend vollstaendig;
+die Preis-Abhaengigkeit geht jedoch fachlich unpassend vom E-Scooter aus. PlantUML bleibt offen.
+
+## 2026-07-11 | 14:37 | Codex (im Auftrag von Tim)
+Schritt: `prompts/klassendiagramm/easylib-v1.md` in einem frischen, eigenstaendigen
+Built-in-Imagegen-Durchlauf ausgefuehrt, das Original-PNG unveraendert als
+`ergebnisse/easylib/chatgpt/klassendiagramm/v1-direkt-chatgpt.png` abgelegt, visuell
+geprueft sowie Evaluation, Notizen und Matrix aktualisiert.
+Ergebnis: Direktbild, `evaluation.md`, `notizen.md`; Matrixstatus `generiert`, Prompt v1.
+Beobachtung: Werk-/Exemplartrennung, Vererbung, Genre und Schnittstellen sind enthalten;
+die Reservierung ist nicht eindeutig mit Medium verbunden. Die vorhandene fachfremde
+`Projekt_Informationsinfrastrukturen.puml` blieb gemaess Originalschutz unveraendert.
