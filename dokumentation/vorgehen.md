@@ -334,3 +334,37 @@ Direktgrafik alle formalen Mindestanforderungen des jeweiligen Prompts vollstaen
 insbesondere die geforderten Entscheidungen, beschrifteten Kanten und Swimlanes. Die
 Direktbilder wurden unabhaengig von PlantUML erzeugt; ein spaeterer Vergleich zwischen
 Direktbild und PlantUML-Ausgabe bleibt damit grundsaetzlich moeglich.
+
+## 2026-07-11 | 14:18 | Codex (im Auftrag von Tim)
+Schritt: Das direkt generierte ChatGPT-Aktivitaetsdiagramm v1 fuer EasyRide visuell gegen
+`lastenhefte/easyride.md`, `prompts/aktivitaet/easyride-v1.md` und die Kriterien K1–K4
+geprueft. Fehlende Begleitdateien angelegt und die Ergebnismatrix aktualisiert.
+Ergebnis: `ergebnisse/easyride/chatgpt/aktivitaet/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easyride/chatgpt/aktivitaet auf `generiert` (v1) gesetzt.
+Beobachtung: Nur das Direktbild liegt vor; PlantUML-Code und Rendering bleiben offen. Das
+Bild erfuellt die Aktivitaets-Mindestzahl und bildet den Kernablauf korrekt ab, enthaelt aber
+nur eine statt der geforderten zwei Entscheidungen. Die Direktbild-Scores sind deshalb
+vorlaeufig und in der Matrix explizit als solche gekennzeichnet.
+
+## 2026-07-11 | 14:22 | Codex (im Auftrag von Tim)
+Schritt: Das direkt generierte ChatGPT-Aktivitaetsdiagramm v1 fuer EasyScoot visuell gegen
+`lastenhefte/easyscoot.md`, `prompts/aktivitaet/easyscoot-v1.md` und die Kriterien K1–K4
+geprueft. Fehlende Begleitdateien angelegt und die Ergebnismatrix aktualisiert.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/aktivitaet/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easyscoot/chatgpt/aktivitaet auf `generiert` (v1) gesetzt.
+Beobachtung: Nur das Direktbild liegt vor; PlantUML-Code und Rendering bleiben offen. Die
+Aktivitaets-Mindestzahl und alle Kernaktivitaeten sind enthalten, aber die geforderte
+Entscheidung fehlt. Ausserdem wird die Preisberechnung vor Erfassung der Nutzungsdaten
+angestossen und „Nutzung beenden“ der System- statt der Kundenlane zugeordnet.
+
+## 2026-07-11 | 14:24 | Codex (im Auftrag von Tim)
+Schritt: Das direkt generierte ChatGPT-Aktivitaetsdiagramm v1 fuer EasyLib visuell gegen
+`lastenhefte/easylib.md`, `prompts/aktivitaet/easylib-v1.md` und die Kriterien K1–K4
+geprueft. Fehlende Begleitdateien angelegt und die Ergebnismatrix aktualisiert.
+Ergebnis: `ergebnisse/easylib/chatgpt/aktivitaet/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easylib/chatgpt/aktivitaet auf `generiert` (v1) gesetzt.
+Beobachtung: Nur das Direktbild liegt vor; PlantUML-Code und Rendering bleiben offen. Beide
+Entscheidungen, die Mindestaktivitaeten sowie die Trennung von Werk und Exemplar sind
+enthalten. Statt der geforderten drei Swimlanes existiert jedoch nur die Lane Bibliothekar.
+Ein vorgeschriebener Git-Commit war nicht moeglich, weil der Schreibzugriff auf den
+Git-Index nicht freigegeben wurde; die Aenderungen bleiben deshalb uncommitted.

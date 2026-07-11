@@ -13,7 +13,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyride | claude | sequenz | generiert | v1 | – | – | – | – |
 | easyride | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easyride | chatgpt | use-case | offen | – | – | – | – | – |
-| easyride | chatgpt | aktivitaet | offen | – | – | – | – | – |
+| easyride | chatgpt | aktivitaet | generiert | v1 | offen (direkt 3) | 5 (direkt) | 4 (direkt) | direkt 5 / PU offen |
 | easyride | chatgpt | sequenz | offen | – | – | – | – | – |
 | easyride | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easyride | gemini | use-case | offen | – | – | – | – | – |
@@ -25,7 +25,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyscoot | claude | sequenz | generiert | v1 | – | – | – | – |
 | easyscoot | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easyscoot | chatgpt | use-case | offen | – | – | – | – | – |
-| easyscoot | chatgpt | aktivitaet | offen | – | – | – | – | – |
+| easyscoot | chatgpt | aktivitaet | generiert | v1 | offen (direkt 3) | 3 (direkt) | 3 (direkt) | direkt 5 / PU offen |
 | easyscoot | chatgpt | sequenz | offen | – | – | – | – | – |
 | easyscoot | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easyscoot | gemini | use-case | offen | – | – | – | – | – |
@@ -37,7 +37,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easylib | claude | sequenz | generiert | v1 | – | – | – | – |
 | easylib | chatgpt | klassendiagramm | offen | – | – | – | – | – |
 | easylib | chatgpt | use-case | offen | – | – | – | – | – |
-| easylib | chatgpt | aktivitaet | offen | – | – | – | – | – |
+| easylib | chatgpt | aktivitaet | generiert | v1 | offen (direkt 3) | 4 (direkt) | 3 (direkt) | direkt 5 / PU offen |
 | easylib | chatgpt | sequenz | offen | – | – | – | – | – |
 | easylib | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easylib | gemini | use-case | offen | – | – | – | – | – |
