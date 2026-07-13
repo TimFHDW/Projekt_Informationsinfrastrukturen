@@ -1,0 +1,88 @@
+@startuml
+title EasyScoot – Klassendiagramm
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+abstract class Nutzerkonto {
+  - nutzerId: String
+}
+
+class Kunde {
+  - vorname: String
+  - name: String
+  - strasse: String
+  - hausnummer: String
+  - plz: String
+  - ort: String
+  - emailadresse: String
+  + scooterBuchen(scooter: EScooter): Fahrt
+  + scooterFreischalten(scooter: EScooter): void
+  + nutzungBeenden(fahrt: Fahrt): void
+}
+
+class Flottenmanager {
+  + alleScooterAnzeigen(): Liste<EScooter>
+}
+
+class ServiceMitarbeiter {
+  + scooterMitNiedrigemLadestandAnzeigen(): Liste<EScooter>
+  + wartungsmodusStarten(scooter: EScooter): void
+  + wartungsmodusBeenden(scooter: EScooter): void
+  + scooterAufnehmen(scooter: EScooter): void
+  + scooterAusmustern(scooter: EScooter): void
+}
+
+class EScooter {
+  - id: String
+  - marke: String
+  - modell: String
+  - batteriekapazitaetWh: double
+  - verbrauchskoeffizientWhProKm: double
+  - position: String
+  - ladezustandProzent: double
+  - geschaetzteRestfahrzeitMinuten: int
+  - fahrstatus: Fahrstatus
+  - leihstatus: Leihstatus
+  - wartungsstatus: Wartungsstatus
+  + freischalten(): void
+  + wartungsmodusStarten(): void
+  + wartungsmodusBeenden(): void
+}
+
+class Fahrt {
+  - dauerMinuten: int
+  - gefahreneKilometer: double
+  - verbrauchteWattstunden: double
+  - preis: double
+}
+
+interface Rechnungssystem <<extern>> {
+  + preisBerechnen(fahrt: Fahrt): double
+}
+
+enum Fahrstatus {
+  STEHEND
+  FAHREND
+}
+
+enum Leihstatus {
+  IN_BENUTZUNG
+  NICHT_IN_BENUTZUNG
+}
+
+enum Wartungsstatus {
+  IN_WARTUNG
+  NICHT_IN_WARTUNG
+}
+
+Nutzerkonto <|-- Kunde
+Nutzerkonto <|-- Flottenmanager
+Nutzerkonto <|-- ServiceMitarbeiter
+Kunde "1" -- "0..*" Fahrt : unternimmt >
+Fahrt "0..*" -- "1" EScooter : nutzt >
+Flottenmanager "0..*" -- "0..*" EScooter : verwaltet >
+ServiceMitarbeiter "0..*" -- "0..*" EScooter : wartet >
+Fahrt "0..*" ..> "1" Rechnungssystem : Preis anfragen
+@enduml

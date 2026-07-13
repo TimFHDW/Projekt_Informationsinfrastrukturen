@@ -4,19 +4,20 @@
 |---|---|
 | Bewertet von | Codex (Sichtprüfung) |
 | Datum | 2026-07-11 |
+| PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/klassendiagramm/easyride-v1.md` |
-| Rendering-Weg | nicht anwendbar – direktes Bild mit integriertem Imagegen-Werkzeug erzeugt |
+| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
 
-Skalen und Regeln: `evaluation/kriterien.md`. Die Bewertung ist vorläufig, solange PlantUML-Code und PlantUML-Rendering fehlen.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 5/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: PlantUML-Ausgabe und Rendering fehlen.
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
+- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block und ausgeglichene Blockklammern); keine Aussage über die Kompilierbarkeit.
 - Direktes Bild – UML-Notation korrekt?: Klassenkästen, Komposition, Assoziationen, Multiplizitäten und Notizen sind formal korrekt als UML erkennbar. Die Verbindung zwischen `Verbindung` und `Haltepunkt` ist als einfache Assoziation mit den Multiplizitäten 2 bzw. 0..* dargestellt. Mehrere Linien sind fachlich an falschen Klassen angeschlossen; dies wird ausschließlich unter K2/K3 bewertet.
 
-## K2 – Inhaltliche Korrektheit — Score: 2/5 (Direktbild)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 2/5
 
 Abgleich mit `lastenhefte/easyride.md`:
 
@@ -25,13 +26,15 @@ Abgleich mit `lastenhefte/easyride.md`:
 - Zentrale Fehlzuordnung: `Routenhalt` ist mit `Verbindung` statt mit `Haltepunkt` verbunden; damit ist der Haltepunkt eines Routenhalts nicht modelliert.
 - Die geforderte Beziehung zwischen `Buchung` und `Fahrgast` fehlt.
 - Die Verbindung `Buchung`–`Route` ist vorhanden, aber mit „gehört zu“ statt der fachlich präziseren Einplanung bezeichnet.
+- PlantUML-Code: verwendet `Fahrt` als Buchungs-/Fahrgastkontext und verbindet Fahrzeug–Route, Routenhalt–Haltepunkt sowie Routenhalt–Kunde fachlich korrekt; beide Fachregeln sind notiert.
 
-## K3 – Vollständigkeit — Score: 3/5 (Direktbild)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 3/5
 
 - Mindestanforderung: für Klassendiagramme nicht anwendbar.
 - Vorhanden: alle geforderten Klassen, zentrale Methoden, Multiplizitäten an den gezeichneten Assoziationen, `{ordered}` und beide Fachregel-Notizen.
 - Fehlende zentrale Elemente: korrekte Assoziationen Fahrzeug–Route, Routenhalt–Haltepunkt und Buchung–Fahrgast.
 - Die Aufnahme- und Absetzbeziehungen zwischen Routenhalt und Fahrgast sind dargestellt.
+- PlantUML-Code: alle geforderten Konzepte, zentralen Methoden, Assoziationsmultiplizitäten, `{ordered}` sowie beide Constraints sind vorhanden.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -40,7 +43,7 @@ Abgleich mit `lastenhefte/easyride.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht vergleichbar, da kein zugehöriger v1-PlantUML-Code und kein PlantUML-Rendering vorliegen.
+- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: Der Code korrigiert die fachlich falschen Anschlüsse des Direktbilds und modelliert die geordnete Route vollständig.
 
 ## Was hätten wir anders modelliert?
 

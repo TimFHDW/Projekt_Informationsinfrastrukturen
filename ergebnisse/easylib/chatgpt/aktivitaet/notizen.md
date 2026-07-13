@@ -27,10 +27,17 @@
 
 ## Offene DoD-Punkte
 
-- [ ] `v1.puml`
+- [x] `v1.puml`
 - [ ] `v1-plantuml.png` oder `.svg`
 - [x] Direktbild (`v1-direkt-chatgpt.png`)
 - [x] `evaluation.md` (Direktbild vollständig, PlantUML-Anteile offen)
 - [x] `notizen.md`
 - [x] Journal-Eintrag
 - [x] Ergebnismatrix auf `generiert` / v1 aktualisiert
+
+## Nachtrag PlantUML am 2026-07-13
+
+- `v1.puml` nachträglich anhand von `prompts/aktivitaet/easylib-v1.md` erzeugt; SHA-256: `3AC3444E370566A11238BBCCD522F1B95EFD4032246A2EA2652DA10B0605B6C5`.
+- Methodikabweichung: Code und Direktbild stammen nicht aus demselben Generierungsdurchlauf; die sechs PUML-Dateien wurden in derselben Codex-Session erstellt.
+- Statische Strukturprüfung erfolgreich: ein `@startuml`/`@enduml`, ausgeglichene Blockklammern, 2 `if`/2 `endif`.
+- Kompilierung und Rendering nicht geprüft: lokal kein PlantUML vorhanden; Download von PlantUML 1.2026.3 wurde nicht freigegeben.

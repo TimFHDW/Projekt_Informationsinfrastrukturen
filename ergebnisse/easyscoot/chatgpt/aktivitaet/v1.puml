@@ -1,0 +1,51 @@
+@startuml
+title EasyScoot – Aktivitätsdiagramm „E-Scooter ausleihen und nutzen"
+
+skinparam shadowing false
+skinparam activity {
+  BackgroundColor #EDF6E9
+  BorderColor #54733D
+  DiamondBackgroundColor #FFF2CC
+  DiamondBorderColor #8A6D1D
+}
+
+|Kunde|
+start
+:Verfügbare E-Scooter in der Nähe abfragen;
+
+|EasyScoot-System|
+:Freie E-Scooter mit Standort,\nLadestand und Restfahrzeit ermitteln;
+
+if (Passender E-Scooter verfügbar?) then (ja)
+  |Kunde|
+  :E-Scooter auswählen;
+  :Zum Standort begeben;
+  :E-Scooter buchen;
+
+  |EasyScoot-System|
+  :Buchung prüfen und E-Scooter freischalten;
+
+  |Kunde|
+  :E-Scooter nutzen;
+  :Nutzung per Smartphone beenden;
+
+  |EasyScoot-System|
+  :Fahrtdaten erfassen\n(Dauer, Kilometer, Wattstunden);
+
+  |Rechnungssystem|
+  :Preis berechnen;
+
+  |EasyScoot-System|
+  :Fahrtzusammenfassung erstellen;
+
+  |Kunde|
+  :Fahrtzusammenfassung anzeigen;
+  stop
+else (nein)
+  |EasyScoot-System|
+  :Keine passenden E-Scooter melden;
+  |Kunde|
+  :Suche beenden;
+  stop
+endif
+@enduml

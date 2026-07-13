@@ -397,3 +397,67 @@ Ergebnis: Direktbild, `evaluation.md`, `notizen.md`; Matrixstatus `generiert`, P
 Beobachtung: Werk-/Exemplartrennung, Vererbung, Genre und Schnittstellen sind enthalten;
 die Reservierung ist nicht eindeutig mit Medium verbunden. Die vorhandene fachfremde
 `Projekt_Informationsinfrastrukturen.puml` blieb gemaess Originalschutz unveraendert.
+
+## 2026-07-13 | 10:33 | Codex (im Auftrag von Tim)
+Schritt: PlantUML-Code fuer das ChatGPT-Aktivitaetsdiagramm EasyRide anhand von
+`prompts/aktivitaet/easyride-v1.md` und `lastenhefte/easyride.md` erzeugt und unveraendert
+als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyride/chatgpt/aktivitaet/v1.puml`.
+Beobachtung: Code enthaelt zwei Entscheidungen, beschriftete Kanten, beide Swimlanes,
+Kapazitaetspruefung vor der Routenerweiterung sowie Start- und Endknoten. Erzeugung erfolgte
+nachtraeglich zum Direktbild und in derselben Codex-Session wie die weiteren Zellen.
+
+## 2026-07-13 | 10:34 | Codex (im Auftrag von Tim)
+Schritt: PlantUML-Code fuer das ChatGPT-Aktivitaetsdiagramm EasyScoot anhand von
+`prompts/aktivitaet/easyscoot-v1.md` und `lastenhefte/easyscoot.md` erzeugt und unveraendert
+als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/aktivitaet/v1.puml`.
+Beobachtung: Entscheidung mit Ja-/Nein-Ausgaengen und drei Swimlanes enthalten;
+Preisberechnung liegt beim Rechnungssystem. Nachtraegliche Erzeugung zum Direktbild.
+
+## 2026-07-13 | 10:35 | Codex (im Auftrag von Tim)
+Schritt: PlantUML-Code fuer das ChatGPT-Aktivitaetsdiagramm EasyLib anhand von
+`prompts/aktivitaet/easylib-v1.md` und `lastenhefte/easylib.md` erzeugt und unveraendert
+als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easylib/chatgpt/aktivitaet/v1.puml`.
+Beobachtung: Zwei Entscheidungen, drei Swimlanes, Zusammenfuehrung der Alternativen sowie
+Trennung von Werk und Exemplar enthalten. Die README-Angabe zum fehlenden EasyLib-Lastenheft
+ist veraltet; die vorhandene Datei wurde ausschliesslich gelesen.
+
+## 2026-07-13 | 10:36 | Codex (im Auftrag von Tim)
+Schritt: PlantUML-Code fuer das ChatGPT-Klassendiagramm EasyRide anhand von
+`prompts/klassendiagramm/easyride-v1.md` und `lastenhefte/easyride.md` erzeugt und
+unveraendert als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyride/chatgpt/klassendiagramm/v1.puml`.
+Beobachtung: Geordnete Routenhalte, ungerichtete Verbindung, Multiplizitaeten, zentrale
+Methoden und beide Fachregel-Notizen enthalten. Nachtraegliche Erzeugung zum Direktbild.
+
+## 2026-07-13 | 10:37 | Codex (im Auftrag von Tim)
+Schritt: PlantUML-Code fuer das ChatGPT-Klassendiagramm EasyScoot anhand von
+`prompts/klassendiagramm/easyscoot-v1.md` und `lastenhefte/easyscoot.md` erzeugt und
+unveraendert als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/klassendiagramm/v1.puml`.
+Beobachtung: Gemeinsame Nutzerkonto-Oberklasse, Status-Enumerationen, externe
+Rechnungssystem-Schnittstelle, Attribute, Methoden und Multiplizitaeten enthalten.
+
+## 2026-07-13 | 10:38 | Codex (im Auftrag von Tim)
+Schritt: PlantUML-Code fuer das ChatGPT-Klassendiagramm EasyLib anhand von
+`prompts/klassendiagramm/easylib-v1.md` und `lastenhefte/easylib.md` erzeugt und
+unveraendert als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easylib/chatgpt/klassendiagramm/v1.puml`.
+Beobachtung: Abstraktes Medium, Buch-/Hoerbuch-Vererbung, getrennte Exemplare, Autor,
+Genre, Ausleihe, Reservierung und externe Schnittstellen enthalten. Die fachfremde Datei
+`Projekt_Informationsinfrastrukturen.puml` blieb unveraendert bestehen.
+
+## 2026-07-13 | 10:42 | Codex (im Auftrag von Tim)
+Schritt: Fuer alle sechs neuen `v1.puml` eine statische Strukturpruefung durchgefuehrt,
+SHA-256-Pruefsummen erfasst und den Versuch unternommen, den offiziellen PlantUML-Renderer
+1.2026.3 fuer Kompilierung und PNG-Rendering temporaer zu laden. Danach je Zelle
+`evaluation.md` und `notizen.md` sowie die Ergebnismatrix aktualisiert.
+Ergebnis: Statische Pruefung aller sechs Codes unauffaellig; Bewertungen enthalten getrennte
+PlantUML-/Direktbild-Befunde; `evaluation/ergebnismatrix.md` aktualisiert. Die Zellen bleiben
+auf `generiert`, da `v1-plantuml.png` weiterhin fehlt.
+Beobachtung: Lokal waren Java 17, aber weder PlantUML-Kommando noch JAR vorhanden. Der
+Download des offiziellen JAR wurde nicht freigegeben; daher keine Kompilierung, kein
+Rendering und keine erfundenen K1-/K4-PlantUML-Scores. Die Originalcodes wurden nach der
+Ablage nicht veraendert; es war keine `v1-korrigiert.puml` erforderlich bzw. belegbar.

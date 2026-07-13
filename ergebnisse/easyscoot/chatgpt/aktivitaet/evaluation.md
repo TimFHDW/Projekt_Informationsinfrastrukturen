@@ -4,19 +4,20 @@
 |---|---|
 | Bewertet von | Codex (Sichtprüfung) |
 | Datum | 2026-07-11 |
+| PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/aktivitaet/easyscoot-v1.md` |
-| Rendering-Weg | nicht anwendbar – nur direkt generiertes PNG vorhanden |
+| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
 
-Skalen und Regeln: `evaluation/kriterien.md`. Die Bewertung ist vorläufig, solange PlantUML-Code und PlantUML-Rendering fehlen.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: PlantUML-Ausgabe und Rendering fehlen.
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
+- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block, ausgeglichene Klammern und 1 `if`/1 `endif`); keine Aussage über die Kompilierbarkeit.
 - Direktes Bild – UML-Notation korrekt?: Start- und Endknoten, Aktionen, Kontrollflüsse und drei Swimlanes sind erkennbar. Die gestrichelten Verbindungen zum Rechnungssystem sind in diesem Kontrollflussdiagramm nicht eindeutig als UML-Kontroll- oder Objektflüsse notiert. Eine Entscheidung fehlt vollständig; dies wird zusätzlich unter K3 gewertet.
 
-## K2 – Inhaltliche Korrektheit — Score: 3/5 (Direktbild)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 3/5
 
 Abgleich mit `lastenhefte/easyscoot.md`:
 
@@ -24,12 +25,14 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 - Die Preisberechnung ist korrekt dem externen Rechnungssystem zugeordnet.
 - Inhaltliche Ablaufabweichung: Die Preisberechnung wird direkt nach „Nutzung beenden“ angestoßen, während die für den Preis benötigten Nutzungsdaten erst danach erfasst werden. Damit ist die Reihenfolge nicht schlüssig.
 - „Nutzung beenden (per App)“ liegt in der Swimlane des EasyScoot-Systems, obwohl das Lastenheft diesen Schritt als Kundenhandlung beschreibt.
+- PlantUML-Code: Die Kundenhandlung „Nutzung beenden“, anschließende Fahrtdatenerfassung, externe Preisberechnung und Zusammenfassung sind in fachlich schlüssiger Reihenfolge modelliert.
 
-## K3 – Vollständigkeit — Score: 3/5 (Direktbild)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 3/5
 
 - Mindestanforderung erfüllt (Aktivitäten ≥ 5): ja; deutlich mehr als fünf Aktivitäten sind dargestellt.
 - Fehlende zentrale Elemente: Die ausdrücklich geforderte Entscheidung, ob ein passender E-Scooter in der Nähe verfügbar ist, fehlt vollständig; folglich fehlen auch beschriftete alternative Ausgänge.
 - Alle im Prompt genannten Kernaktivitäten sind vorhanden.
+- PlantUML-Code: alle Kernaktivitäten, die geforderte Verfügbarkeitsentscheidung mit Ja-/Nein-Ausgängen, drei Swimlanes sowie Start- und Endknoten sind vorhanden.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -38,7 +41,7 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht vergleichbar, da weder PlantUML-Code noch PlantUML-Rendering vorliegen.
+- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: Der Code ergänzt die im Direktbild fehlende Entscheidung und ordnet Nutzungsende, Fahrtdatenerfassung und Preisberechnung fachlich korrekt zu.
 
 ## Was hätten wir anders modelliert?
 

@@ -4,19 +4,20 @@
 |---|---|
 | Bewertet von | Codex (Sichtprüfung) |
 | Datum | 2026-07-11 |
+| PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/klassendiagramm/easylib-v1.md` |
-| Rendering-Weg | nicht anwendbar – direktes Bild mit integriertem Imagegen-Werkzeug erzeugt |
+| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
 
-Skalen und Regeln: `evaluation/kriterien.md`. Die Bewertung ist vorläufig, solange ein gültiger EasyLib-v1-PlantUML-Code und dessen Rendering fehlen.
+Skalen und Regeln: `evaluation/kriterien.md`. Ein gültig benanntes `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 5/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht für EasyLib v1 prüfbar.
-- Fehlerliste: Die vorhandene Datei `Projekt_Informationsinfrastrukturen.puml` modelliert Bankkonten und gehört fachlich nicht zu EasyLib; sie wird nicht als v1 gewertet und gemäß Originalschutz nicht verändert.
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
+- Fehlerliste: statische Prüfung von `v1.puml` am 2026-07-13 unauffällig (vollständiger UML-Block und ausgeglichene Blockklammern); keine Aussage über die Kompilierbarkeit. Die fachfremde Datei `Projekt_Informationsinfrastrukturen.puml` bleibt unberührt und wird nicht als v1 gewertet.
 - Direktes Bild – UML-Notation korrekt?: Abstrakte Oberklasse, Generalisierung, Komposition, Klassen, Multiplizitäten, Interfaces, Abhängigkeiten, Enumeration und Notizen sind formal klar erkennbar.
 
-## K2 – Inhaltliche Korrektheit — Score: 4/5 (Direktbild)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 4/5
 
 Abgleich mit `lastenhefte/easylib.md`:
 
@@ -24,12 +25,14 @@ Abgleich mit `lastenhefte/easylib.md`:
 - Ausleihe ist korrekt an ein Exemplar gebunden.
 - Inhaltliche Fehlzuordnung: Die Reservierungsassoziation läuft im Bild zur gemeinsamen rechten Verbindung beim Exemplar statt eindeutig zu `Medium`; fachlich soll ein Werk reserviert werden.
 - Die Annahme zur widersprüchlichen Leihfristanforderung ist sichtbar dokumentiert.
+- PlantUML-Code: Reservierung ist eindeutig an `Medium`, Ausleihe eindeutig an `Exemplar` angeschlossen; die Annahme zur Leihfrist ist als Notiz enthalten.
 
-## K3 – Vollständigkeit — Score: 4/5 (Direktbild)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 4/5
 
 - Mindestanforderung: für Klassendiagramme nicht anwendbar.
 - Alle zentralen Klassen, alle neun Genrewerte, Autor-Multiplizität 1..*, Werk-/Exemplartrennung sowie beide externen Systeme sind vorhanden.
 - Fehlendes zentrales Detail: Eine eindeutige, korrekt angeschlossene Reservierung–Medium-Assoziation.
+- PlantUML-Code: Vererbung, Werk-/Exemplartrennung, Autor 1..*, alle neun Genrewerte, Kunde, Ausleihe, Reservierung und beide externen Schnittstellen sind vollständig vorhanden.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -38,7 +41,7 @@ Abgleich mit `lastenhefte/easylib.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Nicht vergleichbar: Die vorhandene fachfremde PUML-Datei ist kein EasyLib-v1-Artefakt; ein zugehöriges PlantUML-Rendering fehlt.
+- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: `v1.puml` korrigiert die unklare Reservierungsassoziation des Direktbilds. Die fachfremde Altdatei bleibt von diesem Vergleich ausgeschlossen.
 
 ## Was hätten wir anders modelliert?
 

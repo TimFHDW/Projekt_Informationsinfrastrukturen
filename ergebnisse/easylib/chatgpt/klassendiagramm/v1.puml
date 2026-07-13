@@ -1,0 +1,99 @@
+@startuml
+title EasyLib – Klassendiagramm
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+abstract class Medium {
+  - titel: String
+  - verlag: String
+  - auflage: int
+  - erscheinungsdatum: Datum
+  - isbn: String
+  - genre: Genre
+}
+
+class Buch {
+  - seitenzahl: int
+}
+
+class Hoerbuch {
+  - anzahlDatentraeger: int
+  - spiellaengeMinuten: int
+}
+
+class Autor {
+  - name: String
+  - vorname: String
+  - mittelname: String [0..1]
+  - namenszusatz: String [0..1]
+}
+
+class Exemplar {
+  - exemplarId: String
+  - etage: int
+  - regalnummer: String
+}
+
+class Kunde {
+  - kundenId: String
+  - name: String
+  - strasse: String
+  - hausnummer: String
+  - plz: String
+  - ort: String
+  - lichtbild: Bild
+}
+
+class Ausleihe {
+  - ausleihdatum: Datum
+  - leihfrist: Datum
+  - rueckgabedatum: Datum [0..1]
+  + leihfristVerlaengern(): boolean
+}
+
+class Reservierung {
+  - reservierungsdatum: Datum
+  - status: String
+  + stornieren(): void
+}
+
+class EasyLibSystem
+
+interface Verbundkatalog <<extern>>
+interface VernetzteBibliothek <<extern>>
+
+enum Genre {
+  ROMAN
+  FANTASY
+  HORROR
+  HUMOR
+  KRIMI
+  SCIENCE_FICTION
+  BIOGRAFIE
+  RATGEBER
+  SACHBUCH
+}
+
+Medium <|-- Buch
+Medium <|-- Hoerbuch
+Medium "1" -- "1..*" Autor : verfasst von
+Medium "1" *-- "0..*" Exemplar : besitzt Exemplare
+Kunde "1" -- "0..*" Ausleihe : hat
+Ausleihe "0..*" -- "1" Exemplar : betrifft
+Kunde "1" -- "0..*" Reservierung : tätigt
+Reservierung "0..*" -- "1" Medium : reserviert Werk
+EasyLibSystem "1" ..> "1" Verbundkatalog : importiert Buchdaten
+EasyLibSystem "1" ..> "0..*" VernetzteBibliothek : durchsucht Bestand
+
+note bottom of Ausleihe
+  {Annahme: Leihfristverlängerung nur,
+  wenn keine andere Reservierung vorliegt}
+end note
+
+note bottom of EasyLibSystem
+  Bibliothekar und Buchhalter sind Akteure,
+  keine Domänenklassen.
+end note
+@enduml
