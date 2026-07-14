@@ -838,3 +838,20 @@ K2/K3); nur Status/Matrix konsolidiert, Inhalte unveraendert. (3) claude-Scores 
 Selbstbewertungen (dieselbe KI hat generiert) – unabhaengige Gegenpruefung empfohlen; bei
 claude sind PlantUML und Direktbild dasselbe Modell (Bild aus v1.puml abgeleitet). (4) Zeit vor
 dem Eintrag frisch aus der Uhr gelesen (2026-07-14 13:37).
+
+## 2026-07-14 | 14:31 | Claude (im Auftrag von Tim)
+Schritt: Die (lokal erzeugten) PlantUML-Renders gesichtet und K1/K4-PlantUML fuer die 16
+brauchbaren Renders bewertet; ergebnismatrix.md entsprechend gefuellt (K1-PU/K4-PU eingetragen,
+Abschnitte „Kernbefunde" und „Offene Punkte" ergaenzt).
+Ergebnis: evaluation/ergebnismatrix.md aktualisiert. Befunde: alle 16 gerenderten v1.puml
+kompilieren fehlerfrei (K1-PU=5). K4-PU: ChatGPT meist 5 (inkl. loop-Fragment
+easyride/chatgpt/sequenz), Claude 4-5, Ausnahme die Claude-Klassendiagramme mit ausufernden
+Auto-Layout-Boegen (easyride 3, easyscoot 4). Vergleich bestaetigt: ChatGPTs PlantUML-Code ist
+inhaltlich korrekt (K2-PU=5), waehrend die direkten Bilder teils stark abfallen
+(easyride/chatgpt/klassendiagramm direkt K2=2, Code korrekt).
+Beobachtung: 8 Renders fehlen/fehlerhaft: easyride/chatgpt/aktivitaet (kein Bild) sowie alle
+easylib-Zellen ausser claude/sequenz (Datei v1-PlantUML.png, 0 Byte – falsche Gross-/
+Kleinschreibung + leerer Render). Nach Neurendern (als v1-plantuml.png) K1/K4-PlantUML dieser 8
+Zellen analog nachtragen. Die einzelnen evaluation.md tragen K1/K4-PlantUML noch als
+„offen/ausstehend"; die Matrix ist der aktuelle Gesamtstand – Propagierung in die einzelnen
+evaluation.md ist der offene Folgeschritt. Zeit frisch gelesen (2026-07-14 14:31).
