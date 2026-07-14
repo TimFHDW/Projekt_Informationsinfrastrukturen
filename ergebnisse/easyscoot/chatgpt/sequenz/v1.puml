@@ -1,0 +1,56 @@
+@startuml
+title EasyScoot – Kunde beendet die Nutzung eines E-Scooters
+
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+autonumber
+
+actor "Kunde\n(Smartphone-App)" as kunde
+participant "easyScoot : EasyScootSystem" as system
+participant "scooter : EScooter\n«externe Mobilfunk-Software»" as scooter
+participant "fahrt : Fahrt" as fahrt
+participant "rechnungssystem : Rechnungssystem\n«extern»" as rechnungssystem
+
+kunde -> system : nutzungBeenden(fahrt: Fahrt)
+activate system
+
+system -> scooter : sperren()
+activate scooter
+scooter --> system : gesperrt
+deactivate scooter
+
+system -> scooter : statusAktualisieren(STEHEND, NICHT_IN_BENUTZUNG)
+activate scooter
+scooter --> system : statusAktualisiert
+deactivate scooter
+
+system -> fahrt : fahrtdatenErmitteln()
+activate fahrt
+fahrt --> system : dauerMinuten, gefahreneKilometer,\nverbrauchteWattstunden
+deactivate fahrt
+
+note over fahrt, rechnungssystem
+  Das Fahrtobjekt enthält Dauer, gefahrene Kilometer
+  und verbrauchte Wattstunden für die Preisberechnung.
+end note
+
+system -> rechnungssystem : preisBerechnen(fahrt: Fahrt)
+activate rechnungssystem
+rechnungssystem --> system : preis: double
+deactivate rechnungssystem
+
+system --> kunde : Fahrtzusammenfassung(dauerMinuten,\ngefahreneKilometer, verbrauchteWattstunden, preis)
+deactivate system
+
+note right of system
+  Im Klassendiagramm gedanklich ergänzt:
+  EasyScootSystem.nutzungBeenden(...)
+  EScooter.sperren()
+  EScooter.statusAktualisieren(...)
+  Fahrt.fahrtdatenErmitteln()
+
+  Unverändert übernommen:
+  Kunde.nutzungBeenden(fahrt: Fahrt)
+  Rechnungssystem.preisBerechnen(fahrt: Fahrt)
+end note
+@enduml

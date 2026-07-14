@@ -586,3 +586,24 @@ PlantUML 5. K1 und K4 PlantUML bleiben offen, da Kompilierung und Rendering fehl
 Beobachtung: Inhaltlich behebt der Code die Reihenfolgeunschärfe des Direktbilds, indem er
 zuerst den naechsten Routenhalt und danach dessen Fahrgastwechsel ermittelt. Ein
 Layoutvergleich ist erst nach einem PlantUML-Rendering moeglich.
+
+## 2026-07-14 | 11:24 | Codex (im Auftrag von Linus)
+Schritt: PlantUML-Code fuer das ChatGPT-Sequenzdiagramm EasyScoot anhand von
+`prompts/sequenz/easyscoot-v1.md`, `lastenhefte/easyscoot.md` und dem vorhandenen
+ChatGPT-Klassendiagramm erzeugt und unveraendert als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/sequenz/v1.puml`; SHA-256
+`2B7B57650C4C4AA729632FBC94194C1E36EDC0293882207BA3D5B56EA2C2A47F`.
+Beobachtung: Der Code enthaelt fuenf synchrone Aufrufe samt Antworten und uebernimmt
+`nutzungBeenden` sowie `preisBerechnen(fahrt: Fahrt)` aus dem Klassendiagramm. Das
+Fahrtobjekt transportiert die dort modellierten Werte Dauer, Kilometer und Wattstunden;
+fehlende System-, Scooter- und Fahrtoperationen sind als gedankliche Ergaenzungen markiert.
+
+## 2026-07-14 | 11:25 | Codex (im Auftrag von Linus)
+Schritt: EasyScoot-`v1.puml` statisch auf Blockstruktur, Aufruf-/Antwortanzahl,
+Aktivierungspaare und Klammern geprueft; anschließend `evaluation.md`, `notizen.md` und
+Ergebnismatrix um die belegbaren PlantUML-Befunde ergaenzt.
+Ergebnis: Statische Strukturpruefung ohne Auffaelligkeit; Matrixwerte K2 PlantUML 5 und K3
+PlantUML 5. K1 und K4 PlantUML bleiben offen, da Kompilierung und Rendering fehlen.
+Beobachtung: Der Code gibt die Fahrtzusammenfassung erst nach Fahrtdaten- und externer
+Preisermittlung genau einmal zurueck und vermeidet damit den dokumentierten vorzeitigen
+Antwortpfeil des Direktbilds. Ein Layoutvergleich bleibt bis zum Rendering offen.

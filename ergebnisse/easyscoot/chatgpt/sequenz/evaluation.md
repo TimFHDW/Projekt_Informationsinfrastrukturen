@@ -6,15 +6,17 @@
 | Datum | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/sequenz/easyscoot-v1.md` |
-| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML-Rendering offen |
+| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML: statische Prüfung, Rendering mangels lokalem Tool offen |
 
-Skalen und Regeln: `evaluation/kriterien.md`. In dieser Zelle liegt bislang nur das
-Direktbild vor; PlantUML-Code und -Rendering bleiben offen und werden nicht bewertet.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor und wurde statisch geprüft;
+Kompilierung und Rendering bleiben mangels lokalem PlantUML-Tool offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 4/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: für PlantUML offen.
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokales PlantUML-Kommando bzw. JAR fehlt.
+- Fehlerliste: statische Prüfung unauffällig: je ein `@startuml`/`@enduml`, fünf synchrone
+  Aufrufe und fünf Antworten, fünf `activate`/`deactivate`-Paare sowie ausgeglichene
+  Klammern. Dies belegt nicht die Kompilierbarkeit.
 - Direktes Bild – UML-Notation korrekt?: Akteur, Objekt-Lebenslinien,
   Aktivierungsbalken, synchrone Aufrufe und gestrichelte Antwortpfeile sind klar notiert.
   Ein lokaler Fehler besteht in einer zusätzlichen vorzeitigen Antwort
@@ -22,7 +24,7 @@ Direktbild vor; PlantUML-Code und -Rendering bleiben offen und werden nicht bewe
   weiterläuft und am Ende korrekt ein zweites Mal beantwortet wird. Durch Entfernen dieses
   einen Pfeils wäre die Aufruf-/Antwortstruktur konsistent.
 
-## K2 – Inhaltliche Korrektheit — Score: offen (Direktbild: 4/5)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 4/5
 
 Abgleich mit `lastenhefte/easyscoot.md`:
 
@@ -35,8 +37,12 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 - Inhaltlicher Abzug: Eine `Fahrtzusammenfassung` wird bereits direkt nach der
   Statusaktualisierung an den Kunden zurückgegeben, also bevor Fahrtdaten und Preis
   vorliegen. Die zweite, abschließende Rückgabe ist dagegen korrekt.
+- PlantUML-Code: Die Nutzung wird beendet, der E-Scooter gesperrt und sein Fahr-/Leihstatus
+  aktualisiert. Anschließend werden Fahrtdaten ermittelt, der Preis ausschließlich über
+  `Rechnungssystem.preisBerechnen(fahrt: Fahrt)` berechnet und genau eine vollständige
+  Zusammenfassung zurückgegeben. Keine inhaltlichen Fehler festgestellt.
 
-## K3 – Vollständigkeit — Score: offen (Direktbild: 5/5)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 5/5
 
 - Mindestanforderung erfüllt (Aufrufe ≥ 5): ja; fünf synchrone Methodenaufrufe sind
   vorhanden.
@@ -44,6 +50,8 @@ Abgleich mit `lastenhefte/easyscoot.md`:
   Fahrtzusammenfassung wird aus Dauer, Kilometern, Wattstunden und extern berechnetem Preis
   erstellt und an den Kunden zurückgegeben.
 - Fehlende zentrale Elemente im Direktbild: keine.
+- PlantUML-Code: fünf synchrone Aufrufe mit fünf Antworten, alle geforderten Lebenslinien
+  und sämtliche Ablaufstationen einschließlich externer Preisberechnung vorhanden.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -53,7 +61,10 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar, da PlantUML-Code und -Rendering fehlen.
+- Ein Layoutvergleich bleibt ohne Rendering offen. Inhaltlich sendet der PlantUML-Code die
+  Fahrtzusammenfassung genau einmal und erst nach Fahrtdatenermittlung und Preisberechnung;
+  damit vermeidet er den vorzeitigen doppelten Antwortpfeil des Direktbilds. Außerdem nutzt
+  er die Klassendiagramm-Signatur `preisBerechnen(fahrt: Fahrt)`.
 
 ## Was hätten wir anders modelliert?
 
@@ -66,3 +77,6 @@ Abgleich mit `lastenhefte/easyscoot.md`:
   Bildreferenz erzeugt und unverändert gespeichert.
 - Die zwei Prompt-Schritte wurden technisch zu einer strukturierten Bildspezifikation
   zusammengeführt; ein separater Verständnis-Check fand nicht statt.
+- Der PlantUML-Code wurde nachträglich und damit nicht im selben Generierungsdurchlauf wie
+  das Direktbild erzeugt. Fehlende Operationen sind entsprechend der Promptvorgabe als
+  gedankliche Ergänzungen zum Klassendiagramm im Code ausgewiesen.
