@@ -53,3 +53,26 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
 - [ ] PlantUML rendern -> v1-plantuml.png/.svg; Renderweg hier notieren
 - [ ] K1/K4 in evaluation.md finalisieren; K2/K3 unabhaengig bestaetigen
 - [ ] Commit: ergebnis(easyscoot/claude): aktivitaet v1 + evaluation
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1)
+- Neue Dateien: `v2.puml` und `v2-direkt.png` (Benennung ohne Systemnamen, wie bei v1
+  dieser Zelle).
+- Versionierung: v2 bezeichnet einen ZWEITEN Generierungsdurchlauf mit unveraendertem
+  Prompt v1 (auf Wunsch von Alex) - Abweichung von der Konvention "N = Prompt-Version"
+  (ergebnisse/README.md); fuer Vergleiche als Durchlauf-Varianz lesen, nicht als
+  Prompt-Iteration.
+- Generierung am 2026-07-14 (~15:30-15:45 CEST) in laufender Cowork-Session (Claude, im
+  Auftrag von Alex); Entwuerfe (Code + Bild) vor Ablage gezeigt und freigegeben, die
+  KI-Ausgabe blieb dabei unveraendert.
+- Direktbild `v2-direkt.png`: von Claude selbst gezeichnet (eigenes Python/Pillow-
+  Zeichenskript, Layout/Koordinaten von der KI bestimmt, keine PlantUML-Beteiligung);
+  diesmal im SELBEN Durchlauf wie v2.puml erzeugt (nicht nachtraeglich abgeleitet),
+  beide Formen stammen aus demselben Modell.
+- Methodik-Abweichungen wie bei v1: keine frische isolierte Session (Vorkontext u. a.
+  v1-Zellen und Use-Case-Zellen); alle drei v2-Aktivitaetsdiagramme in einer Sitzung ->
+  moeglicher Struktur-Uebertrag zwischen den Systemen.
+- Kein `v2-plantuml.png`: PlantUML-Rendering in der Cowork-Umgebung weiterhin blockiert
+  (jar-Download 403, jetzt auch npm 403); bitte lokal rendern wie bei v1 (2026-07-14).
+- Inhaltlich: Nein-Zweig (kein passender E-Scooter) endet in eigenem Endknoten;
+  Preisberechnung in der Rechnungssystem-Swimlane; Leihstatus "in Benutzung" als
+  systemseitige Wirkung des Freischaltens.

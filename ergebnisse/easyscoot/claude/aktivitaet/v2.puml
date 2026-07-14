@@ -1,0 +1,31 @@
+@startuml EasyScoot-Aktivitaetsdiagramm-v2
+' EasyScoot - Aktivitaetsdiagramm (KI: Claude, Prompt v1, 2. Durchlauf -> v2)
+skinparam shadowing false
+title E-Scooter ausleihen und nutzen
+
+|Kunde|
+start
+:Verfuegbare E-Scooter in der Naehe abfragen;
+|EasyScoot-System|
+:Liste freier E-Scooter anzeigen\n(Standort, Ladestand, Restfahrzeit);
+|Kunde|
+if (Passender E-Scooter in der Naehe verfuegbar?) then (ja)
+  :E-Scooter auswaehlen;
+  :Zum Standort des E-Scooters begeben;
+  :E-Scooter buchen und freischalten;
+  |EasyScoot-System|
+  :E-Scooter entriegeln und Leihstatus\nauf "in Benutzung" setzen;
+  |Kunde|
+  :E-Scooter nutzen (Fahrt);
+  :Nutzung per Smartphone beenden;
+  |EasyScoot-System|
+  :Fahrtdaten ermitteln\n(Dauer, Kilometer, Wattstunden);
+  |Rechnungssystem|
+  :Preis berechnen;
+  |EasyScoot-System|
+  :Fahrtzusammenfassung anzeigen\n(Dauer, Kilometer, Wattstunden, Preis);
+  stop
+else (nein)
+  stop
+endif
+@enduml
