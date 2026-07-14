@@ -628,3 +628,16 @@ PlantUML 5. K1 und K4 PlantUML bleiben offen, da Kompilierung und Rendering fehl
 Beobachtung: Anders als im Direktbild wird `Ausleihe` im Code erst an der
 `create participant`-Deklaration eingefuehrt. Damit beginnt ihre Lebenslinie am fachlich
 und syntaktisch vorgesehenen Erzeugungszeitpunkt; ein Layoutvergleich bleibt offen.
+
+## 2026-07-14 | 11:31 | Codex (im Auftrag von Linus)
+Schritt: Abschlusspruefung aller drei neuen ChatGPT-Sequenz-PlantUML-Codes samt
+Pruefsummen, Mindestaufrufen, Antworten, Aktivierungspaaren, Begleitdateien, Matrix,
+Git-Index und Commit-Historie durchgefuehrt.
+Ergebnis: EasyRide und EasyScoot enthalten je fuenf, EasyLib sechs synchrone Aufrufe; in
+allen Codes stimmen Aufruf-/Antwort- und Aktivierungszahlen ueberein. Alle drei SHA-256-
+Pruefsummen entsprechen den Notizen, und EasyLib verwendet `create participant` vor der
+ersten Ausleihe-Verwendung. Commits: `7140c88`, `7bfc247`, `644669c`.
+Beobachtung: Branch `main` liegt vier Commits vor `origin/main`; Index und Diff-Pruefungen
+sind sauber. Nur die bereits vorhandene unversionierte Datei `.idea/vcs.xml` bleibt
+unveraendert. Mangels lokalem PlantUML-Tooling bleiben Kompilierung, Renderdateien sowie K1
+und K4 PlantUML offen; die Zellen bleiben deshalb korrekt auf Status `generiert`.
