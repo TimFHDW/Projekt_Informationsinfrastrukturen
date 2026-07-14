@@ -554,3 +554,14 @@ korrigiert; alle aelteren Eintraege blieben unveraendert.
 Ergebnis: `dokumentation/vorgehen.md`.
 Beobachtung: Die gezielte Korrektur bestehender Ueberschriften ist eine ausdruecklich
 beauftragte Ausnahme von der Append-only-Regel; dieser Nachtrag macht sie nachvollziehbar.
+
+## 2026-07-14 | 11:19 | Codex (im Auftrag von Linus)
+Schritt: `AGENTS.md` sowie die READMEs von Repository, Prompts, Ergebnissen, Evaluation,
+Dokumentation und Lastenheften gelesen; die drei ChatGPT-Sequenzzellen, vorhandenen
+Klassendiagramme und das lokale PlantUML-Tooling inventarisiert.
+Ergebnis: In allen drei Sequenzzellen fehlen `v1.puml` und das PlantUML-Rendering; Prompt
+v1, Direktbild, `evaluation.md` und `notizen.md` sind vorhanden. Java 17 ist installiert,
+aber weder ein PlantUML-Kommando noch eine PlantUML-JAR ist lokal verfuegbar.
+Beobachtung: Die Codes werden je System separat aus dem jeweiligen Prompt, Lastenheft und
+ChatGPT-Klassendiagramm abgeleitet und unveraendert als Originalausgabe gespeichert. Eine
+Kompilierung oder ein Rendering ist ohne PlantUML-Tooling nicht belegbar und bleibt offen.
