@@ -493,3 +493,23 @@ Unschaerfen sind die ungenutzte Lebenslinie `Betroffene Fahrgaeste` und die Ermi
 Fahrgastwechsels vor der Bestimmung des naechsten Haltepunkts. Der erste Sammel-Patch
 meldete nach bereits angewendeten Datei- und Matrix-Hunks einen Kontextkonflikt beim
 Matrix-Hunk; der fehlende Journal-Hunk wurde deshalb separat append-only nachgetragen.
+
+## 2026-07-14 | 10:55 | Codex (im Auftrag von Tim)
+Schritt: `prompts/sequenz/easyscoot-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
+Ergebnis: Unveraenderte Erstausgabe unter
+`C:/Users/admin/.codex/generated_images/019f5fcd-3397-7841-919a-47d84bd0624a/exec-5b21b9a5-60f3-4169-9d06-7c0856baf49b.png`.
+Beobachtung: Die Ausgabe enthaelt zusaetzlich zur korrekten abschliessenden Rueckgabe eine
+vorzeitige `Fahrtzusammenfassung` direkt nach der Statusaktualisierung. Dieser Fehler bleibt
+im Original erhalten und wird in Evaluation und Notizen bewertet.
+
+## 2026-07-14 | 10:56 | Codex (im Auftrag von Tim)
+Schritt: EasyScoot-Direktbild unveraendert als
+`ergebnisse/easyscoot/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
+`lastenhefte/easyscoot.md` und `evaluation/kriterien.md` visuell geprueft sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix aktualisiert.
+Ergebnis: Zelle `easyscoot/chatgpt/sequenz` steht auf `generiert` mit Prompt v1 und
+Direktbild-Scores K1 4, K2 4, K3 5, K4 5; PlantUML-Anteile bleiben offen.
+Beobachtung: Die fachliche Kernsequenz und die externe Preisberechnung sind vollstaendig.
+Der zusaetzliche vorzeitige Antwortpfeil zum Kunden ist als Originalfehler dokumentiert und
+wurde nicht aus dem Bild entfernt.

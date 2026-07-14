@@ -26,7 +26,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyscoot | chatgpt | klassendiagramm | generiert | v1 | PU offen / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU offen / direkt 5 |
 | easyscoot | chatgpt | use-case | offen | – | – | – | – | – |
 | easyscoot | chatgpt | aktivitaet | generiert | v1 | PU offen / direkt 3 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU offen / direkt 5 |
-| easyscoot | chatgpt | sequenz | offen | – | – | – | – | – |
+| easyscoot | chatgpt | sequenz | generiert | v1 | PU offen / direkt 4 | PU offen / direkt 4 | PU offen / direkt 5 | PU offen / direkt 5 |
 | easyscoot | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easyscoot | gemini | use-case | offen | – | – | – | – | – |
 | easyscoot | gemini | aktivitaet | offen | – | – | – | – | – |
