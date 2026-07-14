@@ -32,10 +32,29 @@
 
 ## Offene DoD-Punkte
 
-- [ ] `v1.puml`
+- [x] `v1.puml`
 - [ ] `v1-plantuml.png` oder `.svg`
 - [x] `v1-direkt.png`
 - [x] `evaluation.md` (Direktbild vollständig, PlantUML-Anteile offen)
 - [x] `notizen.md`
 - [x] Journal-Eintrag
 - [x] Ergebnismatrix auf `generiert` / v1 aktualisiert
+
+## Nachtrag PlantUML am 2026-07-14
+
+- `v1.puml` nachträglich anhand von `prompts/sequenz/easylib-v1.md`, dem vorhandenen
+  Lastenheft und dem ChatGPT-Klassendiagramm erzeugt; SHA-256:
+  `30C506195885FF2ADCE7E5E5BF7393B5E590A6C359B0FF9CB91CF9820261345A`.
+- Methodikabweichung: PlantUML-Code und Direktbild stammen nicht aus demselben
+  Generierungsdurchlauf; für jedes System wird der Code dennoch separat ohne Bildreferenz
+  erstellt.
+- Namenskonsistenz: `EasyLibSystem`, `Kunde`, `Exemplar` und `Ausleihe` aus dem
+  Klassendiagramm übernommen. `Exemplar` ist als physisches Buchexemplar beschriftet;
+  fehlende Operationen und der Ausleihe-Konstruktor sind im Code als gedankliche
+  Ergänzungen vermerkt.
+- Statische Strukturprüfung erfolgreich: ein `@startuml`/`@enduml`, sechs synchrone
+  Aufrufe, sechs Antworten, sechs passende Aktivierungs-/Deaktivierungspaare, eine
+  `create participant`-Deklaration für `Ausleihe` und ausgeglichene Klammern. Die
+  Ausleihe-Lebenslinie wird nicht vor der Create-Deklaration verwendet.
+- Kompilierung und Rendering nicht geprüft: Java 17 ist vorhanden, aber lokal fehlen
+  PlantUML-Kommando und PlantUML-JAR. `v1-plantuml.png` bleibt offen.

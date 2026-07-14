@@ -6,15 +6,18 @@
 | Datum | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/sequenz/easylib-v1.md` |
-| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML-Rendering offen |
+| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML: statische Prüfung, Rendering mangels lokalem Tool offen |
 
-Skalen und Regeln: `evaluation/kriterien.md`. In dieser Zelle liegt bislang nur das
-Direktbild vor; PlantUML-Code und -Rendering bleiben offen und werden nicht bewertet.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor und wurde statisch geprüft;
+Kompilierung und Rendering bleiben mangels lokalem PlantUML-Tool offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 4/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: für PlantUML offen.
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokales PlantUML-Kommando bzw. JAR fehlt.
+- Fehlerliste: statische Prüfung unauffällig: je ein `@startuml`/`@enduml`, sechs synchrone
+  Aufrufe und sechs Antworten, sechs `activate`/`deactivate`-Paare, eine
+  `create participant`-Deklaration für `Ausleihe` sowie ausgeglichene Klammern. Dies belegt
+  nicht die Kompilierbarkeit.
 - Direktes Bild – UML-Notation korrekt?: Akteur, Objekt-Lebenslinien,
   Aktivierungsbalken, synchrone Aufrufe und gestrichelte Antwortpfeile sind klar notiert.
   Die Erzeugungsnachricht ist als `«create»` markiert, der Teilnehmerkopf und die
@@ -22,7 +25,7 @@ Direktbild vor; PlantUML-Code und -Rendering bleiben offen und werden nicht bewe
   korrekter UML-Erzeugungsnotation müssten Kopf und Lebenslinie erst am Ziel der
   Create-Nachricht beginnen.
 
-## K2 – Inhaltliche Korrektheit — Score: offen (Direktbild: 5/5)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 5/5
 
 Abgleich mit `lastenhefte/easylib.md`:
 
@@ -33,8 +36,12 @@ Abgleich mit `lastenhefte/easylib.md`:
   das Exemplar und nicht das bibliografische Buch verliehen wird.
 - Die Verfügbarkeitsbedingung ist vor der Erzeugung als Guard notiert. Es wurden keine
   fachfremden Funktionen ergänzt und keine inhaltlichen Fehler zum Lastenheft festgestellt.
+- PlantUML-Code: Kunde und physisches Exemplar werden ID-basiert ermittelt, die
+  Verfügbarkeit umfasst Leih- und Reservierungsstatus, die Ausleihe erhält eine Leihfrist
+  und der Exemplarstatus wird aktualisiert. Werk-/Exemplartrennung und Annahme zur
+  Leihfristverlängerung sind explizit notiert; keine inhaltlichen Fehler festgestellt.
 
-## K3 – Vollständigkeit — Score: offen (Direktbild: 5/5)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 5/5
 
 - Mindestanforderung erfüllt (Aufrufe ≥ 5): ja; sechs synchrone Methodenaufrufe und sechs
   Antwortpfeile sind vorhanden.
@@ -42,6 +49,9 @@ Abgleich mit `lastenhefte/easylib.md`:
   Verfügbarkeitsprüfung, Leihfrist, Statusaktualisierung und Bestätigung sind enthalten.
 - Fehlende zentrale Elemente im Direktbild: keine. Der zu frühe Beginn der
   Ausleihe-Lebenslinie ist unter K1 als Notationsfehler erfasst.
+- PlantUML-Code: sechs synchrone Aufrufe mit sechs Antworten, alle geforderten
+  Lebenslinien und Ablaufstationen vorhanden. `Ausleihe` wird per `create participant`
+  unmittelbar an ihrer Erzeugungsnachricht eingeführt.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -51,7 +61,10 @@ Abgleich mit `lastenhefte/easylib.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar, da PlantUML-Code und -Rendering fehlen.
+- Ein Layoutvergleich bleibt ohne Rendering offen. Inhaltlich beginnen Teilnehmerkopf und
+  Lebenslinie der `Ausleihe` im PlantUML-Code erst an der Create-Nachricht; damit behebt der
+  Code den zentralen Notationsfehler des Direktbilds. Beide Formen verleihen ausdrücklich
+  das physische Exemplar und bilden denselben fachlichen Ablauf ab.
 
 ## Was hätten wir anders modelliert?
 
@@ -66,3 +79,6 @@ Abgleich mit `lastenhefte/easylib.md`:
   Bildreferenz erzeugt und unverändert gespeichert.
 - Die zwei Prompt-Schritte wurden technisch zu einer strukturierten Bildspezifikation
   zusammengeführt; ein separater Verständnis-Check fand nicht statt.
+- Der PlantUML-Code wurde nachträglich und damit nicht im selben Generierungsdurchlauf wie
+  das Direktbild erzeugt. Fehlende Operationen sind entsprechend der Promptvorgabe als
+  gedankliche Ergänzungen zum Klassendiagramm im Code ausgewiesen.

@@ -607,3 +607,24 @@ PlantUML 5. K1 und K4 PlantUML bleiben offen, da Kompilierung und Rendering fehl
 Beobachtung: Der Code gibt die Fahrtzusammenfassung erst nach Fahrtdaten- und externer
 Preisermittlung genau einmal zurueck und vermeidet damit den dokumentierten vorzeitigen
 Antwortpfeil des Direktbilds. Ein Layoutvergleich bleibt bis zum Rendering offen.
+
+## 2026-07-14 | 11:28 | Codex (im Auftrag von Linus)
+Schritt: PlantUML-Code fuer das ChatGPT-Sequenzdiagramm EasyLib anhand von
+`prompts/sequenz/easylib-v1.md`, `lastenhefte/easylib.md` und dem vorhandenen
+ChatGPT-Klassendiagramm erzeugt und unveraendert als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easylib/chatgpt/sequenz/v1.puml`; SHA-256
+`30C506195885FF2ADCE7E5E5BF7393B5E590A6C359B0FF9CB91CF9820261345A`.
+Beobachtung: Der Code enthaelt sechs synchrone Aufrufe samt Antworten. `Exemplar` wird als
+physisches Buchexemplar verwendet; `Ausleihe` wird erst an der `create`-Nachricht als
+Teilnehmer erzeugt. Die Annahme zur mehrdeutigen Leihfristverlaengerung und fehlende
+Klassendiagrammoperationen sind als Notizen ausgewiesen.
+
+## 2026-07-14 | 11:29 | Codex (im Auftrag von Linus)
+Schritt: EasyLib-`v1.puml` statisch auf Blockstruktur, Aufruf-/Antwortanzahl,
+Aktivierungspaare, Create-Deklaration und Klammern geprueft; anschließend `evaluation.md`,
+`notizen.md` und Ergebnismatrix um die belegbaren PlantUML-Befunde ergaenzt.
+Ergebnis: Statische Strukturpruefung ohne Auffaelligkeit; Matrixwerte K2 PlantUML 5 und K3
+PlantUML 5. K1 und K4 PlantUML bleiben offen, da Kompilierung und Rendering fehlen.
+Beobachtung: Anders als im Direktbild wird `Ausleihe` im Code erst an der
+`create participant`-Deklaration eingefuehrt. Damit beginnt ihre Lebenslinie am fachlich
+und syntaktisch vorgesehenen Erzeugungszeitpunkt; ein Layoutvergleich bleibt offen.
