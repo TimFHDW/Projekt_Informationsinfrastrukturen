@@ -7,14 +7,13 @@
 | PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/klassendiagramm/easyride-v1.md` |
-| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 5/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
-- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block und ausgeglichene Blockklammern); keine Aussage über die Kompilierbarkeit.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 5 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
+- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block und ausgeglichene Blockklammern); Kompilierbarkeit am 2026-07-14 bestaetigt (fehlerfrei gerendert).
 - Direktes Bild – UML-Notation korrekt?: Klassenkästen, Komposition, Assoziationen, Multiplizitäten und Notizen sind formal korrekt als UML erkennbar. Die Verbindung zwischen `Verbindung` und `Haltepunkt` ist als einfache Assoziation mit den Multiplizitäten 2 bzw. 0..* dargestellt. Mehrere Linien sind fachlich an falschen Klassen angeschlossen; dies wird ausschließlich unter K2/K3 bewertet.
 
 ## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 2/5
@@ -38,12 +37,12 @@ Abgleich mit `lastenhefte/easyride.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 4, Befunde: gerendert; lesbar, einige laengere Kanten (eingeplant in, liegt an), keine Ueberlappungen.
 - Direktes Bild — Score: 5/5, Befunde: scharfes, kontrastreiches Querformat; Klassen und Notizen sind vollständig sichtbar, Beschriftungen überlappen nicht.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: Der Code korrigiert die fachlich falschen Anschlüsse des Direktbilds und modelliert die geordnete Route vollständig.
+- Inhaltlich vergleichbar, mit gerendertem PlantUML-Layout (2026-07-14): Der Code korrigiert die fachlich falschen Anschlüsse des Direktbilds und modelliert die geordnete Route vollständig.
 
 ## Was hätten wir anders modelliert?
 

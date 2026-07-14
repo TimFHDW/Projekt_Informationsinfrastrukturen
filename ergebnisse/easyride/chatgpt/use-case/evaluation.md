@@ -7,14 +7,13 @@
 | PlantUML-Nachbewertung | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyride-v1.md` |
-| Rendering-Weg | offen – lokal weder PlantUML-Kommando noch PlantUML-JAR vorhanden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und
 Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 4/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokaler Renderer fehlt.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 4 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Fehlerliste: statische Prüfung von `v1.puml` unauffällig (je ein `@startuml`/`@enduml`,
   ausgeglichene Klammern, zwei Akteure und fünf Use Cases); keine Aussage über die
   Kompilierbarkeit. Im Direktbild enden die Assoziationslinien jeweils
@@ -51,7 +50,7 @@ Abgleich mit `lastenhefte/easyride.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 4, Befunde: gerendert; lesbar, wenige Kreuzungen.
 - Direktes Bild — Score: 5/5, Befunde: klare Links-rechts-Gruppierung nach Akteur,
   kontrastreiche und scharfe Beschriftungen, keine Kreuzungen, Überlappungen oder
   abgeschnittenen Elemente.

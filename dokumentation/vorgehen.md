@@ -820,3 +820,51 @@ EasyScoot 11 und EasyLib 15 eindeutige Use Cases; nur EasyLib besitzt die eine b
 Beobachtung: Saemtliche Aenderungen sind bewusst ungestagt und uncommitted; der Git-Index
 ist leer. Auf ausdruecklichen Wunsch von Lewin wurden weder Commit noch Push ausgefuehrt.
 PlantUML-Rendering und damit K1/K4 PlantUML bleiben offen.
+
+## 2026-07-14 | 13:37 | Claude (im Auftrag von Tim)
+Schritt: Evaluationsdurchgang fuer die 24 vorhandenen Zellen (claude + chatgpt). PlantUML-
+Rendering in der Cowork-Umgebung erneut geprueft und weiterhin blockiert (npm 403 fuer
+node-plantuml, Maven/GitHub/jsDelivr/unpkg nicht erreichbar) – lokales Rendern hier nicht
+moeglich. Als Ersatz statische Struktur-Pruefung aller 24 v1.puml: alle bestanden
+(@startuml/@enduml paarig, Klammern balanciert, nicht abgeschnitten).
+Ergebnis: evaluation/ergebnismatrix.md vollstaendig gefuellt – die 12 claude-Zeilen mit Scores
+(K2/K3 + K1/K4-direkt aus den evaluation.md; claude/sequenz-PU bereits gerendert), alle 24
+vorhandenen Zellen auf Status „evaluiert" gesetzt, Fussnote zum Render-Block ergaenzt. Gemini
+(12 Zellen) bleibt „offen" (keine Artefakte, Regel 8).
+Beobachtung: (1) K1 (Kompilierbarkeit) und K4-PlantUML bleiben fuer die 21 nicht gerenderten
+Zellen offen – nur im lokalen Renderweg (z. B. IntelliJ-PlantUML-Plugin) schliessbar; statisch
+sind alle 24 unauffaellig. (2) chatgpt-Zellen waren bereits von Codex bewertet (Direktbild +
+K2/K3); nur Status/Matrix konsolidiert, Inhalte unveraendert. (3) claude-Scores sind
+Selbstbewertungen (dieselbe KI hat generiert) – unabhaengige Gegenpruefung empfohlen; bei
+claude sind PlantUML und Direktbild dasselbe Modell (Bild aus v1.puml abgeleitet). (4) Zeit vor
+dem Eintrag frisch aus der Uhr gelesen (2026-07-14 13:37).
+
+## 2026-07-14 | 14:31 | Claude (im Auftrag von Tim)
+Schritt: Die (lokal erzeugten) PlantUML-Renders gesichtet und K1/K4-PlantUML fuer die 16
+brauchbaren Renders bewertet; ergebnismatrix.md entsprechend gefuellt (K1-PU/K4-PU eingetragen,
+Abschnitte „Kernbefunde" und „Offene Punkte" ergaenzt).
+Ergebnis: evaluation/ergebnismatrix.md aktualisiert. Befunde: alle 16 gerenderten v1.puml
+kompilieren fehlerfrei (K1-PU=5). K4-PU: ChatGPT meist 5 (inkl. loop-Fragment
+easyride/chatgpt/sequenz), Claude 4-5, Ausnahme die Claude-Klassendiagramme mit ausufernden
+Auto-Layout-Boegen (easyride 3, easyscoot 4). Vergleich bestaetigt: ChatGPTs PlantUML-Code ist
+inhaltlich korrekt (K2-PU=5), waehrend die direkten Bilder teils stark abfallen
+(easyride/chatgpt/klassendiagramm direkt K2=2, Code korrekt).
+Beobachtung: 8 Renders fehlen/fehlerhaft: easyride/chatgpt/aktivitaet (kein Bild) sowie alle
+easylib-Zellen ausser claude/sequenz (Datei v1-PlantUML.png, 0 Byte – falsche Gross-/
+Kleinschreibung + leerer Render). Nach Neurendern (als v1-plantuml.png) K1/K4-PlantUML dieser 8
+Zellen analog nachtragen. Die einzelnen evaluation.md tragen K1/K4-PlantUML noch als
+„offen/ausstehend"; die Matrix ist der aktuelle Gesamtstand – Propagierung in die einzelnen
+evaluation.md ist der offene Folgeschritt. Zeit frisch gelesen (2026-07-14 14:31).
+
+## 2026-07-14 | 14:45 | Claude (im Auftrag von Tim)
+Schritt: Die 8 zuvor fehlenden/fehlerhaften Renders sind nachgerendert (jetzt korrekt als
+v1-plantuml.png, 15–46 KB) – gesichtet und bewertet. ergebnismatrix.md final aktualisiert: alle
+24 Zellen mit vollstaendigen PU- und Direkt-Scores.
+Ergebnis: evaluation/ergebnismatrix.md final. Alle 24 v1.puml kompilieren fehlerfrei (K1-PU=5).
+Neu bewertet: easyride/chatgpt/aktivitaet (K4-PU 5) und alle easylib-Zellen (claude
+klassen/use-case K4-PU 4, aktivitaet 5, sequenz 4; chatgpt klassen/aktivitaet/sequenz K4-PU 5,
+use-case K4-PU 3 – viele Kreuzungen).
+Beobachtung: Keine Render-/Kompilierfehler mehr; K1 ist damit fuer beide KIs ueber alle vier
+Diagrammtypen vollstaendig bestaetigt. Verbleibend offen: Gemini (keine Artefakte) sowie die
+Propagierung der K1/K4-PU-Scores aus der Matrix in die einzelnen evaluation.md. Zeit frisch
+gelesen (2026-07-14 14:45).

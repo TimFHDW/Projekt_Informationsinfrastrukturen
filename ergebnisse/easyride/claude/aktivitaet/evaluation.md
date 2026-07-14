@@ -6,14 +6,12 @@
 | Datum | 2026-07-06 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/aktivitaet/easyride-v1.md` |
-| Rendering-Weg | ausstehend – in dieser Session kein PlantUML-Rendering moeglich |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Rendering ausstehend)
-
-- PlantUML kompiliert ohne Korrektur: noch nicht geprueft – kein Renderlauf moeglich
-  (plantuml.jar-Download blockiert, HTTP 403). Im Team-Renderweg pruefen, Ergebnis eintragen.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 5 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Struktur-Vorpruefung (ersetzt kein Rendering): @startuml/@enduml paarig, 2x if/else/endif
   paarig (verschachtelt), 2 Swimlanes, genau ein start und ein stop, alle Aktionen als :...;
 - Direktes Bild – UML-Notation korrekt?: v1-direkt.png ergaenzt (2026-07-06). Sichtpruefung: korrekte Aktivitaetsdiagramm-Notation (Start-/Endknoten, Aktionen, Rauten-Entscheidungen mit beschrifteten Kanten, Swimlanes). Formale Bewertung durch Teammitglied ausstehend.
@@ -50,12 +48,12 @@ Abgleich mit `lastenhefte/easyride.md`, konkrete Befunde:
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
-- PlantUML-Rendering — Score: offen, Befunde: noch nicht gerendert.
+- PlantUML-Rendering — Score: 5, Befunde: gerendert; klare 2-Swimlane-Struktur, gut lesbar.
 - Direktes Bild — Score: 5 (vorlaeufig), Befunde: v1-direkt.png sauber lesbar – klare Swimlanes, keine Ueberlappungen, beschriftete Kanten; unabhaengige Bestaetigung ausstehend.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar: nur PlantUML-Form vorhanden, kein direktes Bild, kein Rendering.
+- Beide Formen liegen vor (Direktbild + gerendertes PlantUML, 2026-07-14); Zeichenqualitaet siehe K4, Inhalt siehe K1/K2.
 
 ## Was haetten wir anders modelliert?
 
@@ -64,10 +62,4 @@ Abgleich mit `lastenhefte/easyride.md`, konkrete Befunde:
 - Ablehnungspfad ergaenzen (kein Fahrzeug mit freier Kapazitaet verfuegbar -> Buchung
   nicht moeglich) inkl. Mitteilung an den Kunden.
 - "Route veraendern" (Umplanung bestehender Halte) als dritten Ausgang abbilden.
-- Objektfluss ("Buchungsanfrage", "Route" als Objektknoten) fuer praezisere UML-Semantik.
-
-## Sonstige Beobachtungen
-
-- Methodik-Abweichungen (gleiche Session wie easylib-Aktivitaetsdiagramm unmittelbar zuvor
-  -> moeglicher Struktur-Uebertrag zwischen Systemen; nur PlantUML-Form; kein Rendering) –
-  Details in `notizen.md`.
+- Objektfluss ("Buchungsanfrage", "Route" als Objektknoten) 

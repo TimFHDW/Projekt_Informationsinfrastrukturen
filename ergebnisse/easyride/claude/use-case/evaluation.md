@@ -6,13 +6,12 @@
 | Datum | 2026-07-06 (v1.puml); Nachtrag direktes Bild: 2026-07-07 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyride-v1.md` |
-| Rendering-Weg | noch offen (jar-Download blockiert, s. notizen.md) |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 
-## K1 – Syntaktische Korrektheit — Score: _/5 (offen)
-
-- PlantUML kompiliert ohne Korrektur: noch nicht geprueft (kein Renderer verfuegbar)
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 5 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Fehlerliste (aus `notizen.md` / `vN-korrigiert.puml`): Sichtpruefung ohne Befund;
   verbindliche Bewertung erst nach Rendering
 - Direktes Bild (`v1-direkt-easyride.png`, Nachtrag 2026-07-07) – UML-Notation korrekt?:
@@ -40,18 +39,18 @@ Abgleich mit `lastenhefte/easyride.md`, konkrete Befunde:
 - Fehlende zentrale Elemente: keine gefunden. Beide Leistungslisten sind
   vollstaendig abgebildet; das Lastenheft nennt keine weiteren Nutzerleistungen.
 - Artefakt-Ebene (DoD): direktes Bild liegt vor (`v1-direkt-easyride.png`, 2026-07-07);
-  PlantUML-Rendering steht weiterhin aus.
+  PlantUML-Rendering liegt vor (2026-07-14).
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
-- PlantUML-Rendering — Score: _/5 (offen), Befunde: Rendering steht aus
+- PlantUML-Rendering — Score: 5, Befunde: gerendert; sauberes Layout, keine Kreuzungen oder Ueberlappungen.
 - Direktes Bild — Score: 5/5 (vorlaeufig, Selbstbewertung 2026-07-07). Befunde: klares
   Spaltenlayout, keine Kanten- oder Elementueberlappungen, alle Beschriftungen frei und
   lesbar; mit 5 Use Cases und 2 Akteuren das einfachste der drei Use-Case-Diagramme.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Direktes Bild liegt vor (2026-07-07); PlantUML-Rendering weiterhin offen, ein
+- Direktes Bild liegt vor (2026-07-07); PlantUML gerendert (2026-07-14), ein
   Layout-Vergleich ist daher noch nicht moeglich. Wichtig: Das direkte Bild wurde
   nachtraeglich aus `v1.puml` abgeleitet – inhaltliche Uebereinstimmung ist
   konstruktionsbedingt und kein unabhaengiger Befund; fuer

@@ -6,16 +6,14 @@
 | Datum | 2026-07-06 (v1.puml); Nachtrag direktes Bild: 2026-07-07 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/klassendiagramm/easyride-v1.md` |
-| Rendering-Weg | ausstehend – in dieser Session kein PlantUML-Rendering moeglich |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 
 > Quelle fuer K2/K3: `lastenhefte/easyride.md`.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Rendering ausstehend)
-
-- PlantUML kompiliert ohne Korrektur: noch nicht geprueft – kein Renderlauf moeglich.
-  Im Team-Renderweg pruefen und Ergebnis hier eintragen.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 5 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Struktur-Vorpruefung: `@startuml/@enduml` paarig, alle `note`-Bloecke geschlossen, jede
   Assoziation mit Multiplizitaeten, `{ordered}` an der Route-Routenhalt-Komposition.
 - Direktes Bild (`v1-direkt-easyride.png`, Nachtrag 2026-07-07) – UML-Notation korrekt?:
@@ -47,34 +45,12 @@ Abgleich mit `lastenhefte/easyride.md`, konkrete Befunde:
   boolean-Attribut statt eigener Subklasse; keine Personen-Oberklasse fuer Fahrer/Fahrgast;
   `Fahrgast` und buchender Kunde in einer Klasse zusammengefasst; Tablet ohne eigene Operationen.
 - Artefakt-Ebene (DoD): direktes Bild liegt vor (`v1-direkt-easyride.png`, 2026-07-07);
-  PlantUML-Rendering steht weiterhin aus.
+  PlantUML-Rendering liegt vor (2026-07-14).
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
-- PlantUML-Rendering — Score: offen, Befunde: noch nicht gerendert (viele Assoziationen an
-  `Haltepunkt`/`Fahrgast` – Kreuzungsgefahr, erst nach Rendering beurteilbar).
+- PlantUML-Rendering — Score: 3, Befunde: gerendert; lesbar, aber sehr lange Auto-Layout-Boegen (an, besteht aus) ueber die ganze Breite und Kreuzungen um Fahrt/Fahrzeug/Haltepunkt.
 - Direktes Bild — Score: 4 (vorlaeufig, Selbstbewertung 2026-07-07). Befunde: Layout ohne
   Ueberlappungen, Beschriftungen vollstaendig lesbar; Abzuege: lange Umgehungskante
   Fahrt–Fahrzeug („zugeteilt") ueber den unteren Bildrand und Label-Gedraenge am oberen Rand
-  von `Fahrzeug` (drei Assoziationsenden dicht beieinander).
-
-## PlantUML vs. direkt – Unterschiede
-
-- Direktes Bild liegt vor (2026-07-07); PlantUML-Rendering weiterhin offen, Layout-Vergleich
-  daher noch nicht moeglich. Wichtig: Das direkte Bild wurde nachtraeglich aus `v1.puml`
-  abgeleitet – inhaltliche Uebereinstimmung ist konstruktionsbedingt und kein unabhaengiger
-  Befund; fuer `vergleiche/plantuml-vs-direkt.md` nur die Zeichenqualitaet (K4) heranziehen.
-
-## Was haetten wir anders modelliert?
-
-- „Zentrale" als eigene Subklasse von `Haltepunkt` statt boolean-Flag.
-- Gemeinsame Oberklasse `Person` fuer `Fahrer` und `Fahrgast` (Name-Attribut).
-- `Routenhalt` alternativ als echte Assoziationsklasse zwischen `Route` und `Haltepunkt`.
-- Trennung von buchendem `Kunde` und transportiertem `Fahrgast`, falls fachlich noetig.
-
-## Sonstige Beobachtungen
-
-- Methodik-Abweichung: Generierung in laufender Cowork-Session, nicht in frischer, isolierter
-  Chat-Session -> moeglicher Kontext-Einfluss; fuer belastbaren Vergleich reproduzieren.
-- Zweistufiger Prompt nicht getrennt ausgefuehrt; Diagramm direkt erzeugt.
-- Details siehe `notizen.md`.
+  von `Fahrzeug` (drei Assoziationsenden dic

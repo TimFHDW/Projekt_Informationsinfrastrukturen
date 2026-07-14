@@ -6,14 +6,13 @@
 | Datum | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/sequenz/easyride-v1.md` |
-| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML: statische Prüfung, Rendering mangels lokalem Tool offen |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor und wurde statisch geprüft;
 Kompilierung und Rendering bleiben mangels lokalem PlantUML-Tool offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 5/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokales PlantUML-Kommando bzw. JAR fehlt.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 5 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Fehlerliste: statische Prüfung unauffällig: je ein `@startuml`/`@enduml`, fünf synchrone
   Aufrufe und fünf Antworten, fünf `activate`/`deactivate`-Paare, geschlossener Loop und
   ausgeglichene Klammern. Dies belegt nicht die Kompilierbarkeit.
@@ -55,7 +54,7 @@ Abgleich mit `lastenhefte/easyride.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 5, Befunde: gerendert; sehr sauber, inkl. loop-Fragment und Aktivierungsbalken.
 - Direktes Bild — Score: 5/5, Befunde: scharfes Querformat, große Beschriftungen, klare
   zeitliche Leserichtung, keine Überlappungen und keine abgeschnittenen Elemente.
 
