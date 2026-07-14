@@ -534,3 +534,15 @@ Beobachtung: Inhalt, Werk-/Exemplartrennung und Mindestanzahl sind vollstaendig.
 Originalfehler ist dokumentiert, dass die Ausleihe-Lebenslinie trotz `create`-Nachricht zu
 frueh beginnt. `lastenhefte/easylib.md` ist entgegen der veralteten README-Angabe vorhanden
 und wurde ausschliesslich gelesen.
+
+## 2026-07-14 | 11:03 | Codex (im Auftrag von Tim)
+Schritt: Abschlusspruefung der drei ChatGPT-Sequenz-Direktbilder, Begleitdateien,
+Matrixzeilen, SHA-256-Pruefsummen, Git-Index und Commit-Historie durchgefuehrt.
+Ergebnis: Alle drei `v1-direkt.png` liegen mit `evaluation.md` und `notizen.md` in den
+korrekten DoD-Zellen; alle Bilder sind 1693 x 929 px, die dokumentierten Pruefsummen stimmen,
+und die Matrix fuehrt die drei Zellen als `generiert` mit Prompt v1. Einzelcommits:
+`e7bb458` (EasyRide), `1a7bc78` (EasyScoot), `1566c72` (EasyLib).
+Beobachtung: Branch ist `main`, der Index ist sauber und der Branch liegt drei Commits vor
+`origin/main`. Nur die bereits vorgefundenen unversionierte Datei `.idea/vcs.xml` bleibt
+unveraendert ausserhalb des Auftrags. PlantUML-Code und -Rendering bleiben in allen drei
+Zellen offen; deshalb lautet der Status korrekt `generiert` statt `evaluiert`.
