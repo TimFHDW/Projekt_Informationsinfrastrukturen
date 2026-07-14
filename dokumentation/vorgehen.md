@@ -461,3 +461,35 @@ Beobachtung: Lokal waren Java 17, aber weder PlantUML-Kommando noch JAR vorhande
 Download des offiziellen JAR wurde nicht freigegeben; daher keine Kompilierung, kein
 Rendering und keine erfundenen K1-/K4-PlantUML-Scores. Die Originalcodes wurden nach der
 Ablage nicht veraendert; es war keine `v1-korrigiert.puml` erforderlich bzw. belegbar.
+
+## 2026-07-14 | 10:47 | Codex (im Auftrag von Tim)
+Schritt: Verbindliche Agenten-, Imagegen-, README-, Prompt- und Evaluationsregeln fuer die
+drei ChatGPT-Sequenzdiagramme geprueft; Zielzellen und Git-Arbeitsbaum inventarisiert.
+Ergebnis: Als Eingaben wurden `prompts/sequenz/easyride-v1.md`,
+`prompts/sequenz/easyscoot-v1.md` und `prompts/sequenz/easylib-v1.md` bestaetigt; die drei
+Zielzellen enthalten bislang nur `.gitkeep` und sind in der Matrix `offen`.
+Beobachtung: Jeder Bilddurchlauf wird ohne Bildreferenz als eigenstaendige Generierung
+ausgefuehrt. Ein erster Git-Status-Aufruf scheiterte an der Safe-Directory-Pruefung; der
+erneute rein lesende Aufruf mit lokalem `safe.directory`-Parameter funktionierte. Die
+unversionierte benutzerseitige Datei `.idea/vcs.xml` bleibt unberuehrt.
+
+## 2026-07-14 | 10:50 | Codex (im Auftrag von Tim)
+Schritt: `prompts/sequenz/easyride-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
+Ergebnis: Unveraenderte Erstausgabe unter
+`C:/Users/admin/.codex/generated_images/019f5fcd-3397-7841-919a-47d84bd0624a/exec-5cdb13fd-1121-479c-b49b-901c14bef353.png`.
+Beobachtung: Das Original wird als Naechstes in die DoD-Zelle kopiert und erst danach
+formal sowie inhaltlich bewertet; erkannte Fehler werden nicht im Bild korrigiert.
+
+## 2026-07-14 | 10:51 | Codex (im Auftrag von Tim)
+Schritt: EasyRide-Direktbild unveraendert als
+`ergebnisse/easyride/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
+`lastenhefte/easyride.md` und `evaluation/kriterien.md` visuell geprueft sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix aktualisiert.
+Ergebnis: Zelle `easyride/chatgpt/sequenz` steht auf `generiert` mit Prompt v1 und
+Direktbild-Scores K1 5, K2 4, K3 5, K4 5; PlantUML-Anteile bleiben offen.
+Beobachtung: Fuenf Aufrufe samt Antworten sind sauber lesbar. Kleinere fachliche
+Unschaerfen sind die ungenutzte Lebenslinie `Betroffene Fahrgaeste` und die Ermittlung des
+Fahrgastwechsels vor der Bestimmung des naechsten Haltepunkts. Der erste Sammel-Patch
+meldete nach bereits angewendeten Datei- und Matrix-Hunks einen Kontextkonflikt beim
+Matrix-Hunk; der fehlende Journal-Hunk wurde deshalb separat append-only nachgetragen.
