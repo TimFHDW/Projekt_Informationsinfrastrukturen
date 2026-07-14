@@ -462,7 +462,7 @@ Download des offiziellen JAR wurde nicht freigegeben; daher keine Kompilierung, 
 Rendering und keine erfundenen K1-/K4-PlantUML-Scores. Die Originalcodes wurden nach der
 Ablage nicht veraendert; es war keine `v1-korrigiert.puml` erforderlich bzw. belegbar.
 
-## 2026-07-14 | 10:47 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 10:47 | Codex (im Auftrag von Linus)
 Schritt: Verbindliche Agenten-, Imagegen-, README-, Prompt- und Evaluationsregeln fuer die
 drei ChatGPT-Sequenzdiagramme geprueft; Zielzellen und Git-Arbeitsbaum inventarisiert.
 Ergebnis: Als Eingaben wurden `prompts/sequenz/easyride-v1.md`,
@@ -473,7 +473,7 @@ ausgefuehrt. Ein erster Git-Status-Aufruf scheiterte an der Safe-Directory-Pruef
 erneute rein lesende Aufruf mit lokalem `safe.directory`-Parameter funktionierte. Die
 unversionierte benutzerseitige Datei `.idea/vcs.xml` bleibt unberuehrt.
 
-## 2026-07-14 | 10:50 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 10:50 | Codex (im Auftrag von Linus)
 Schritt: `prompts/sequenz/easyride-v1.md` als strukturierte Bildspezifikation in einem
 eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
 Ergebnis: Unveraenderte Erstausgabe unter
@@ -481,7 +481,7 @@ Ergebnis: Unveraenderte Erstausgabe unter
 Beobachtung: Das Original wird als Naechstes in die DoD-Zelle kopiert und erst danach
 formal sowie inhaltlich bewertet; erkannte Fehler werden nicht im Bild korrigiert.
 
-## 2026-07-14 | 10:51 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 10:51 | Codex (im Auftrag von Linus)
 Schritt: EasyRide-Direktbild unveraendert als
 `ergebnisse/easyride/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
 `lastenhefte/easyride.md` und `evaluation/kriterien.md` visuell geprueft sowie
@@ -494,7 +494,7 @@ Fahrgastwechsels vor der Bestimmung des naechsten Haltepunkts. Der erste Sammel-
 meldete nach bereits angewendeten Datei- und Matrix-Hunks einen Kontextkonflikt beim
 Matrix-Hunk; der fehlende Journal-Hunk wurde deshalb separat append-only nachgetragen.
 
-## 2026-07-14 | 10:55 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 10:55 | Codex (im Auftrag von Linus)
 Schritt: `prompts/sequenz/easyscoot-v1.md` als strukturierte Bildspezifikation in einem
 eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
 Ergebnis: Unveraenderte Erstausgabe unter
@@ -503,7 +503,7 @@ Beobachtung: Die Ausgabe enthaelt zusaetzlich zur korrekten abschliessenden Ruec
 vorzeitige `Fahrtzusammenfassung` direkt nach der Statusaktualisierung. Dieser Fehler bleibt
 im Original erhalten und wird in Evaluation und Notizen bewertet.
 
-## 2026-07-14 | 10:56 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 10:56 | Codex (im Auftrag von Linus)
 Schritt: EasyScoot-Direktbild unveraendert als
 `ergebnisse/easyscoot/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
 `lastenhefte/easyscoot.md` und `evaluation/kriterien.md` visuell geprueft sowie
@@ -514,7 +514,7 @@ Beobachtung: Die fachliche Kernsequenz und die externe Preisberechnung sind voll
 Der zusaetzliche vorzeitige Antwortpfeil zum Kunden ist als Originalfehler dokumentiert und
 wurde nicht aus dem Bild entfernt.
 
-## 2026-07-14 | 11:00 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 11:00 | Codex (im Auftrag von Linus)
 Schritt: `prompts/sequenz/easylib-v1.md` als strukturierte Bildspezifikation in einem
 eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
 Ergebnis: Unveraenderte Erstausgabe unter
@@ -523,7 +523,7 @@ Beobachtung: Die `create`-Nachricht ist sichtbar, die Lebenslinie `Ausleihe` beg
 entgegen der UML-Erzeugungsnotation bereits am oberen Teilnehmerkopf. Diese Abweichung
 bleibt im Original und wird formal bewertet.
 
-## 2026-07-14 | 11:01 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 11:01 | Codex (im Auftrag von Linus)
 Schritt: EasyLib-Direktbild unveraendert als
 `ergebnisse/easylib/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
 `lastenhefte/easylib.md` und `evaluation/kriterien.md` visuell geprueft sowie
@@ -535,7 +535,7 @@ Originalfehler ist dokumentiert, dass die Ausleihe-Lebenslinie trotz `create`-Na
 frueh beginnt. `lastenhefte/easylib.md` ist entgegen der veralteten README-Angabe vorhanden
 und wurde ausschliesslich gelesen.
 
-## 2026-07-14 | 11:03 | Codex (im Auftrag von Tim)
+## 2026-07-14 | 11:03 | Codex (im Auftrag von Linus)
 Schritt: Abschlusspruefung der drei ChatGPT-Sequenz-Direktbilder, Begleitdateien,
 Matrixzeilen, SHA-256-Pruefsummen, Git-Index und Commit-Historie durchgefuehrt.
 Ergebnis: Alle drei `v1-direkt.png` liegen mit `evaluation.md` und `notizen.md` in den
@@ -546,3 +546,11 @@ Beobachtung: Branch ist `main`, der Index ist sauber und der Branch liegt drei C
 `origin/main`. Nur die bereits vorgefundenen unversionierte Datei `.idea/vcs.xml` bleibt
 unveraendert ausserhalb des Auftrags. PlantUML-Code und -Rendering bleiben in allen drei
 Zellen offen; deshalb lautet der Status korrekt `generiert` statt `evaluiert`.
+
+## 2026-07-14 | 11:11 | Codex (im Auftrag von Linus)
+Schritt: Auf ausdruecklichen Auftrag die Auftraggeberangabe in den acht von Codex neu
+angelegten Journal-Eintraegen vom 14.07.2026 (10:47 bis 11:03 Uhr) von `Tim` auf `Linus`
+korrigiert; alle aelteren Eintraege blieben unveraendert.
+Ergebnis: `dokumentation/vorgehen.md`.
+Beobachtung: Die gezielte Korrektur bestehender Ueberschriften ist eine ausdruecklich
+beauftragte Ausnahme von der Append-only-Regel; dieser Nachtrag macht sie nachvollziehbar.
