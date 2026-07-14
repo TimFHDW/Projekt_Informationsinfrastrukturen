@@ -510,3 +510,34 @@ Ergebnis: `ergebnisse/easyscoot/chatgpt/use-case/evaluation.md` und `notizen.md`
 Beobachtung: K1 direkt 3/5, K2 direkt 3/5, K3 direkt 3/5, K4 direkt 3/5. Ausschlaggebend
 sind die falschen beziehungsweise mehrdeutigen Zuordnungen der beiden Sekundaerakteure.
 PlantUML-Code und -Rendering bleiben offen.
+
+## 2026-07-14 | 10:56 | Codex (im Auftrag von Tim)
+Schritt: `prompts/use-case/easylib-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das unveraenderte Ergebnis in die
+Zielzelle kopiert und visuell geprueft.
+Ergebnis: `ergebnisse/easylib/chatgpt/use-case/v1-direkt.png`.
+Beobachtung: Das Bild enthaelt alle geforderten Akteure und Funktionsbezeichnungen sowie
+eine fachlich passende `<<extend>>`-Beziehung fuer den optionalen Katalogimport. Entgegen der
+Promptvorgabe wurden `Bestand durchsuchen` und `Standort und Status einsehen` jedoch jeweils
+doppelt gezeichnet; die vernetzten Bibliotheken sind zudem falsch mit `Leihfrist verlaengern`
+verbunden. Das Original bleibt als Messobjekt unveraendert.
+
+## 2026-07-14 | 10:57 | Codex (im Auftrag von Tim)
+Schritt: Das EasyLib-Direktbild gegen `lastenhefte/easylib.md` und
+`evaluation/kriterien.md` bewertet, Rohbeobachtungen dokumentiert und die Ergebnismatrix
+aktualisiert.
+Ergebnis: `ergebnisse/easylib/chatgpt/use-case/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easylib/chatgpt/use-case auf `generiert` (v1) gesetzt.
+Beobachtung: K1 direkt 3/5, K2 direkt 3/5, K3 direkt 3/5, K4 direkt 3/5. Der optionale
+Katalogimport ist korrekt als `<<extend>>` modelliert; Duplikate und falsche beziehungsweise
+fehlende Akteurszuordnungen senken die Bewertung. PlantUML-Code und -Rendering bleiben offen.
+
+## 2026-07-14 | 10:58 | Codex (im Auftrag von Tim)
+Schritt: Abschliessende Konsistenzpruefung der drei erzeugten Direktbilder, Zell-Dateien und
+Matrixzeilen sowie `git diff --check` ausgefuehrt.
+Ergebnis: Fuer easyride, easyscoot und easylib liegen jeweils ein lesbares PNG mit
+1693 x 929 Pixeln, `evaluation.md` und `notizen.md` vor; alle drei Matrixzeilen stehen auf
+`generiert` mit Prompt v1. Die Diff-Pruefung meldet keine Whitespace-Fehler.
+Beobachtung: Die Bilddateien sind technisch intakt. Die vollstaendige DoD bleibt pro Zelle
+offen, weil `v1.puml` und `v1-plantuml.png` beziehungsweise `.svg` nicht Teil dieses
+Direktbild-Auftrags waren und weiterhin fehlen.

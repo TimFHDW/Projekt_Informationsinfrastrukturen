@@ -36,7 +36,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easylib | claude | aktivitaet | generiert | v1 | – | – | – | – |
 | easylib | claude | sequenz | generiert | v1 | – | – | – | – |
 | easylib | chatgpt | klassendiagramm | generiert | v1 | PU offen / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU offen / direkt 5 |
-| easylib | chatgpt | use-case | offen | – | – | – | – | – |
+| easylib | chatgpt | use-case | generiert | v1 | PU offen / direkt 3 | PU offen / direkt 3 | PU offen / direkt 3 | PU offen / direkt 3 |
 | easylib | chatgpt | aktivitaet | generiert | v1 | PU offen / direkt 3 | PU 5 / direkt 4 | PU 5 / direkt 3 | PU offen / direkt 5 |
 | easylib | chatgpt | sequenz | offen | – | – | – | – | – |
 | easylib | gemini | klassendiagramm | offen | – | – | – | – | – |
