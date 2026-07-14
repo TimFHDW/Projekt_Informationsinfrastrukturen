@@ -7,17 +7,16 @@
 | PlantUML-Nachbewertung | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyscoot-v1.md` |
-| Rendering-Weg | offen – lokal weder PlantUML-Kommando noch PlantUML-JAR vorhanden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und
 Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokaler Renderer fehlt.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 3 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Fehlerliste: statische Prüfung von `v1.puml` unauffällig (je ein `@startuml`/`@enduml`,
   ausgeglichene Klammern, fünf Akteure, elf Use Cases und ein geschlossenes Notizpaar);
-  keine Aussage über die Kompilierbarkeit. Im Direktbild laufen mehrere Assoziationslinien auf gemeinsame
+  Kompilierbarkeit am 2026-07-14 bestaetigt (fehlerfrei gerendert). Im Direktbild laufen mehrere Assoziationslinien auf gemeinsame
   Punkte neben den Akteursfiguren zu, ohne die Akteure sichtbar zu berühren. Rechts führen
   Linien an Akteuren vorbei oder enden an einem nicht als UML-Element definierten
   Linienknoten. Dadurch sind mehrere Assoziationen syntaktisch nicht eindeutig.
@@ -58,7 +57,7 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 4, Befunde: gerendert; lesbar, ein include-Bogen mit Notiz.
 - Direktes Bild — Score: 3/5, Befunde: Text und einzelne Elemente sind scharf und gut
   lesbar. Die dichten Linienfächer links und insbesondere die langen, teils mehrdeutigen
   Linienführungen rechts erschweren jedoch die Zuordnung.

@@ -855,3 +855,16 @@ Kleinschreibung + leerer Render). Nach Neurendern (als v1-plantuml.png) K1/K4-Pl
 Zellen analog nachtragen. Die einzelnen evaluation.md tragen K1/K4-PlantUML noch als
 „offen/ausstehend"; die Matrix ist der aktuelle Gesamtstand – Propagierung in die einzelnen
 evaluation.md ist der offene Folgeschritt. Zeit frisch gelesen (2026-07-14 14:31).
+
+## 2026-07-14 | 14:45 | Claude (im Auftrag von Tim)
+Schritt: Die 8 zuvor fehlenden/fehlerhaften Renders sind nachgerendert (jetzt korrekt als
+v1-plantuml.png, 15–46 KB) – gesichtet und bewertet. ergebnismatrix.md final aktualisiert: alle
+24 Zellen mit vollstaendigen PU- und Direkt-Scores.
+Ergebnis: evaluation/ergebnismatrix.md final. Alle 24 v1.puml kompilieren fehlerfrei (K1-PU=5).
+Neu bewertet: easyride/chatgpt/aktivitaet (K4-PU 5) und alle easylib-Zellen (claude
+klassen/use-case K4-PU 4, aktivitaet 5, sequenz 4; chatgpt klassen/aktivitaet/sequenz K4-PU 5,
+use-case K4-PU 3 – viele Kreuzungen).
+Beobachtung: Keine Render-/Kompilierfehler mehr; K1 ist damit fuer beide KIs ueber alle vier
+Diagrammtypen vollstaendig bestaetigt. Verbleibend offen: Gemini (keine Artefakte) sowie die
+Propagierung der K1/K4-PU-Scores aus der Matrix in die einzelnen evaluation.md. Zeit frisch
+gelesen (2026-07-14 14:45).
