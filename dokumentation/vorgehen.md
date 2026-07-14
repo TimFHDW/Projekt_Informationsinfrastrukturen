@@ -513,3 +513,24 @@ Direktbild-Scores K1 4, K2 4, K3 5, K4 5; PlantUML-Anteile bleiben offen.
 Beobachtung: Die fachliche Kernsequenz und die externe Preisberechnung sind vollstaendig.
 Der zusaetzliche vorzeitige Antwortpfeil zum Kunden ist als Originalfehler dokumentiert und
 wurde nicht aus dem Bild entfernt.
+
+## 2026-07-14 | 11:00 | Codex (im Auftrag von Tim)
+Schritt: `prompts/sequenz/easylib-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
+Ergebnis: Unveraenderte Erstausgabe unter
+`C:/Users/admin/.codex/generated_images/019f5fcd-3397-7841-919a-47d84bd0624a/exec-13eca668-c704-4a73-a695-f24273132582.png`.
+Beobachtung: Die `create`-Nachricht ist sichtbar, die Lebenslinie `Ausleihe` beginnt jedoch
+entgegen der UML-Erzeugungsnotation bereits am oberen Teilnehmerkopf. Diese Abweichung
+bleibt im Original und wird formal bewertet.
+
+## 2026-07-14 | 11:01 | Codex (im Auftrag von Tim)
+Schritt: EasyLib-Direktbild unveraendert als
+`ergebnisse/easylib/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
+`lastenhefte/easylib.md` und `evaluation/kriterien.md` visuell geprueft sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix aktualisiert.
+Ergebnis: Zelle `easylib/chatgpt/sequenz` steht auf `generiert` mit Prompt v1 und
+Direktbild-Scores K1 4, K2 5, K3 5, K4 5; PlantUML-Anteile bleiben offen.
+Beobachtung: Inhalt, Werk-/Exemplartrennung und Mindestanzahl sind vollstaendig. Als
+Originalfehler ist dokumentiert, dass die Ausleihe-Lebenslinie trotz `create`-Nachricht zu
+frueh beginnt. `lastenhefte/easylib.md` ist entgegen der veralteten README-Angabe vorhanden
+und wurde ausschliesslich gelesen.
