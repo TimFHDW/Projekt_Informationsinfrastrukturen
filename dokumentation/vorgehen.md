@@ -461,3 +461,185 @@ Beobachtung: Lokal waren Java 17, aber weder PlantUML-Kommando noch JAR vorhande
 Download des offiziellen JAR wurde nicht freigegeben; daher keine Kompilierung, kein
 Rendering und keine erfundenen K1-/K4-PlantUML-Scores. Die Originalcodes wurden nach der
 Ablage nicht veraendert; es war keine `v1-korrigiert.puml` erforderlich bzw. belegbar.
+
+## 2026-07-14 | 10:43 | Codex (im Auftrag von Lewin)
+Schritt: Root- und Bereichs-READMEs, die drei freigegebenen Use-Case-Prompts v1,
+Evaluationskriterien, Vorlage, Ergebnismatrix und den Ist-Stand der drei
+ChatGPT/Use-Case-Zellen geprueft.
+Ergebnis: `prompts/use-case/easyride-v1.md`, `easyscoot-v1.md` und `easylib-v1.md` als
+Grundlage bestaetigt; alle drei Zielzellen enthalten bislang nur `.gitkeep` und stehen in
+`evaluation/ergebnismatrix.md` auf `offen`.
+Beobachtung: Der Auftrag betrifft die noch fehlenden direkt generierten Diagrammbilder.
+PlantUML-Code und -Rendering sind damit weiterhin offene Bestandteile der vollstaendigen DoD.
+
+## 2026-07-14 | 10:47 | Codex (im Auftrag von Linus)
+Schritt: Verbindliche Agenten-, Imagegen-, README-, Prompt- und Evaluationsregeln fuer die
+drei ChatGPT-Sequenzdiagramme geprueft; Zielzellen und Git-Arbeitsbaum inventarisiert.
+Ergebnis: Als Eingaben wurden `prompts/sequenz/easyride-v1.md`,
+`prompts/sequenz/easyscoot-v1.md` und `prompts/sequenz/easylib-v1.md` bestaetigt; die drei
+Zielzellen enthalten bislang nur `.gitkeep` und sind in der Matrix `offen`.
+Beobachtung: Jeder Bilddurchlauf wird ohne Bildreferenz als eigenstaendige Generierung
+ausgefuehrt. Ein erster Git-Status-Aufruf scheiterte an der Safe-Directory-Pruefung; der
+erneute rein lesende Aufruf mit lokalem `safe.directory`-Parameter funktionierte. Die
+unversionierte benutzerseitige Datei `.idea/vcs.xml` bleibt unberuehrt.
+
+## 2026-07-14 | 10:48 | Codex (im Auftrag von Lewin)
+Schritt: `prompts/use-case/easyride-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das unveraenderte Ergebnis in die
+Zielzelle kopiert und visuell geprueft.
+Ergebnis: `ergebnisse/easyride/chatgpt/use-case/v1-direkt.png`.
+Beobachtung: Das Diagramm enthaelt genau die geforderten zwei Akteure und fuenf Use Cases
+innerhalb der Systemgrenze. Die Assoziationslinien enden mit kleinen sichtbaren Abstaenden
+vor den Akteursfiguren; dieser Notationsmangel wird in der Evaluation festgehalten.
+
+## 2026-07-14 | 10:46 | Codex (im Auftrag von Lewin)
+Schritt: Das EasyRide-Direktbild gegen `lastenhefte/easyride.md` und
+`evaluation/kriterien.md` bewertet, Rohbeobachtungen dokumentiert und die Ergebnismatrix
+aktualisiert.
+Ergebnis: `ergebnisse/easyride/chatgpt/use-case/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easyride/chatgpt/use-case auf `generiert` (v1) gesetzt.
+Beobachtung: K1 direkt 4/5, K2 direkt 5/5, K3 direkt 5/5, K4 direkt 5/5. PlantUML-Code
+und -Rendering bleiben offen. Der Zeitstempel 10:48 im unmittelbar vorherigen Eintrag war
+ein Erfassungsfehler; gemaess Append-only-Regel wurde der Eintrag nicht nachtraeglich geaendert.
+
+## 2026-07-14 | 10:50 | Codex (im Auftrag von Linus)
+Schritt: `prompts/sequenz/easyride-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
+Ergebnis: Unveraenderte Erstausgabe unter
+`C:/Users/admin/.codex/generated_images/019f5fcd-3397-7841-919a-47d84bd0624a/exec-5cdb13fd-1121-479c-b49b-901c14bef353.png`.
+Beobachtung: Das Original wird als Naechstes in die DoD-Zelle kopiert und erst danach
+formal sowie inhaltlich bewertet; erkannte Fehler werden nicht im Bild korrigiert.
+
+## 2026-07-14 | 10:51 | Codex (im Auftrag von Linus)
+Schritt: EasyRide-Direktbild unveraendert als
+`ergebnisse/easyride/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
+`lastenhefte/easyride.md` und `evaluation/kriterien.md` visuell geprueft sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix aktualisiert.
+Ergebnis: Zelle `easyride/chatgpt/sequenz` steht auf `generiert` mit Prompt v1 und
+Direktbild-Scores K1 5, K2 4, K3 5, K4 5; PlantUML-Anteile bleiben offen.
+Beobachtung: Fuenf Aufrufe samt Antworten sind sauber lesbar. Kleinere fachliche
+Unschaerfen sind die ungenutzte Lebenslinie `Betroffene Fahrgaeste` und die Ermittlung des
+Fahrgastwechsels vor der Bestimmung des naechsten Haltepunkts. Der erste Sammel-Patch
+meldete nach bereits angewendeten Datei- und Matrix-Hunks einen Kontextkonflikt beim
+Matrix-Hunk; der fehlende Journal-Hunk wurde deshalb separat append-only nachgetragen.
+
+## 2026-07-14 | 10:51 | Codex (im Auftrag von Lewin)
+Schritt: `prompts/use-case/easyscoot-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das unveraenderte Ergebnis in die
+Zielzelle kopiert und visuell geprueft.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/use-case/v1-direkt.png`.
+Beobachtung: Alle fuenf Akteure und elf geforderten Use Cases sind enthalten. Das Bild
+vertauscht jedoch rechts mehrere fachliche Zuordnungen: `Nutzung beenden` fuehrt zum
+E-Scooter statt zum Rechnungssystem, waehrend `Wartungsmodus beenden` zum Rechnungssystem
+fuehrt. Mehrere Assoziationen enden zudem vor den Akteursfiguren.
+
+## 2026-07-14 | 10:52 | Codex (im Auftrag von Lewin)
+Schritt: Das EasyScoot-Direktbild gegen `lastenhefte/easyscoot.md` und
+`evaluation/kriterien.md` bewertet, Rohbeobachtungen dokumentiert und die Ergebnismatrix
+aktualisiert.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/use-case/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easyscoot/chatgpt/use-case auf `generiert` (v1) gesetzt.
+Beobachtung: K1 direkt 3/5, K2 direkt 3/5, K3 direkt 3/5, K4 direkt 3/5. Ausschlaggebend
+sind die falschen beziehungsweise mehrdeutigen Zuordnungen der beiden Sekundaerakteure.
+PlantUML-Code und -Rendering bleiben offen.
+
+## 2026-07-14 | 10:55 | Codex (im Auftrag von Linus)
+Schritt: `prompts/sequenz/easyscoot-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
+Ergebnis: Unveraenderte Erstausgabe unter
+`C:/Users/admin/.codex/generated_images/019f5fcd-3397-7841-919a-47d84bd0624a/exec-5b21b9a5-60f3-4169-9d06-7c0856baf49b.png`.
+Beobachtung: Die Ausgabe enthaelt zusaetzlich zur korrekten abschliessenden Rueckgabe eine
+vorzeitige `Fahrtzusammenfassung` direkt nach der Statusaktualisierung. Dieser Fehler bleibt
+im Original erhalten und wird in Evaluation und Notizen bewertet.
+
+## 2026-07-14 | 10:56 | Codex (im Auftrag von Linus)
+Schritt: EasyScoot-Direktbild unveraendert als
+`ergebnisse/easyscoot/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
+`lastenhefte/easyscoot.md` und `evaluation/kriterien.md` visuell geprueft sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix aktualisiert.
+Ergebnis: Zelle `easyscoot/chatgpt/sequenz` steht auf `generiert` mit Prompt v1 und
+Direktbild-Scores K1 4, K2 4, K3 5, K4 5; PlantUML-Anteile bleiben offen.
+Beobachtung: Die fachliche Kernsequenz und die externe Preisberechnung sind vollstaendig.
+Der zusaetzliche vorzeitige Antwortpfeil zum Kunden ist als Originalfehler dokumentiert und
+wurde nicht aus dem Bild entfernt.
+
+## 2026-07-14 | 10:56 | Codex (im Auftrag von Lewin)
+Schritt: `prompts/use-case/easylib-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das unveraenderte Ergebnis in die
+Zielzelle kopiert und visuell geprueft.
+Ergebnis: `ergebnisse/easylib/chatgpt/use-case/v1-direkt.png`.
+Beobachtung: Das Bild enthaelt alle geforderten Akteure und Funktionsbezeichnungen sowie
+eine fachlich passende `<<extend>>`-Beziehung fuer den optionalen Katalogimport. Entgegen der
+Promptvorgabe wurden `Bestand durchsuchen` und `Standort und Status einsehen` jedoch jeweils
+doppelt gezeichnet; die vernetzten Bibliotheken sind zudem falsch mit `Leihfrist verlaengern`
+verbunden. Das Original bleibt als Messobjekt unveraendert.
+
+## 2026-07-14 | 10:57 | Codex (im Auftrag von Lewin)
+Schritt: Das EasyLib-Direktbild gegen `lastenhefte/easylib.md` und
+`evaluation/kriterien.md` bewertet, Rohbeobachtungen dokumentiert und die Ergebnismatrix
+aktualisiert.
+Ergebnis: `ergebnisse/easylib/chatgpt/use-case/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easylib/chatgpt/use-case auf `generiert` (v1) gesetzt.
+Beobachtung: K1 direkt 3/5, K2 direkt 3/5, K3 direkt 3/5, K4 direkt 3/5. Der optionale
+Katalogimport ist korrekt als `<<extend>>` modelliert; Duplikate und falsche beziehungsweise
+fehlende Akteurszuordnungen senken die Bewertung. PlantUML-Code und -Rendering bleiben offen.
+
+## 2026-07-14 | 10:58 | Codex (im Auftrag von Lewin)
+Schritt: Abschliessende Konsistenzpruefung der drei erzeugten Direktbilder, Zell-Dateien und
+Matrixzeilen sowie `git diff --check` ausgefuehrt.
+Ergebnis: Fuer easyride, easyscoot und easylib liegen jeweils ein lesbares PNG mit
+1693 x 929 Pixeln, `evaluation.md` und `notizen.md` vor; alle drei Matrixzeilen stehen auf
+`generiert` mit Prompt v1. Die Diff-Pruefung meldet keine Whitespace-Fehler.
+Beobachtung: Die Bilddateien sind technisch intakt. Die vollstaendige DoD bleibt pro Zelle
+offen, weil `v1.puml` und `v1-plantuml.png` beziehungsweise `.svg` nicht Teil dieses
+Direktbild-Auftrags waren und weiterhin fehlen.
+
+## 2026-07-14 | 11:00 | Codex (im Auftrag von Linus)
+Schritt: `prompts/sequenz/easylib-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ohne Bildreferenz ausgefuehrt.
+Ergebnis: Unveraenderte Erstausgabe unter
+`C:/Users/admin/.codex/generated_images/019f5fcd-3397-7841-919a-47d84bd0624a/exec-13eca668-c704-4a73-a695-f24273132582.png`.
+Beobachtung: Die `create`-Nachricht ist sichtbar, die Lebenslinie `Ausleihe` beginnt jedoch
+entgegen der UML-Erzeugungsnotation bereits am oberen Teilnehmerkopf. Diese Abweichung
+bleibt im Original und wird formal bewertet.
+
+## 2026-07-14 | 11:01 | Codex (im Auftrag von Linus)
+Schritt: EasyLib-Direktbild unveraendert als
+`ergebnisse/easylib/chatgpt/sequenz/v1-direkt.png` abgelegt, gegen
+`lastenhefte/easylib.md` und `evaluation/kriterien.md` visuell geprueft sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix aktualisiert.
+Ergebnis: Zelle `easylib/chatgpt/sequenz` steht auf `generiert` mit Prompt v1 und
+Direktbild-Scores K1 4, K2 5, K3 5, K4 5; PlantUML-Anteile bleiben offen.
+Beobachtung: Inhalt, Werk-/Exemplartrennung und Mindestanzahl sind vollstaendig. Als
+Originalfehler ist dokumentiert, dass die Ausleihe-Lebenslinie trotz `create`-Nachricht zu
+frueh beginnt. `lastenhefte/easylib.md` ist entgegen der veralteten README-Angabe vorhanden
+und wurde ausschliesslich gelesen.
+
+## 2026-07-14 | 11:03 | Codex (im Auftrag von Linus)
+Schritt: Abschlusspruefung der drei ChatGPT-Sequenz-Direktbilder, Begleitdateien,
+Matrixzeilen, SHA-256-Pruefsummen, Git-Index und Commit-Historie durchgefuehrt.
+Ergebnis: Alle drei `v1-direkt.png` liegen mit `evaluation.md` und `notizen.md` in den
+korrekten DoD-Zellen; alle Bilder sind 1693 x 929 px, die dokumentierten Pruefsummen stimmen,
+und die Matrix fuehrt die drei Zellen als `generiert` mit Prompt v1. Einzelcommits:
+`e7bb458` (EasyRide), `1a7bc78` (EasyScoot), `1566c72` (EasyLib).
+Beobachtung: Branch ist `main`, der Index ist sauber und der Branch liegt drei Commits vor
+`origin/main`. Nur die bereits vorgefundenen unversionierte Datei `.idea/vcs.xml` bleibt
+unveraendert ausserhalb des Auftrags. PlantUML-Code und -Rendering bleiben in allen drei
+Zellen offen; deshalb lautet der Status korrekt `generiert` statt `evaluiert`.
+
+## 2026-07-14 | 11:11 | Codex (im Auftrag von Linus)
+Schritt: Auf ausdruecklichen Auftrag die Auftraggeberangabe in den acht von Codex neu
+angelegten Journal-Eintraegen vom 14.07.2026 (10:47 bis 11:03 Uhr) von `Tim` auf `Linus`
+korrigiert; alle aelteren Eintraege blieben unveraendert.
+Ergebnis: `dokumentation/vorgehen.md`.
+Beobachtung: Die gezielte Korrektur bestehender Ueberschriften ist eine ausdruecklich
+beauftragte Ausnahme von der Append-only-Regel; dieser Nachtrag macht sie nachvollziehbar.
+
+## 2026-07-14 | 11:34 | Codex (im Auftrag des Tim)
+Schritt: Den Verlust von Journal-Eintraegen im Merge-Commit `392e312` untersucht und die
+acht Use-Case-Eintraege aus `f3a1cb3` sowie die neun Sequenz-Eintraege aus `488587d`
+wortgetreu und append-only wieder zusammengefuehrt.
+Ergebnis: `dokumentation/vorgehen.md` enthaelt wieder beide Arbeitsstraenge.
+Beobachtung: Beim konfliktbehafteten Merge war nur der gemeinsame Stand bis 13.07.2026
+uebernommen worden. Die Ergebnisartefakte selbst waren nicht verloren. Es wurde weder die
+Git-Historie umgeschrieben noch ein Push ausgefuehrt.
