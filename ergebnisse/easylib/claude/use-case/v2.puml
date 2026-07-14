@@ -1,0 +1,54 @@
+@startuml EasyLib-UseCase
+' EasyLib - Use-Case-Diagramm (KI: Claude, v2 / 2. Durchlauf, Prompt v1)
+left to right direction
+skinparam packageStyle rectangle
+
+actor Bibliothekar
+actor Kunde
+actor Buchhalter
+actor Verbundkatalog
+actor "Vernetzte Bibliotheken" as VBib
+
+rectangle EasyLib {
+  usecase "Exemplar einpflegen" as B1
+  usecase "Buchdaten aus Verbund-\nkatalog importieren" as B1a
+  usecase "Exemplar auspflegen" as B2
+  usecase "Exemplar verleihen" as B3
+  usecase "Rueckgabe entgegennehmen" as B4
+  usecase "Bestand durchsuchen" as S1
+  usecase "Bestand vernetzter\nBibliotheken durchsuchen" as S2
+  usecase "Kundendaten einsehen" as B5
+  usecase "Kundenkonto anlegen" as K1
+  usecase "Kundenkonto loeschen" as K2
+  usecase "Buch reservieren" as K3
+  usecase "Reservierung stornieren" as K4
+  usecase "Leihfrist verlaengern" as K5
+  usecase "Ueberfaellige Ausleihen\neinsehen" as BH1
+}
+
+Bibliothekar --> B1
+Bibliothekar --> B2
+Bibliothekar --> B3
+Bibliothekar --> B4
+Bibliothekar --> S1
+Bibliothekar --> S2
+Bibliothekar --> B5
+Kunde --> K1
+Kunde --> K2
+Kunde --> S1
+Kunde --> K3
+Kunde --> K4
+Kunde --> K5
+Buchhalter --> BH1
+
+B1a ..> B1 : <<extend>>
+Verbundkatalog -- B1a
+VBib -- S2
+
+note bottom of K5
+  Annahme: Verlaengern nur, wenn KEINE
+  andere Reservierung fuer das Buch
+  vorliegt (Aufloesung der Mehrdeutigkeit
+  im Lastenheft).
+end note
+@enduml

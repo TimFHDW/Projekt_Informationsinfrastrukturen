@@ -1,0 +1,22 @@
+@startuml EasyRide-UseCase
+' EasyRide - Use-Case-Diagramm (KI: Claude, v2 / 2. Durchlauf, Prompt v1)
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Kunde\n(Fahrgast)" as Kunde
+actor Fahrer
+
+rectangle EasyRide {
+  usecase "Fahrt buchen" as UC1
+  usecase "Wartezeit abfragen\n(vor Fahrtantritt)" as UC2
+  usecase "Restfahrzeit abfragen\n(nach Fahrtantritt)" as UC3
+  usecase "Naechsten Haltepunkt mit\nFahrgastwechsel abfragen" as UC4
+  usecase "Erreichen eines\nHaltepunkts bestaetigen" as UC5
+}
+
+Kunde --> UC1
+Kunde --> UC2
+Kunde --> UC3
+Fahrer --> UC4
+Fahrer --> UC5
+@enduml

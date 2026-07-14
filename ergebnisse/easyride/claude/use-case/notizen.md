@@ -81,3 +81,23 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
 - [ ] evaluation/ergebnismatrix.md aktualisieren
 - [ ] Journal-Eintrag in dokumentation/vorgehen.md
 - [ ] Commit: ergebnis(easyride/claude): use-case v1 + evaluation
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1)
+- Neue Dateien: `v2.puml` und `v2-direkt.png` (PNG ohne Systemnamen, wie bei den Klassendiagramm-/
+  Aktivitaets-v2-Zellen). `v2-plantuml.png` steht aus – Renderer in dieser Session 403-gesperrt
+  (npm/Maven/CDN); lokal nachrendern (z. B. IntelliJ-PlantUML-Plugin).
+- Versionierung: v2 = ZWEITER Durchlauf mit unveraendertem Prompt v1 (Wunsch Tim) – Abweichung von
+  „N = Prompt-Version"; als Durchlauf-Varianz lesen, nicht als Prompt-Iteration.
+- Unabhaengigkeit: v1 dieser Zelle (`v1.puml`, `v1-direkt-easyride.png`) auf Wunsch von Tim BEWUSST
+  NICHT eingesehen; Generierung allein aus `prompts/use-case/easyride-v1.md`. Einschraenkung: im
+  Sitzungskontext waren Doku-/Journal-Eintraege mit v1-Bezuegen sichtbar -> kein vollstaendig
+  isolierter Durchlauf.
+- `v2.puml` und `v2-direkt.png` im SELBEN Durchlauf erzeugt (Bild nicht aus der puml abgeleitet);
+  Direktbild via eigenem Use-Case-SVG-Generator -> librsvg/cairo -> PNG.
+- Methodik-Abweichungen wie zuvor: keine frische Session; Zweischritt-Prompt nicht getrennt; alle
+  drei v2-Use-Case-Bilder in einer Sitzung -> moeglicher Struktur-Uebertrag zwischen Systemen.
+- Inhalt v2: Akteure Kunde (Fahrgast) und Fahrer ausserhalb der Systemgrenze „EasyRide"; genau 5
+  Use Cases aus den abschliessenden Leistungslisten (Kunde: Fahrt buchen, Wartezeit abfragen,
+  Restfahrzeit abfragen; Fahrer: naechsten Halt mit Fahrgastwechsel abfragen, Erreichen
+  bestaetigen). Kein include/extend (nicht fachlich noetig).
+- Noch offen (v2): `v2-plantuml.png` rendern; vollstaendige K1-K4-Bewertung.

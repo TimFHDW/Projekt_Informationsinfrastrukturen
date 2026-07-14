@@ -72,3 +72,13 @@ Abgleich mit `lastenhefte/easyride.md`, konkrete Befunde:
 - Mit genau 5 Use Cases liegt das Diagramm exakt an der Mindestgrenze; das ist
   durch die abschliessenden Leistungslisten des Lastenhefts gedeckt, nicht durch
   Sparsamkeit der KI.
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1) - Bewertung offen
+- `v2.puml` und `v2-direkt.png` liegen vor (s. notizen.md, Nachtrag v2); `v2-plantuml.png` offen
+  (Renderer 403-gesperrt). Diese Datei bewertet weiterhin v1; die vollstaendige v2-Bewertung (K1-K4)
+  steht aus.
+- K1-Vorbefund v2: statische Struktur-Pruefung von `v2.puml` bestanden (@startuml/@enduml paarig,
+  Akteure ausserhalb der Systemgrenze, 5 Use Cases aus Akteurssicht); Kompilierbarkeit erst nach
+  Rendering final.
+- v1 wurde fuer die unabhaengige v2-Generierung bewusst nicht herangezogen; v1-vs-v2-Vergleich als
+  Folgeschritt.

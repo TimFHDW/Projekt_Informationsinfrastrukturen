@@ -10,7 +10,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 | System | KI | Diagrammtyp | Status | Prompt | K1 Syntax | K2 Inhalt | K3 Vollst. | K4 Lesbarkeit |
 |---|---|---|---|---|---|---|---|---|
 | easyride | claude | klassendiagramm | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 4 | PU 3 / direkt 4 |
-| easyride | claude | use-case | evaluiert | v1 | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
+| easyride | claude | use-case | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
 | easyride | claude | aktivitaet | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
 | easyride | claude | sequenz | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
 | easyride | chatgpt | klassendiagramm | evaluiert | v1 | PU 5 / direkt 5 | PU 5 / direkt 2 | PU 5 / direkt 3 | PU 4 / direkt 5 |
@@ -22,7 +22,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 | easyride | gemini | aktivitaet | offen | – | – | – | – | – |
 | easyride | gemini | sequenz | offen | – | – | – | – | – |
 | easyscoot | claude | klassendiagramm | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 4 | PU 4 / direkt 4 |
-| easyscoot | claude | use-case | evaluiert | v1 | PU 5 / direkt 5 | 5 | 5 | PU 4 / direkt 4 |
+| easyscoot | claude | use-case | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 4 / direkt 4 |
 | easyscoot | claude | aktivitaet | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
 | easyscoot | claude | sequenz | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
 | easyscoot | chatgpt | klassendiagramm | evaluiert | v1 | PU 5 / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU 5 / direkt 5 |
@@ -34,7 +34,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 | easyscoot | gemini | aktivitaet | offen | – | – | – | – | – |
 | easyscoot | gemini | sequenz | offen | – | – | – | – | – |
 | easylib | claude | klassendiagramm | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 4 | PU 4 / direkt 4 |
-| easylib | claude | use-case | evaluiert | v1 | PU 5 / direkt 5 | 5 | 5 | PU 4 / direkt 4 |
+| easylib | claude | use-case | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 4 / direkt 4 |
 | easylib | claude | aktivitaet | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
 | easylib | claude | sequenz | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
 | easylib | chatgpt | klassendiagramm | evaluiert | v1 | PU 5 / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU 5 / direkt 5 |
@@ -60,6 +60,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 - **claude-Scores sind Selbstbewertungen** (dieselbe KI hat generiert) – unabhaengige Gegenpruefung empfohlen. ChatGPT-Zellen wurden von Codex bewertet; die PlantUML-Seite (K1/K4-PU) ist hier ergaenzt.
 - **aktivitaet/claude v2 (3 Zellen):** 2. Durchlauf mit Prompt v1 am 14.07. generiert (`v2.puml` + `v2-direkt.png`, s. notizen.md-Nachtraege); Bewertung und `v2-plantuml.png` offen.
 - **klassendiagramm/claude v2 (3 Zellen):** 2. Durchlauf mit Prompt v1 am 14.07. generiert (`v2.puml` + `v2-direkt.png` + `v2-plantuml.png`; alle drei `v2.puml` kompilieren fehlerfrei, Renderweg plantuml.jar 1.2019.06 via npm node-plantuml; s. notizen.md-Nachtraege); K2-K4-Bewertung von v2 offen.
+- **use-case/claude v2 (3 Zellen):** 2. Durchlauf mit Prompt v1 am 14.07. generiert, **unabhaengig** (v1 auf Wunsch von Tim nicht eingesehen); `v2.puml` + `v2-direkt.png` liegen vor, `v2-plantuml.png` offen (Renderer in dieser Session 403-gesperrt); K1-K4-Bewertung von v2 offen (s. notizen.md/evaluation.md-Nachtraege).
 - **Propagierung in die einzelnen `evaluation.md`:** Die K1/K4-PlantUML-Scores stehen bisher nur in dieser Matrix; in den 24 `evaluation.md` sind die K1/K4-PU-Zeilen teils noch als „offen/ausstehend" markiert (Folgeschritt).
 
 

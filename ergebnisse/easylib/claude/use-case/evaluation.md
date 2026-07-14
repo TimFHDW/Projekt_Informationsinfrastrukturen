@@ -75,3 +75,13 @@ Abgleich mit `lastenhefte/easylib.md`, konkrete Befunde:
   moeglicher context bleed, s. notizen.md.
 - Prompt-Formulierung "Buch reservieren" uebernommen; konsistent mit der
   Werk-vs.-Exemplar-Regel (reserviert wird auf Werk-Ebene).
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1) - Bewertung offen
+- `v2.puml` und `v2-direkt.png` liegen vor (s. notizen.md, Nachtrag v2); `v2-plantuml.png` offen
+  (Renderer 403-gesperrt). Diese Datei bewertet weiterhin v1; die vollstaendige v2-Bewertung (K1-K4)
+  steht aus.
+- K1-Vorbefund v2: statische Struktur-Pruefung von `v2.puml` bestanden (@startuml/@enduml paarig,
+  Akteure ausserhalb der Systemgrenze, 14 Use Cases, `<<extend>>` Katalogimport); Kompilierbarkeit
+  erst nach Rendering final.
+- v1 wurde fuer die unabhaengige v2-Generierung bewusst nicht herangezogen; v1-vs-v2-Vergleich als
+  Folgeschritt.

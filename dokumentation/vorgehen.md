@@ -954,3 +954,25 @@ easylib-Fassung aktualisiert; in den drei Dateien als Hinweis-Abschnitt dokument
 Erneuter Truncation-Vorfall nach Muster vom 06.07. (22:40) - Commit-Inhalte vor dem
 Committen auf abgeschnittene Dateienden pruefen. (4) Commits macht Lewin selbst
 (ausdruecklicher Wunsch); nichts committet oder gepusht.
+
+## 2026-07-14 | 19:06 | Claude (im Auftrag von Tim)
+Schritt: Zweiter Generierungsdurchlauf der Use-Case-Diagramme der Claude-Spalte (Auftrag Tim:
+prompts/use-case/<system>-v1.md ausfuehren und die direkt erstellten Diagramme in den DoD-Zellen
+abliefern). Je Zelle v2.puml und - im selben Durchlauf, aus demselben Modell - das direkt
+gezeichnete Bild v2-direkt.png erzeugt (eigener Use-Case-SVG-Generator der KI -> librsvg/cairo ->
+PNG; keine PlantUML-Beteiligung). PNG-Benennung ohne Systemnamen, wie bei den aktivitaet-/sequenz-/
+klassendiagramm-v2-Zellen.
+Ergebnis: ergebnisse/{easyride,easyscoot,easylib}/claude/use-case/{v2.puml, v2-direkt.png};
+Nachtraege in den sechs notizen.md/evaluation.md; evaluation/ergebnismatrix.md (3 Zeilen + Offene
+Punkte) aktualisiert.
+Beobachtung: (1) Versionierung wie bei den anderen v2-Durchlaeufen: v2 = 2. Durchlauf mit Prompt v1
+(Wunsch Tim), nicht Prompt-Iteration - als Durchlauf-Varianz lesen. (2) Unabhaengigkeit: v1 dieser
+Zellen (v1.puml/v1-direkt) auf ausdruecklichen Wunsch von Tim vor und waehrend der Generierung
+BEWUSST NICHT eingesehen; im Sitzungskontext waren Journal-/Doku-Bezuege zu v1 aber sichtbar ->
+kein vollstaendig isolierter Durchlauf. (3) Inhalt: easyride 5 Use Cases (Akteure Kunde/Fahrer),
+easyscoot 10 (+ E-Scooter/Rechnungssystem als Sekundaerakteure), easylib 14 (Bestand durchsuchen
+von Bibliothekar+Kunde geteilt, Katalogimport als <<extend>>). (4) Kein v2-plantuml.png: Renderer
+in dieser Session 403-gesperrt (npm/Maven/CDN) - lokal nachrendern wie bei v1; statische
+Struktur-Pruefung der drei v2.puml bestanden. (5) Methodik wie zuvor: laufende Session, drei
+Diagramme in einer Sitzung (Struktur-Uebertrag moeglich). Kein Commit/Push. Zeit frisch gelesen
+(2026-07-14 19:06).

@@ -85,3 +85,21 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
 - [ ] evaluation/ergebnismatrix.md aktualisieren
 - [ ] Journal-Eintrag in dokumentation/vorgehen.md
 - [ ] Commit: ergebnis(easyscoot/claude): use-case v1 + evaluation
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1)
+- Neue Dateien: `v2.puml` und `v2-direkt.png` (PNG ohne Systemnamen). `v2-plantuml.png` steht aus –
+  Renderer in dieser Session 403-gesperrt; lokal nachrendern.
+- Versionierung: v2 = ZWEITER Durchlauf mit unveraendertem Prompt v1 (Wunsch Tim) – Durchlauf-
+  Varianz, nicht Prompt-Iteration.
+- Unabhaengigkeit: v1 dieser Zelle (`v1.puml`, `v1-direkt-easyscoot.png`) auf Wunsch von Tim BEWUSST
+  NICHT eingesehen; Generierung allein aus `prompts/use-case/easyscoot-v1.md`. Einschraenkung:
+  Sitzungskontext mit v1-Bezuegen sichtbar -> kein vollstaendig isolierter Durchlauf.
+- `v2.puml` und `v2-direkt.png` im SELBEN Durchlauf (Bild nicht aus puml abgeleitet); Direktbild via
+  Use-Case-SVG-Generator -> librsvg/cairo.
+- Methodik-Abweichungen wie zuvor (keine frische Session; kein getrennter Zweischritt-Prompt; alle
+  drei v2-UC-Bilder in einer Sitzung).
+- Inhalt v2: Akteure Kunde/Flottenmanager/Service-Mitarbeiter (primaer) + E-Scooter (Mobilfunk) und
+  Rechnungssystem (Sekundaerakteure) ausserhalb „EasyScoot"; 10 Use Cases. „Liste aller E-Scooter
+  einsehen" von Flottenmanager UND Service geteilt; Rechnungssystem an „Nutzung beenden", E-Scooter
+  an Abfrage/Wartungsmodus. Kein include/extend.
+- Noch offen (v2): `v2-plantuml.png` rendern; vollstaendige K1-K4-Bewertung.

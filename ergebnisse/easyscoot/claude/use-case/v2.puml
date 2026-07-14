@@ -1,0 +1,42 @@
+@startuml EasyScoot-UseCase
+' EasyScoot - Use-Case-Diagramm (KI: Claude, v2 / 2. Durchlauf, Prompt v1)
+left to right direction
+skinparam packageStyle rectangle
+
+actor Kunde
+actor Flottenmanager
+actor "Service-Mitarbeiter" as Service
+actor "E-Scooter\n(Mobilfunk-Software)" as EScooter
+actor Rechnungssystem
+
+rectangle EasyScoot {
+  usecase "Kundenkonto erstellen" as U1
+  usecase "Verfuegbare E-Scooter\nin der Naehe abfragen" as U2
+  usecase "E-Scooter buchen\nund freischalten" as U3
+  usecase "Nutzung beenden" as U4
+  usecase "Liste aller E-Scooter\neinsehen" as U5
+  usecase "Gefilterte Liste einsehen\n(Ladestand <= 50 %)" as U6
+  usecase "Wartungsmodus starten" as U7
+  usecase "Wartungsmodus beenden" as U8
+  usecase "E-Scooter in Flotte\naufnehmen" as U9
+  usecase "E-Scooter ausmustern" as U10
+}
+
+Kunde --> U1
+Kunde --> U2
+Kunde --> U3
+Kunde --> U4
+Flottenmanager --> U5
+Service --> U5
+Service --> U6
+Service --> U7
+Service --> U8
+Service --> U9
+Service --> U10
+
+U2 -- EScooter
+U3 -- EScooter
+U7 -- EScooter
+U8 -- EScooter
+U4 -- Rechnungssystem
+@enduml
