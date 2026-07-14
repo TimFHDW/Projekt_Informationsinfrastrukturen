@@ -490,3 +490,23 @@ Ergebnis: `ergebnisse/easyride/chatgpt/use-case/evaluation.md` und `notizen.md` 
 Beobachtung: K1 direkt 4/5, K2 direkt 5/5, K3 direkt 5/5, K4 direkt 5/5. PlantUML-Code
 und -Rendering bleiben offen. Der Zeitstempel 10:48 im unmittelbar vorherigen Eintrag war
 ein Erfassungsfehler; gemaess Append-only-Regel wurde der Eintrag nicht nachtraeglich geaendert.
+
+## 2026-07-14 | 10:51 | Codex (im Auftrag von Tim)
+Schritt: `prompts/use-case/easyscoot-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das unveraenderte Ergebnis in die
+Zielzelle kopiert und visuell geprueft.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/use-case/v1-direkt.png`.
+Beobachtung: Alle fuenf Akteure und elf geforderten Use Cases sind enthalten. Das Bild
+vertauscht jedoch rechts mehrere fachliche Zuordnungen: `Nutzung beenden` fuehrt zum
+E-Scooter statt zum Rechnungssystem, waehrend `Wartungsmodus beenden` zum Rechnungssystem
+fuehrt. Mehrere Assoziationen enden zudem vor den Akteursfiguren.
+
+## 2026-07-14 | 10:52 | Codex (im Auftrag von Tim)
+Schritt: Das EasyScoot-Direktbild gegen `lastenhefte/easyscoot.md` und
+`evaluation/kriterien.md` bewertet, Rohbeobachtungen dokumentiert und die Ergebnismatrix
+aktualisiert.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/use-case/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easyscoot/chatgpt/use-case auf `generiert` (v1) gesetzt.
+Beobachtung: K1 direkt 3/5, K2 direkt 3/5, K3 direkt 3/5, K4 direkt 3/5. Ausschlaggebend
+sind die falschen beziehungsweise mehrdeutigen Zuordnungen der beiden Sekundaerakteure.
+PlantUML-Code und -Rendering bleiben offen.
