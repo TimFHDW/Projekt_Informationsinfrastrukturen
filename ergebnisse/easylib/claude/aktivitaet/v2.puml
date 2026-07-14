@@ -1,0 +1,34 @@
+@startuml EasyLib-Aktivitaetsdiagramm-v2
+' EasyLib - Aktivitaetsdiagramm (KI: Claude, Prompt v1, 2. Durchlauf -> v2)
+skinparam shadowing false
+title Bibliothekar pflegt ein neues Buchexemplar ein
+
+|Bibliothekar|
+start
+:ISBN bzw. Buchdaten erfassen;
+|EasyLib-System|
+:Verbundkatalog abfragen;
+|Verbundkatalog|
+:Buchdaten suchen und zurueckmelden;
+|EasyLib-System|
+if (Buchdaten im Verbundkatalog gefunden?) then (ja)
+  :Buchdaten importieren;
+else (nein)
+  |Bibliothekar|
+  :Buchdaten manuell eingeben;
+  |EasyLib-System|
+endif
+:Pruefen, ob Werk bereits im Bestand existiert;
+if (Werk bereits im Bestand?) then (ja)
+  :Exemplar zum bestehenden Werk anlegen;
+else (nein)
+  :Werk neu anlegen;
+  :Exemplar zum neuen Werk anlegen;
+endif
+|Bibliothekar|
+:Standort zuweisen (Etage, Regalnummer);
+|EasyLib-System|
+:Exemplar mit Standort speichern;
+:Bestaetigung anzeigen;
+stop
+@enduml

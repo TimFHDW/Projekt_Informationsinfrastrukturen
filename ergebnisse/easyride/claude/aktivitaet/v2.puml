@@ -1,0 +1,29 @@
+@startuml EasyRide-Aktivitaetsdiagramm-v2
+' EasyRide - Aktivitaetsdiagramm (KI: Claude, Prompt v1, 2. Durchlauf -> v2)
+skinparam shadowing false
+title Kunde bucht eine Fahrt
+
+|Kunde|
+start
+:Start- und Zielhaltepunkt eingeben;
+|EasyRide-System|
+:Passendes Fahrzeug bzw. Route suchen;
+:Kapazitaet und Streckenfuehrung pruefen;
+if (Existierende Route erweiterbar\n(Kapazitaet und Strecke passend)?) then (ja)
+  :Route erweitern;
+else (nein)
+  if (Fahrzeug mit freier Kapazitaet verfuegbar?) then (ja)
+    :Neue Route anlegen\n(beginnt und endet an der Zentrale);
+  else (nein)
+    |Kunde|
+    :Ablehnung der Buchung erhalten;
+    stop
+  endif
+endif
+|EasyRide-System|
+:Fahrgast auf Routenhalten einplanen\n(Zustieg am Start, Ausstieg am Ziel);
+:Wartezeit berechnen;
+|Kunde|
+:Wartezeit erhalten;
+stop
+@enduml
