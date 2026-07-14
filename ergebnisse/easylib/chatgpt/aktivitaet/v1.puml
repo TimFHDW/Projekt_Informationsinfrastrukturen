@@ -1,0 +1,48 @@
+@startuml
+title EasyLib – Aktivitätsdiagramm „Neues Buchexemplar einpflegen"
+
+skinparam shadowing false
+skinparam activity {
+  BackgroundColor #FFF4E5
+  BorderColor #9C6500
+  DiamondBackgroundColor #FFF2CC
+  DiamondBorderColor #8A6D1D
+}
+
+|Bibliothekar|
+start
+:ISBN bzw. Suchdaten erfassen;
+
+|EasyLib-System|
+:Verbundkatalog abfragen;
+
+|Verbundkatalog|
+:Buchdaten suchen;
+
+if (Buchdaten im Verbundkatalog gefunden?) then (ja)
+  :Buchdaten bereitstellen;
+  |EasyLib-System|
+  :Buchdaten importieren;
+else (nein)
+  |Bibliothekar|
+  :Buchdaten manuell eingeben;
+endif
+
+|EasyLib-System|
+:Prüfen, ob das Werk bereits\nim Bestand existiert;
+
+if (Werk bereits im Bestand?) then (ja)
+  :Vorhandenes Werk verwenden;
+else (nein)
+  :Neues Werk anlegen;
+endif
+
+:Neues Exemplar mit eindeutiger ID anlegen;
+
+|Bibliothekar|
+:Standort zuweisen\n(Etage, Regalnummer);
+
+|EasyLib-System|
+:Exemplar speichern und Bestand aktualisieren;
+stop
+@enduml

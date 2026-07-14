@@ -47,7 +47,7 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
 
 ## Noch zu tun (DoD)
 - [ ] Reproduktion in frischer, isolierter Session (Methodik)
-- [ ] v1-direkt.png (direkt generiertes Bild) nachliefern
+- [x] v1-direkt.png ergaenzt am 2026-07-06 (Cowork-SVG + librsvg-Render; Journal 15:52)
 - [ ] PlantUML rendern -> v1-plantuml.png/.svg; Renderweg hier notieren
 - [ ] K1/K4 in evaluation.md finalisieren; K2/K3 unabhaengig bestaetigen
 - [ ] Commit: ergebnis(easyride/claude): aktivitaet v1 + evaluation

@@ -38,7 +38,7 @@ Bestätige kurz, dass du die Systembeschreibung gelesen hast, und nenne die Akte
 externen Systeme, die du erkennst. Erstelle noch kein Diagramm.
 
 ---
-SYSTEMBESCHREIBUNG „EasyScoot" (Inhalt des Lastenhefts in eigenen Worten):
+SYSTEMBESCHREIBUNG „EasyScoot":
 
 EasyScoot ist die neu zu entwickelnde Software eines E-Scooter-Verleihs. In
 einer Stadt stehen E-Scooter an wechselnden Orten bereit; Kunden buchen sie

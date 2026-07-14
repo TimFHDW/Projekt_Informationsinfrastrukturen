@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Bewertet von | Claude (Cowork) – vorlaeufige Selbstbewertung, unabhaengige Pruefung durch Teammitglied ausstehend |
-| Datum | 2026-07-06 |
+| Datum | 2026-07-06 (v1.puml); Nachtrag direktes Bild: 2026-07-07 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/klassendiagramm/easylib-v1.md` |
 | Rendering-Weg | ausstehend – in dieser Session kein PlantUML-Rendering moeglich |
@@ -22,7 +22,13 @@ Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 - Struktur-Vorpruefung (nicht renderfrei-bestaetigend): `@startuml/@enduml` paarig, alle
   `note`-Bloecke paarig geschlossen, 11 Typen (1 Enum, 1 abstrakte + 8 Klassen + 2 externe
   Systeme), Enum `Genre` mit 9 Werten. Endgueltige K1-Bewertung erst nach Rendering.
-- Direktes Bild – UML-Notation korrekt?: n. v. – es wurde keine „direkt"-Bildform erzeugt (nur PlantUML)
+- Direktes Bild (`v1-direkt-easylib.png`, Nachtrag 2026-07-07) – UML-Notation korrekt?:
+  ja (vorlaeufige Selbstbewertung): abstrakte Klasse `Medium` kursiv, Vererbung mit hohlem
+  Dreieck, Komposition Medium–Exemplar mit gefuellter Raute, `«enumeration»` Genre mit 9
+  Werten, `«external system»`-Stereotypen, gestrichelte Abhaengigkeiten mit offener
+  Pfeilspitze, Multiplizitaeten an allen Assoziationen (Autor 1..*), `{unique}`/`[0..1]`
+  an Attributen. Einschraenkung: Bild nachtraeglich aus `v1.puml` abgeleitet (siehe
+  notizen.md, Nachtrag).
 
 ## K2 – Inhaltliche Korrektheit — Score: 4 (vorlaeufig)
 
@@ -56,16 +62,24 @@ Abgleich mit `lastenhefte/easylib.md`, konkrete Befunde:
   (Adresse/Standort); Bibliotheksausweis als Attribute (kundenID, lichtbild) statt eigener
   Klasse; Ausleihe-/Reservierungsstatus nicht als Enum, sondern aus Assoziationen ableitbar;
   kein eigenes „Bibliothek/Katalog"-Objekt zur Verankerung der Bestandssuche.
-- Artefakt-Ebene (nicht K3, aber DoD-relevant): „direkt"-Bildform fehlt; Rendering steht aus.
+- Artefakt-Ebene (nicht K3, aber DoD-relevant): direktes Bild liegt vor
+  (`v1-direkt-easylib.png`, 2026-07-07); PlantUML-Rendering steht weiterhin aus.
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
 - PlantUML-Rendering — Score: offen, Befunde: noch nicht gerendert.
-- Direktes Bild — Score: n. v., Befunde: keine „direkt"-Bildform erzeugt.
+- Direktes Bild — Score: 4 (vorlaeufig, Selbstbewertung 2026-07-07). Befunde: Werk-/
+  Exemplar-/Vorgangs-Ebenen klar getrennt, externe Systeme rechts abgesetzt, keine
+  Ueberlappungen; Abzuege: lange Randkante Medium–Reservierung („betrifft") ueber den linken
+  Bildrand, zwei nah beieinander laufende Vertikalkanten („umfasst"/„taetigt") zwischen
+  Kunde und Exemplar.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar: nur PlantUML-Form vorhanden, kein direktes Bild, kein Rendering.
+- Direktes Bild liegt vor (2026-07-07); PlantUML-Rendering weiterhin offen, Layout-Vergleich
+  daher noch nicht moeglich. Wichtig: Das direkte Bild wurde nachtraeglich aus `v1.puml`
+  abgeleitet – inhaltliche Uebereinstimmung ist konstruktionsbedingt und kein unabhaengiger
+  Befund; fuer `vergleiche/plantuml-vs-direkt.md` nur die Zeichenqualitaet (K4) heranziehen.
 
 ## Was haetten wir anders modelliert?
 

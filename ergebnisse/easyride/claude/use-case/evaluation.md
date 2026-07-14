@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| Bewertet von | Alex (mit Claude/Cowork) |
-| Datum | 2026-07-06 |
+| Bewertet von | Alex (mit Claude/Cowork); Direktbild-Abschnitte: Claude-Selbstbewertung (vorlaeufig) |
+| Datum | 2026-07-06 (v1.puml); Nachtrag direktes Bild: 2026-07-07 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyride-v1.md` |
 | Rendering-Weg | noch offen (jar-Download blockiert, s. notizen.md) |
@@ -15,7 +15,11 @@ Skalen und Regeln: `evaluation/kriterien.md`. Jeder Score braucht Befunde.
 - PlantUML kompiliert ohne Korrektur: noch nicht geprueft (kein Renderer verfuegbar)
 - Fehlerliste (aus `notizen.md` / `vN-korrigiert.puml`): Sichtpruefung ohne Befund;
   verbindliche Bewertung erst nach Rendering
-- Direktes Bild – UML-Notation korrekt?: n. a., v1-direkt.png liegt nicht vor
+- Direktes Bild (`v1-direkt-easyride.png`, Nachtrag 2026-07-07) – UML-Notation korrekt?:
+  ja (vorlaeufige Selbstbewertung): Akteure als Strichmaennchen ausserhalb der benannten
+  Systemgrenze "EasyRide", Use Cases als Ellipsen, ungerichtete Assoziationen; keine
+  include/extend (wie im Modell). Einschraenkung: Bild nachtraeglich aus `v1.puml`
+  abgeleitet (s. notizen.md, Nachtrag).
 
 ## K2 – Inhaltliche Korrektheit — Score: 5/5 (vorlaeufig)
 
@@ -35,15 +39,23 @@ Abgleich mit `lastenhefte/easyride.md`, konkrete Befunde:
 - Mindestanforderung erfuellt (UC >= 5): ja, genau 5 Use Cases
 - Fehlende zentrale Elemente: keine gefunden. Beide Leistungslisten sind
   vollstaendig abgebildet; das Lastenheft nennt keine weiteren Nutzerleistungen.
+- Artefakt-Ebene (DoD): direktes Bild liegt vor (`v1-direkt-easyride.png`, 2026-07-07);
+  PlantUML-Rendering steht weiterhin aus.
 
 ## K4 – Lesbarkeit / Zeichenqualitaet
 
 - PlantUML-Rendering — Score: _/5 (offen), Befunde: Rendering steht aus
-- Direktes Bild — Score: _/5 (offen), Befunde: liegt nicht vor
+- Direktes Bild — Score: 5/5 (vorlaeufig, Selbstbewertung 2026-07-07). Befunde: klares
+  Spaltenlayout, keine Kanten- oder Elementueberlappungen, alle Beschriftungen frei und
+  lesbar; mit 5 Use Cases und 2 Akteuren das einfachste der drei Use-Case-Diagramme.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar: direkte Bildform fehlt (s. notizen.md).
+- Direktes Bild liegt vor (2026-07-07); PlantUML-Rendering weiterhin offen, ein
+  Layout-Vergleich ist daher noch nicht moeglich. Wichtig: Das direkte Bild wurde
+  nachtraeglich aus `v1.puml` abgeleitet – inhaltliche Uebereinstimmung ist
+  konstruktionsbedingt und kein unabhaengiger Befund; fuer
+  `vergleiche/plantuml-vs-direkt.md` nur die Zeichenqualitaet (K4) heranziehen.
 
 ## Was haetten wir anders modelliert?
 

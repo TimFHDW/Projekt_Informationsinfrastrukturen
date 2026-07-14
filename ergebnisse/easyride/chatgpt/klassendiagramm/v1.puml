@@ -1,0 +1,74 @@
+@startuml
+title EasyRide – Klassendiagramm
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+
+class Kunde {
+  - kundenId: String
+  - name: String
+  + fahrtBuchen(start: Haltepunkt, ziel: Haltepunkt): Fahrt
+}
+
+class Fahrt {
+  - fahrtId: String
+  - status: String
+  + wartezeitBerechnen(): Dauer
+  + restfahrzeitBerechnen(): Dauer
+}
+
+class Fahrer {
+  - fahrerId: String
+  - name: String
+  + naechstenHaltepunktAbfragen(): Routenhalt
+  + ankunftBestaetigen(halt: Routenhalt): void
+}
+
+class Fahrzeug {
+  - fahrzeugId: String
+  - anzahlSitzplaetze: int
+}
+
+class Route {
+  - routeId: String
+  + haltHinzufuegen(halt: Routenhalt): void
+}
+
+class Routenhalt {
+  - position: int
+}
+
+class Haltepunkt {
+  - name: String
+  - istZentrale: boolean
+}
+
+class Verbindung {
+  - durchschnittlicheFahrzeit: Dauer
+}
+
+Kunde "1" -- "0..*" Fahrt : bucht >
+Fahrt "0..*" --> "1" Haltepunkt : start
+Fahrt "0..*" --> "1" Haltepunkt : ziel
+Fahrt "0..*" -- "1" Route : eingeplant in >
+Fahrzeug "1" -- "0..*" Route : fährt >
+Fahrer "1" -- "0..1" Fahrzeug : steuert >
+Route "1" *-- "2..*" Routenhalt : halte {ordered}
+Routenhalt "0..*" --> "1" Haltepunkt : liegt an >
+Routenhalt "0..*" -- "0..*" Kunde : nimmt auf >
+Routenhalt "0..*" -- "0..*" Kunde : setzt ab >
+Verbindung "0..*" -- "2" Haltepunkt : verbindet
+
+note right of Fahrzeug
+  {Zu keinem Zeitpunkt:
+  Anzahl eingeplanter Fahrgäste
+  <= Anzahl Sitzplätze}
+end note
+
+note right of Route
+  {Jede Route beginnt und endet
+  an der Zentrale; dort kein
+  Ein- oder Ausstieg}
+end note
+@enduml

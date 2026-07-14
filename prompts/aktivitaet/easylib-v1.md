@@ -49,7 +49,7 @@ die externen Systeme und die zentralen Fachbegriffe. Erstelle noch kein
 Diagramm.
 
 ---
-SYSTEMBESCHREIBUNG „EasyLib" (Inhalt des Lastenhefts in eigenen Worten):
+SYSTEMBESCHREIBUNG „EasyLib":
 
 EasyLib ist die neu zu entwickelnde Software für das Bestands- und
 Ausleihemanagement einer Bücherei; sie löst eine veraltete Altsoftware ab.

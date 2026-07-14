@@ -30,4 +30,12 @@ Zwei Schritte, beide in derselben frischen Chat-Session:
    (b) PlantUML-Code. Falls eine KI das nicht in einem Durchlauf kann: in zwei Teilprompts
    in derselben frischen Session ausführen und das in `notizen.md` der Zelle dokumentieren.
 3. Mindestanforderungen aus der Aufgabenstellung müssen im Prompt abgedeckt sein:
-   Use-
+   Use-Case-Diagramm ≥ 5 Use Cases, Aktivitätsdiagramm ≥ 5 Aktivitäten,
+   Sequenzdiagramm ≥ 5 Methodenaufrufe.
+4. **Frische Chat-Session pro Durchlauf** (kein Kontext aus früheren Generierungen; die
+   zwei Schritte einer Datei gehören zu EINEM Durchlauf).
+5. Welche Prompt-Version für ein Ergebnis verwendet wurde, steht in der `evaluation.md`
+   der Zelle und in der `ergebnismatrix.md`.
+
+Herkunft der Prompts: `dokumentation/quelle-ki-prompts-oose1.md` (OOSE-I-Sammlung mit
+ausführlichen Begründungen je Prompt).

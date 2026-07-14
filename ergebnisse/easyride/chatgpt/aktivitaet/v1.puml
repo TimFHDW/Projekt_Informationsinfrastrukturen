@@ -1,0 +1,35 @@
+@startuml
+title EasyRide – Aktivitätsdiagramm „Kunde bucht eine Fahrt"
+
+skinparam shadowing false
+skinparam activity {
+  BackgroundColor #EAF2F8
+  BorderColor #2E5D7B
+  DiamondBackgroundColor #FFF2CC
+  DiamondBorderColor #8A6D1D
+}
+
+|Kunde|
+start
+:Start- und Zielhaltepunkt erfassen;
+
+|EasyRide-System|
+:Passendes Fahrzeug und Route suchen;
+
+if (Passendes Fahrzeug gefunden?) then (ja)
+  :Kapazität prüfen;
+  if (Existierende Route erweiterbar\n(Kapazität und Strecke passend)?) then (ja)
+    :Route erweitern;
+  else (nein)
+    :Neue Route anlegen\n(Start und Ende: Zentrale);
+  endif
+  :Fahrgast auf Routenhalte einplanen;
+  :Wartezeit berechnen;
+  |Kunde|
+  :Wartezeit mitteilen;
+  stop
+else (nein)
+  :Keine verfügbare Fahrt mitteilen;
+  stop
+endif
+@enduml

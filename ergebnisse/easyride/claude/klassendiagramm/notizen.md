@@ -41,9 +41,26 @@ Roh-Beobachtungen aus der Generierung. Ergaenzt die strukturierte Bewertung in `
   nicht; bewusst weggelassen).
 - `Fahrt`-`Fahrzeug`-Zuteilung als 0..1 modelliert (zum Buchungszeitpunkt evtl. noch offen).
 
+## Nachtrag 2026-07-07: direkt generiertes Bild (`v1-direkt-easyride.png`)
+- Erzeugt am 2026-07-07 (~18:45 CEST) in laufender Cowork-Session (Claude, im Auftrag von
+  Linus). Grundlage: Schritt-2-Vorgaben aus `prompts/klassendiagramm/easyride-v1.md` und das
+  bereits abgelegte `v1.puml` als Modellbasis (Prompt-Regel: beide Ausgabeformen muessen
+  inhaltlich uebereinstimmen).
+- Tooling: Claude hat das Bild selbst gezeichnet (eigenes Python/Pillow-Zeichenskript der KI,
+  Layout und Koordinaten von der KI bestimmt) – KEINE PlantUML-Beteiligung. PNG 3320x2300 px.
+- Methodik-Abweichungen: (1) erneut keine frische, isolierte Session; (2) Bild nicht im selben
+  Durchlauf wie der PlantUML-Code entstanden, sondern nachtraeglich aus `v1.puml` abgeleitet –
+  die inhaltliche Uebereinstimmung PlantUML vs. direkt ist damit konstruktionsbedingt und
+  NICHT als unabhaengiger Befund fuer `vergleiche/plantuml-vs-direkt.md` verwertbar (dort nur
+  Zeichenqualitaet/K4 vergleichen); (3) alle drei Klassendiagramm-Bilder in einer Sitzung
+  erzeugt -> moeglicher Struktur-Uebertrag zwischen den Systemen.
+- Namensabweichung: AGENTS.md/DoD sieht `v1-direkt.png` vor; auf ausdruecklichen Wunsch von
+  Linus mit Systemnamen benannt (`v1-direkt-easyride.png`).
+
 ## Noch zu tun (DoD)
 - [ ] Reproduktion in frischer, isolierter Session
-- [ ] `v1-direkt.png` (direkt generiertes Bild) nachliefern
+- [x] `v1-direkt-easyride.png` (direkt generiertes Bild) – nachgeliefert am 2026-07-07,
+      siehe Nachtrag oben
 - [ ] PlantUML rendern -> `v1-plantuml.png/.svg`; Renderweg notieren
 - [ ] K1/K4 in `evaluation.md` finalisieren; K2/K3 unabhaengig bestaetigen
 - [ ] Commit: `ergebnis(easyride/claude): klassendiagramm v1 + evaluation`
