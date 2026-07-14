@@ -26,7 +26,7 @@ Regeln für die gesamte Konversation:
    auf Deutsch.
 3. Gib jedes Diagramm in zwei Formen aus: (a) als von dir direkt
    gezeichnetes/generiertes Diagrammbild und (b) als PlantUML-Code in einem
-   Codeblock; beide müssen inhaltlich übereinstimmen. Ergänze jeweils eine
+   Codeblock. Ergänze jeweils eine
    kurze Erläuterung deiner Modellierungsentscheidungen.
 4. Verwende korrekte UML-2-Notation.
 5. Liste am Ende jeder Antwort deine Annahmen und erkannte Unklarheiten in

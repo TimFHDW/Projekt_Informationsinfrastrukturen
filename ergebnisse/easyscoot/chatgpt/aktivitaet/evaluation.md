@@ -7,14 +7,13 @@
 | PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/aktivitaet/easyscoot-v1.md` |
-| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
-- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block, ausgeglichene Klammern und 1 `if`/1 `endif`); keine Aussage über die Kompilierbarkeit.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 3 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
+- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block, ausgeglichene Klammern und 1 `if`/1 `endif`); Kompilierbarkeit am 2026-07-14 bestaetigt (fehlerfrei gerendert).
 - Direktes Bild – UML-Notation korrekt?: Start- und Endknoten, Aktionen, Kontrollflüsse und drei Swimlanes sind erkennbar. Die gestrichelten Verbindungen zum Rechnungssystem sind in diesem Kontrollflussdiagramm nicht eindeutig als UML-Kontroll- oder Objektflüsse notiert. Eine Entscheidung fehlt vollständig; dies wird zusätzlich unter K3 gewertet.
 
 ## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 3/5
@@ -36,12 +35,12 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 5, Befunde: gerendert; saubere 3-Swimlane-Struktur (Preis im Rechnungssystem).
 - Direktes Bild — Score: 5/5, Befunde: klare drei Swimlanes, gut lesbare Beschriftungen, keine Überlappungen oder abgeschnittenen Elemente. Die gestrichelten Verbindungen bleiben semantisch uneindeutig, beeinträchtigen die optische Lesbarkeit aber kaum.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: Der Code ergänzt die im Direktbild fehlende Entscheidung und ordnet Nutzungsende, Fahrtdatenerfassung und Preisberechnung fachlich korrekt zu.
+- Inhaltlich vergleichbar, mit gerendertem PlantUML-Layout (2026-07-14): Der Code ergänzt die im Direktbild fehlende Entscheidung und ordnet Nutzungsende, Fahrtdatenerfassung und Preisberechnung fachlich korrekt zu.
 
 ## Was hätten wir anders modelliert?
 
