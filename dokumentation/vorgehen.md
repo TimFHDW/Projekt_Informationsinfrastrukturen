@@ -886,3 +886,24 @@ jetzt auch npm 403) - lokal rendern wie bei v1. Methodik wie zuvor: laufende Ses
 Diagramme in einer Sitzung (moeglicher Struktur-Uebertrag). Commits lokal, kein Push
 (Wunsch Alex).
 
+
+## 2026-07-14 | 16:42 | Claude (im Auftrag von Linus)
+Schritt: Zweiter Generierungsdurchlauf der Sequenzdiagramme der Claude-Spalte: Prompts
+prompts/sequenz/<system>-v1.md unveraendert erneut ausgefuehrt; je Zelle v2.puml und - im
+selben Durchlauf - das direkt gezeichnete Bild v2-direkt.png erzeugt (eigenes
+Python/Pillow-Zeichenskript der KI, keine PlantUML-Beteiligung). Benennung ohne
+Systemnamen, wie bei den Aktivitaetsdiagramm-v2-Zellen.
+Ergebnis: ergebnisse/{easyride,easyscoot,easylib}/claude/sequenz/{v2.puml, v2-direkt.png};
+Nachtraege in den sechs notizen.md/evaluation.md; evaluation/ergebnismatrix.md ergaenzt
+(Status "evaluiert (v1); v2 generiert" + Hinweis unter Offene Punkte).
+Beobachtung: Versionierungs-Abweichung wie bei aktivitaet dokumentiert: v2 = 2. Durchlauf
+mit Prompt v1 (Wunsch Linus), nicht Prompt-Iteration - als Durchlauf-Varianz-Befund
+nutzbar. Inhaltlich weicht v2 sichtbar von v1 ab (easyride: Buchung statt Fahrt als
+Lebenslinie, andere Methodennamen -> Namenskonsistenz zum Klassendiagramm v1 nicht
+gegeben; easyscoot: berechnePreis(dauer, kilometer, wattstunden) wie im Prompt-Beispiel;
+easylib: Systemfassade erzeugt Ausleihe per create, expliziter Ablehnungspfad). Nach
+Sichtpruefung wurden zu lange Nachrichtenbeschriftungen der Direktbilder vor der Ablage
+umgebrochen (nur Layout, keine inhaltliche Aenderung). Kein v2-plantuml.png: Rendering in
+der Cowork-Umgebung weiterhin blockiert (npm 403, kein jar) - lokal rendern wie bei v1.
+Methodik wie zuvor: laufende Session, drei Diagramme in einer Sitzung (moeglicher
+Struktur-Uebertrag). Commits lokal, kein Push.
