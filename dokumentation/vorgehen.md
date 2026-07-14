@@ -887,6 +887,42 @@ Diagramme in einer Sitzung (moeglicher Struktur-Uebertrag). Commits lokal, kein 
 (Wunsch Alex).
 
 
+## 2026-07-14 | 16:42 | Claude (im Auftrag von Linus)
+Schritt: Zweiter Generierungsdurchlauf der Sequenzdiagramme der Claude-Spalte: Prompts
+prompts/sequenz/<system>-v1.md unveraendert erneut ausgefuehrt; je Zelle v2.puml und - im
+selben Durchlauf - das direkt gezeichnete Bild v2-direkt.png erzeugt (eigenes
+Python/Pillow-Zeichenskript der KI, keine PlantUML-Beteiligung). Benennung ohne
+Systemnamen, wie bei den Aktivitaetsdiagramm-v2-Zellen.
+Ergebnis: ergebnisse/{easyride,easyscoot,easylib}/claude/sequenz/{v2.puml, v2-direkt.png};
+Nachtraege in den sechs notizen.md/evaluation.md; evaluation/ergebnismatrix.md ergaenzt
+(Status "evaluiert (v1); v2 generiert" + Hinweis unter Offene Punkte).
+Beobachtung: Versionierungs-Abweichung wie bei aktivitaet dokumentiert: v2 = 2. Durchlauf
+mit Prompt v1 (Wunsch Linus), nicht Prompt-Iteration - als Durchlauf-Varianz-Befund
+nutzbar. Inhaltlich weicht v2 sichtbar von v1 ab (easyride: Buchung statt Fahrt als
+Lebenslinie, andere Methodennamen -> Namenskonsistenz zum Klassendiagramm v1 nicht
+gegeben; easyscoot: berechnePreis(dauer, kilometer, wattstunden) wie im Prompt-Beispiel;
+easylib: Systemfassade erzeugt Ausleihe per create, expliziter Ablehnungspfad). Nach
+Sichtpruefung wurden zu lange Nachrichtenbeschriftungen der Direktbilder vor der Ablage
+umgebrochen (nur Layout, keine inhaltliche Aenderung). Kein v2-plantuml.png: Rendering in
+der Cowork-Umgebung weiterhin blockiert (npm 403, kein jar) - lokal rendern wie bei v1.
+Methodik wie zuvor: laufende Session, drei Diagramme in einer Sitzung (moeglicher
+Struktur-Uebertrag). Commits lokal, kein Push.
+
+## 2026-07-14 | 16:49 | Claude (im Auftrag von Linus)
+Schritt: Git-Zwischenfall bei den sequenz-v2-Commits dokumentiert und repariert. Die
+Cowork-Sandbox darf im Projektordner keine Dateien loeschen (unlink blockiert); dadurch
+blieben nach dem ersten Commit stale Lockdateien (.git/index.lock, .git/HEAD.lock) liegen
+und .git/index wurde durch die Sync-Schicht genullt ("bad signature 0x00000000").
+Ergebnis: Index aus HEAD neu aufgebaut (read-tree in externen Index, per Kopie
+zurueckgeschrieben - kein Loeschen noetig); stale Locks und tmp_obj-Reste per Umbenennen
+nach .git/stale-locks-20260714/ verschoben (bitte lokal manuell loeschen, aus der Sandbox
+nicht moeglich); restliche Commits ueber externen Index (GIT_INDEX_FILE) ausgefuehrt.
+Alle 5 sequenz-v2-Commits liegen vor; git fsck: Objektstore in Ordnung (nur dangling
+trees der Fehlversuche).
+Beobachtung: Fuer kuenftige Cowork-Sessions in diesem Repo Commits besser direkt lokal
+ausfuehren oder Loesch-Freigabe erteilen; die Zeichenskript-Datei wurde von derselben
+Sync-Schicht einmal am Dateiende abgeschnitten (repariert, Ergebnis unbeeinflusst).
+
 ## 2026-07-14 | 17:15 | Claude (im Auftrag von Lewin)
 Schritt: Zweiter Generierungsdurchlauf der Klassendiagramme der Claude-Spalte (Auftrag: die
 drei Prompts prompts/klassendiagramm/<system>-v1.md ausfuehren und die direkt erstellten

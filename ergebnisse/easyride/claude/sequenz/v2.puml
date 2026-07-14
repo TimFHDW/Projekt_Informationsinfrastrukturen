@@ -1,0 +1,53 @@
+@startuml EasyRide-Sequenz-Ankunft-v2
+' EasyRide – Sequenzdiagramm: "Fahrer bestaetigt das Erreichen eines Haltepunkts"
+' (KI: Claude, Prompt v1, 2. Generierungsdurchlauf -> v2)
+skinparam shadowing false
+autonumber
+
+actor "Fahrer (Tablet)" as fahrer
+participant ":EasyRide" as sys
+participant "route : Route" as route
+participant "buchung : Buchung" as buchung
+
+fahrer -> sys : halteErreicht(haltepunkt : Haltepunkt)
+activate sys
+
+sys -> route : aktualisiereFortschritt(haltepunkt : Haltepunkt)
+activate route
+route --> sys : erreichterHalt : Routenhalt
+deactivate route
+
+sys -> route : ermittleNaechstenHalt() : Routenhalt
+activate route
+route --> sys : naechsterHalt
+deactivate route
+
+sys -> route : ermittleEinUndAussteiger(naechsterHalt : Routenhalt)
+activate route
+route --> sys : einsteiger : Liste<Fahrgast>,\naussteiger : Liste<Fahrgast>
+deactivate route
+
+loop fuer jede Buchung der noch befoerderten Fahrgaeste
+  sys -> buchung : aktualisiereRestfahrzeit(erreichterHalt : Routenhalt)
+  activate buchung
+  buchung --> sys : restfahrzeitMinuten : int
+  deactivate buchung
+end
+
+note right
+  Restfahrzeit = Summe der durchschnittlichen
+  Fahrzeiten ab dem zuletzt erreichten
+  Haltepunkt bis zum Ziel (Lastenheft)
+end note
+
+sys --> fahrer : naechsterHalt inkl. Namen der\nEin- und Aussteiger
+deactivate sys
+
+note over sys, buchung
+  Im Klassendiagramm gedanklich zu ergaenzen:
+  Systemfassade EasyRide.halteErreicht(haltepunkt),
+  Route.aktualisiereFortschritt(), Route.ermittleNaechstenHalt(),
+  Route.ermittleEinUndAussteiger(),
+  Buchung.aktualisiereRestfahrzeit().
+end note
+@enduml

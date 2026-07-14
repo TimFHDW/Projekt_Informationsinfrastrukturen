@@ -1,0 +1,66 @@
+@startuml EasyLib-Sequenz-Ausleihe-v2
+' EasyLib – Sequenzdiagramm: "Bibliothekar verleiht ein Buchexemplar an einen Kunden"
+' (KI: Claude, Prompt v1, 2. Generierungsdurchlauf -> v2)
+skinparam shadowing false
+autonumber
+
+actor Bibliothekar as bib
+participant ":EasyLib" as sys
+participant "kunde : Kunde" as kunde
+participant "exemplar : Exemplar" as ex
+
+bib -> sys : verleiheExemplar(kundenId : String,\nexemplarId : String)
+activate sys
+
+sys -> sys : findeKunde(kundenId) : Kunde
+sys -> sys : findeExemplar(exemplarId) : Exemplar
+
+sys -> ex : pruefeVerfuegbarkeit(kunde : Kunde) : boolean
+activate ex
+ex --> sys : verfuegbar
+deactivate ex
+
+note right
+  verfuegbar = nicht verliehen UND keine
+  entgegenstehende Reservierung eines
+  anderen Kunden
+end note
+
+alt verfuegbar
+
+  create participant "ausleihe : Ausleihe" as aus
+  sys -> aus : <<create>> Ausleihe(kunde, exemplar,\nleihfrist = heute + 28 Tage)
+  activate aus
+  aus --> sys : ausleihe
+  deactivate aus
+
+  sys -> ex : setzeAusgeliehen(ausleihe : Ausleihe)
+  activate ex
+  ex --> sys : ok
+  deactivate ex
+
+  sys -> kunde : fuegeAusleiheHinzu(ausleihe : Ausleihe)
+  activate kunde
+  kunde --> sys : ok
+  deactivate kunde
+
+  sys --> bib : Bestaetigung: Ausleihe angelegt\n(Leihfrist heute + 28 Tage)
+
+else nicht verfuegbar
+
+  sys --> bib : Ablehnung: Exemplar nicht verfuegbar
+
+end
+
+deactivate sys
+
+note over kunde, aus
+  Ausgeliehen wird das physische Exemplar, reserviert das Werk
+  (Buch/Hoerbuch) - konsistent zur Werk/Exemplar-Trennung.
+  Im Klassendiagramm gedanklich zu ergaenzen:
+  EasyLib.verleiheExemplar/findeKunde/findeExemplar,
+  Exemplar.pruefeVerfuegbarkeit(), Exemplar.setzeAusgeliehen(),
+  Kunde.fuegeAusleiheHinzu(), Konstruktor Ausleihe(...).
+  Leihfrist 28 Tage = Annahme (Lastenheft nennt keine Dauer).
+end note
+@enduml

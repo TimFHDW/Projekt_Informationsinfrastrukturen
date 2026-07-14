@@ -1,0 +1,53 @@
+@startuml EasyScoot-Sequenz-NutzungBeenden-v2
+' EasyScoot – Sequenzdiagramm: "Kunde beendet die Nutzung eines E-Scooters"
+' (KI: Claude, Prompt v1, 2. Generierungsdurchlauf -> v2)
+skinparam shadowing false
+autonumber
+
+actor "Kunde (Smartphone-App)" as kunde
+participant ":EasyScoot" as sys
+participant "escooter : EScooter\n(externe Mobilfunk-Software)" as sc
+participant "fahrt : Fahrt" as fahrt
+participant "Rechnungssystem" as rs <<external>>
+
+kunde -> sys : beendeNutzung(escooterId : String)
+activate sys
+
+sys -> sc : sperre()
+activate sc
+sc --> sys : gesperrt (fahrstatus = stehend)
+deactivate sc
+
+sys -> sys : setzeLeihstatus(escooterId,\nLeihstatus.NICHT_IN_BENUTZUNG)
+
+sys -> fahrt : schliesseAb(endzeit : Zeitpunkt,\nendposition : Position)
+activate fahrt
+fahrt --> sys : ok
+deactivate fahrt
+
+sys -> fahrt : gibFahrtdaten()
+activate fahrt
+fahrt --> sys : dauer : int, kilometer : double,\nwattstunden : double
+deactivate fahrt
+
+sys -> rs : berechnePreis(dauer, kilometer, wattstunden) : double
+activate rs
+rs --> sys : preis
+deactivate rs
+
+sys -> fahrt : hinterlegePreis(preis : double)
+activate fahrt
+fahrt --> sys : ok
+deactivate fahrt
+
+sys --> kunde : Fahrtzusammenfassung (dauer, kilometer,\nwattstunden, preis)
+deactivate sys
+
+note over sys, rs
+  Preisberechnung ausschliesslich durch das angebundene
+  Rechnungssystem (Lastenheft). Im Klassendiagramm gedanklich
+  zu ergaenzen: Systemfassade EasyScoot.beendeNutzung/
+  setzeLeihstatus, EScooter.sperre(), Fahrt.schliesseAb(),
+  Fahrt.gibFahrtdaten(), Fahrt.hinterlegePreis().
+end note
+@enduml

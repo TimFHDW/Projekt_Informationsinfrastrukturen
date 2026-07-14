@@ -12,7 +12,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 | easyride | claude | klassendiagramm | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 4 | PU 3 / direkt 4 |
 | easyride | claude | use-case | evaluiert | v1 | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
 | easyride | claude | aktivitaet | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
-| easyride | claude | sequenz | evaluiert | v1 | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
+| easyride | claude | sequenz | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
 | easyride | chatgpt | klassendiagramm | evaluiert | v1 | PU 5 / direkt 5 | PU 5 / direkt 2 | PU 5 / direkt 3 | PU 4 / direkt 5 |
 | easyride | chatgpt | use-case | evaluiert | v1 | PU 5 / direkt 4 | PU 5 / direkt 5 | PU 5 / direkt 5 | PU 4 / direkt 5 |
 | easyride | chatgpt | aktivitaet | evaluiert | v1 | PU 5 / direkt 3 | PU 5 / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 5 |
@@ -24,7 +24,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 | easyscoot | claude | klassendiagramm | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 4 | PU 4 / direkt 4 |
 | easyscoot | claude | use-case | evaluiert | v1 | PU 5 / direkt 5 | 5 | 5 | PU 4 / direkt 4 |
 | easyscoot | claude | aktivitaet | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
-| easyscoot | claude | sequenz | evaluiert | v1 | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
+| easyscoot | claude | sequenz | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
 | easyscoot | chatgpt | klassendiagramm | evaluiert | v1 | PU 5 / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU 5 / direkt 5 |
 | easyscoot | chatgpt | use-case | evaluiert | v1 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU 4 / direkt 3 |
 | easyscoot | chatgpt | aktivitaet | evaluiert | v1 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU 5 / direkt 5 |
@@ -36,7 +36,7 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 | easylib | claude | klassendiagramm | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 4 | PU 4 / direkt 4 |
 | easylib | claude | use-case | evaluiert | v1 | PU 5 / direkt 5 | 5 | 5 | PU 4 / direkt 4 |
 | easylib | claude | aktivitaet | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 5 | 5 | PU 5 / direkt 5 |
-| easylib | claude | sequenz | evaluiert | v1 | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
+| easylib | claude | sequenz | evaluiert (v1); v2 generiert | v1 (v2 = 2. Durchlauf) | PU 5 / direkt 5 | 4 | 5 | PU 4 / direkt 4 |
 | easylib | chatgpt | klassendiagramm | evaluiert | v1 | PU 5 / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU 5 / direkt 5 |
 | easylib | chatgpt | use-case | evaluiert | v1 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU 3 / direkt 3 |
 | easylib | chatgpt | aktivitaet | evaluiert | v1 | PU 5 / direkt 3 | PU 5 / direkt 4 | PU 5 / direkt 3 | PU 5 / direkt 5 |
@@ -62,3 +62,5 @@ Notation Scores: `PU` = PlantUML-Rendering, `direkt` = direkt gezeichnetes KI-Bi
 - **klassendiagramm/claude v2 (3 Zellen):** 2. Durchlauf mit Prompt v1 am 14.07. generiert (`v2.puml` + `v2-direkt.png` + `v2-plantuml.png`; alle drei `v2.puml` kompilieren fehlerfrei, Renderweg plantuml.jar 1.2019.06 via npm node-plantuml; s. notizen.md-Nachtraege); K2-K4-Bewertung von v2 offen.
 - **Propagierung in die einzelnen `evaluation.md`:** Die K1/K4-PlantUML-Scores stehen bisher nur in dieser Matrix; in den 24 `evaluation.md` sind die K1/K4-PU-Zeilen teils noch als „offen/ausstehend" markiert (Folgeschritt).
 
+
+- **sequenz/claude v2 (3 Zellen):** 2. Durchlauf mit Prompt v1 am 14.07. generiert (`v2.puml` + `v2-direkt.png`, 

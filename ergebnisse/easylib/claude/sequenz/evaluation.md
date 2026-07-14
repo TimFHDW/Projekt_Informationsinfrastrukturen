@@ -76,3 +76,13 @@ Abgleich mit `lastenhefte/easylib.md` und Prompt-Szenario, konkrete Befunde:
 
 - Methodik-Abweichungen (laufende Session, kein Zweischritt-Ablauf, kein
   direkt-Bild): siehe `notizen.md`.
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1) - Bewertung offen
+- `v2.puml` und `v2-direkt.png` liegen vor (s. notizen.md, Nachtrag v2). Diese Datei
+  bewertet weiterhin v1; die v2-Bewertung (K1-K4) steht aus, u. a. weil das
+  PlantUML-Rendering von `v2.puml` noch fehlt (Umgebung blockiert Renderer, lokal rendern).
+- Vorlaeufige Sichtpruefung v2: Mindestanforderungen des Prompts erfuellt (>= 5
+  Methodenaufrufe, geforderte Lebenslinien vorhanden, synchrone Aufrufe mit
+  Antwortpfeilen, Methodensignaturen mit Parametern).
+- easylib-spezifisch: Ausleihe wird per create-Nachricht erzeugt; verliehen wird das
+  Exemplar (nicht das Buch) - beide Spezialanforderungen des Prompts erfuellt.
