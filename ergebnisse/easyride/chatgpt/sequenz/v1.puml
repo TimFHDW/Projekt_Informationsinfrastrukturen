@@ -1,0 +1,57 @@
+@startuml
+title EasyRide – Fahrer bestätigt das Erreichen eines Haltepunkts
+
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+autonumber
+
+actor "Fahrer\n(via Tablet)" as fahrer
+participant "easyRide : EasyRideSystem" as system
+participant "route : Route" as route
+participant "naechsterHalt : Routenhalt" as routenhalt
+participant "fahrt : Fahrt" as fahrt
+
+fahrer -> system : ankunftBestaetigen(erreichterHalt: Routenhalt)
+activate system
+
+system -> route : fortschrittAktualisieren(erreichterHalt: Routenhalt)
+activate route
+route --> system : fortschrittAktualisiert
+deactivate route
+
+system -> route : naechstenHaltErmitteln()
+activate route
+route --> system : naechsterHalt: Routenhalt
+deactivate route
+
+system -> routenhalt : fahrgastwechselErmitteln()
+activate routenhalt
+routenhalt --> system : aufzunehmendeFahrgaeste, abzusetzendeFahrgaeste
+deactivate routenhalt
+
+loop für jede betroffene Fahrt
+  system -> fahrt : restfahrzeitBerechnen(naechsterHalt: Haltepunkt)
+  activate fahrt
+  fahrt --> system : verbleibendeFahrzeit: Dauer
+  deactivate fahrt
+end
+
+system --> fahrer : naechsterHaltepunkt,\naufzunehmendeNamen, abzusetzendeNamen
+deactivate system
+
+note over route, routenhalt
+  Fachinvarianten bleiben gewahrt:
+  - Haltepunktnetz ungerichtet
+  - keine Kapazitätsüberschreitung
+  - Zentrale ohne Ein- oder Ausstieg
+end note
+
+note right of system
+  Im Klassendiagramm gedanklich ergänzt:
+  EasyRideSystem.ankunftBestaetigen(...)
+  Route.fortschrittAktualisieren(...)
+  Route.naechstenHaltErmitteln()
+  Routenhalt.fahrgastwechselErmitteln()
+  Parameter bei Fahrt.restfahrzeitBerechnen(...)
+end note
+@enduml

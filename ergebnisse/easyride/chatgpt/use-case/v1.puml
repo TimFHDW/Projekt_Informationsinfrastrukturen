@@ -1,0 +1,26 @@
+@startuml
+title EasyRide – Use-Case-Diagramm
+
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+actor "Kunde\n(Fahrgast)" as Kunde
+actor Fahrer
+
+rectangle "EasyRide" {
+  usecase "Fahrt buchen" as UC_FahrtBuchen
+  usecase "Wartezeit abfragen\n(vor Fahrtantritt)" as UC_WartezeitAbfragen
+  usecase "Restfahrzeit abfragen\n(nach Fahrtantritt)" as UC_RestfahrzeitAbfragen
+  usecase "Nächsten Haltepunkt mit\nFahrgastwechsel abfragen" as UC_HaltepunktAbfragen
+  usecase "Erreichen eines\nHaltepunkts bestätigen" as UC_HaltepunktBestaetigen
+}
+
+Kunde -- UC_FahrtBuchen
+Kunde -- UC_WartezeitAbfragen
+Kunde -- UC_RestfahrzeitAbfragen
+
+Fahrer -- UC_HaltepunktAbfragen
+Fahrer -- UC_HaltepunktBestaetigen
+
+@enduml

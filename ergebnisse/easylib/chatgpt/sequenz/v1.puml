@@ -1,0 +1,66 @@
+@startuml
+title EasyLib – Bibliothekar verleiht ein Buchexemplar
+
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+autonumber
+
+actor Bibliothekar as bibliothekar
+participant "easyLib : EasyLibSystem" as system
+participant "kunde : Kunde" as kunde
+participant "exemplar : Exemplar\n(physisches Buchexemplar)" as exemplar
+
+bibliothekar -> system : exemplarVerleihen(kundenId: String, exemplarId: String)
+activate system
+
+system -> kunde : kundeErmitteln(kundenId: String)
+activate kunde
+kunde --> system : kundeGefunden
+deactivate kunde
+
+system -> exemplar : exemplarErmitteln(exemplarId: String)
+activate exemplar
+exemplar --> system : exemplarGefunden
+deactivate exemplar
+
+system -> exemplar : verfuegbarkeitPruefen()
+activate exemplar
+exemplar --> system : verfügbar\n(nicht verliehen, keine entgegenstehende Reservierung)
+deactivate exemplar
+
+create participant "ausleihe : Ausleihe" as ausleihe
+system -> ausleihe : «create» Ausleihe(kunde: Kunde, exemplar: Exemplar, leihfrist: Datum)
+activate ausleihe
+ausleihe --> system : ausleiheAngelegt
+deactivate ausleihe
+
+system -> exemplar : statusAktualisieren(VERLIEHEN, NICHT_RESERVIERT)
+activate exemplar
+exemplar --> system : statusAktualisiert
+deactivate exemplar
+
+system --> bibliothekar : Ausleihbestaetigung(leihfrist: Datum)
+deactivate system
+
+note right of exemplar
+  Verliehen wird das physische Exemplar,
+  nicht das bibliografische Buch/Medium.
+end note
+
+note right of ausleihe
+  Annahme zur Mehrdeutigkeit im Lastenheft
+  (nicht Teil dieses Ablaufs):
+  Leihfristverlängerung nur, wenn keine
+  andere Reservierung vorliegt.
+end note
+
+note right of system
+  Im Klassendiagramm gedanklich ergänzt:
+  EasyLibSystem.exemplarVerleihen(...)
+  Kunde.kundeErmitteln(...)
+  Exemplar.exemplarErmitteln(...)
+  Exemplar.verfuegbarkeitPruefen()
+  Exemplar.statusAktualisieren(...)
+  Ausleihe-Konstruktor mit Leihfrist
+end note
+@enduml
