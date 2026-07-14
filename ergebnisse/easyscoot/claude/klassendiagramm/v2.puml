@@ -1,0 +1,116 @@
+@startuml
+' EasyScoot - UML-Klassendiagramm
+' Version: v2 = 2. Generierungsdurchlauf mit Prompt v1 (prompts/klassendiagramm/easyscoot-v1.md)
+' KI: Claude - Original-Ausgabe, unveraendert abgelegt
+title EasyScoot - Klassendiagramm (v2)
+skinparam classAttributeIconSize 0
+
+abstract class Nutzerkonto
+
+class Kunde {
+  vorname : String
+  name : String
+  strasse : String
+  hausnummer : String
+  plz : String
+  ort : String
+  emailAdresse : String
+  freieScooterInNaeheAbfragen() : List<EScooter>
+  scooterBuchen(scooter : EScooter) : Fahrt
+  scooterFreischalten(scooter : EScooter)
+  nutzungBeenden(fahrt : Fahrt)
+}
+
+class Flottenmanager {
+  gesamtlisteAbrufen() : List<EScooter>
+}
+
+class ServiceMitarbeiter {
+  gesamtlisteAbrufen() : List<EScooter>
+  niedrigladungsListeAbrufen() : List<EScooter>
+  wartungsmodusStarten(scooter : EScooter)
+  wartungsmodusBeenden(scooter : EScooter)
+  scooterAufnehmen(scooter : EScooter)
+  scooterAusmustern(scooter : EScooter)
+}
+
+class EScooter {
+  id : String
+  marke : String
+  modell : String
+  batteriekapazitaetWh : Integer
+  verbrauchskoeffizientWhProKm : Double
+  position : GeoPosition
+  ladezustandProzent : Integer
+  fahrstatus : Fahrstatus
+  leihstatus : Leihstatus
+  wartungsstatus : Wartungsstatus
+  statusdatenMelden(pos : GeoPosition, ladung : Integer, status : Fahrstatus)
+  restfahrzeitSchaetzenMin() : Integer
+  freischalten()
+  sperren()
+  mobilfunkAnmelden()
+  mobilfunkAbmelden()
+}
+
+class Fahrt {
+  dauerMinuten : Integer
+  gefahreneKilometer : Double
+  verbrauchteWattstunden : Double
+  preis : Double
+  zusammenfassungErstellen() : String
+}
+
+interface Rechnungssystem <<extern>> {
+  preisBerechnen(fahrt : Fahrt) : Double
+}
+
+enum Fahrstatus {
+  STEHEND
+  FAHREND
+}
+
+enum Leihstatus {
+  IN_BENUTZUNG
+  NICHT_IN_BENUTZUNG
+}
+
+enum Wartungsstatus {
+  IN_WARTUNG
+  NICHT_IN_WARTUNG
+}
+
+' --- Vererbung ---
+Nutzerkonto <|-- Kunde
+Nutzerkonto <|-- Flottenmanager
+Nutzerkonto <|-- ServiceMitarbeiter
+
+' --- Assoziationen ---
+Kunde "1" -- "0..*" Fahrt : unternimmt >
+EScooter "1" -- "0..*" Fahrt : wird genutzt fuer <
+ServiceMitarbeiter "0..*" -- "0..*" EScooter : wartet >
+Flottenmanager ..> EScooter : ruft Gesamtliste ab
+Fahrt ..> Rechnungssystem : Preisberechnung anfragen
+EScooter ..> Fahrstatus
+EScooter ..> Leihstatus
+EScooter ..> Wartungsstatus
+
+note right of Nutzerkonto
+  Gemeinsame abstrakte Oberklasse: Das Lastenheft
+  nennt fuer alle drei Rollen ein eigenes Nutzerkonto.
+  Nur fuer Kunden sind Attribute vorgegeben, daher
+  bleibt die Oberklasse ohne eigene Attribute.
+end note
+
+note bottom of Rechnungssystem
+  Externes, bereits existierendes System -
+  EasyScoot bindet es nur an; der Preis wird
+  NICHT in EasyScoot berechnet.
+end note
+
+note right of EScooter
+  Meldet Position, Ladezustand und
+  Fahrstatus in regelmaessigen Abstaenden
+  per Mobilfunk (fertige Fahrzeugsoftware).
+end note
+@enduml

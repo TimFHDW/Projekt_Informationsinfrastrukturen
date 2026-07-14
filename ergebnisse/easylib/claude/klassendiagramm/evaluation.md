@@ -77,4 +77,47 @@ Abgleich mit `lastenhefte/easylib.md`, konkrete Befunde:
 - Direktes Bild liegt vor (2026-07-07); PlantUML gerendert (2026-07-14), Layout-Vergleich
   daher noch nicht moeglich. Wichtig: Das direkte Bild wurde nachtraeglich aus `v1.puml`
   abgeleitet – inhaltliche Uebereinstimmung ist konstruktionsbedingt und kein unabhaengiger
-  Befund; fuer `vergleiche/plantuml-vs-direkt.md`
+  Befund; fuer `vergleiche/plantuml-vs-direkt.md` nur die Zeichenqualitaet (K4) heranziehen.
+
+## Was haetten wir anders modelliert?
+
+- `Adresse` (Strasse, Hausnummer, PLZ, Ort) und `Standort` (Etage, Regalnummer) als eigene
+  Wertklassen (Komposition) statt inline.
+- `Bibliotheksausweis` als eigene Klasse (kundenID, lichtbild) mit 1:1-Komposition zu `Kunde`.
+- Optional ein `Katalog`/`Bibliothek`-Objekt, um „eigener vs. vernetzter Bestand" und die
+  Suche explizit zu verankern.
+- Ausleihe-/Reservierungsstatus als abgeleitete Attribute oder Enums explizit machen.
+- Reservierung ggf. streng nur an `Buch` statt an `Medium` – naeher am Wortlaut des Lastenhefts.
+
+## Sonstige Beobachtungen
+
+- Nachtraeglich gegen das offizielle `lastenhefte/easylib.md` geprueft (2026-07-06): keine
+  inhaltliche Korrektur am Diagramm noetig.
+- Methodik-Abweichung: Generierung in laufender Cowork-Session (Vorkontext u. a. aus
+  EasyRide-/EasyScoot-Prompts), nicht in frischer, isolierter Chat-Session -> moeglicher
+  Kontext-Einfluss; fuer belastbaren Vergleich in frischer Session reproduzieren.
+- Zweistufiger Prompt (Basis + Diagramm) wurde nicht als getrennte Sende-Schritte mit
+  Verstaendnis-Check ausgefuehrt; Diagramm direkt erzeugt.
+- Details siehe `notizen.md`.
+
+## Hinweis 2026-07-14: abgeschnittenes Dateiende wiederhergestellt
+
+- Die Arbeitskopie dieser Datei (und Commit e69849d) endete mitten im Satz ("...fuer `vergleiche/plantuml-vs-direkt.md`").
+  Die fehlenden Abschnitte wurden am 2026-07-14 aus Commit 9ef275b wiederhergestellt; die
+  heute ergaenzten K1-/K4-PlantUML-Befunde blieben erhalten.
+  Details und Begruendung: Journal (dokumentation/vorgehen.md), Eintrag vom 2026-07-14.
+
+## Nachtrag 2026-07-14: v2 (2. Durchlauf, Prompt v1) - Bewertung offen
+
+- `v2.puml`, `v2-direkt.png` und `v2-plantuml.png` liegen vor (s. notizen.md, Nachtrag v2).
+  Diese Datei bewertet weiterhin v1; die vollstaendige v2-Bewertung (K2-K4) steht aus.
+- K1-Vorbefund v2: `v2.puml` kompiliert fehlerfrei - am 2026-07-14 in der Cowork-Sandbox
+  gerendert (plantuml.jar 1.2019.06 aus dem npm-Paket node-plantuml); keine Korrektur
+  noetig, kein `v2-korrigiert.puml`.
+- Vorlaeufige Sichtpruefung v2 (kein Ersatz fuer die Bewertung): Vererbung Medium <- Buch/Hoerbuch mit
+  gemeinsamen Attributen nur in der (abstrakten) Oberklasse, Exemplar getrennt vom Werk,
+  Autor-Assoziation 1..*, Genre-Enum mit exakt 9 Werten, Ausleihe am Exemplar /
+  Reservierung am Medium (begruendet als Notiz), Leihfrist-Mehrdeutigkeit explizit als
+  Constraint + Annahme, Bibliothekar/Buchhalter als Akteure begruendet (keine Klassen),
+  Schnittstellen Verbundkatalog/VernetzteBibliothek angedeutet, Multiplizitaeten
+  vollstaendig.

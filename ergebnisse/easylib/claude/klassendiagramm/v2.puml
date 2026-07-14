@@ -1,0 +1,147 @@
+@startuml
+' EasyLib - UML-Klassendiagramm
+' Version: v2 = 2. Generierungsdurchlauf mit Prompt v1 (prompts/klassendiagramm/easylib-v1.md)
+' KI: Claude - Original-Ausgabe, unveraendert abgelegt
+title EasyLib - Klassendiagramm (v2)
+skinparam classAttributeIconSize 0
+
+abstract class Medium {
+  titel : String
+  verlag : String
+  auflage : Integer
+  erscheinungsdatum : Date
+  isbn : String
+  genre : Genre
+}
+
+class Buch {
+  seitenzahl : Integer
+}
+
+class Hoerbuch {
+  anzahlDatentraeger : Integer
+  spiellaengeMinuten : Integer
+}
+
+class Autor {
+  name : String
+  vorname : String
+  mittelname : String [0..1]
+  namenszusatz : String [0..1]
+}
+
+enum Genre {
+  ROMAN
+  FANTASY
+  HORROR
+  HUMOR
+  KRIMI
+  SCIENCE_FICTION
+  BIOGRAFIE
+  RATGEBER
+  SACHBUCH
+}
+
+class Exemplar {
+  id : String
+  etage : Integer
+  regalnummer : Integer
+}
+
+class Kunde {
+  kundenId : String
+  name : String
+  strasse : String
+  hausnummer : String
+  plz : String
+  ort : String
+  kontoLoeschen()
+  reservieren(medium : Medium) : Reservierung
+  leihfristVerlaengern(ausleihe : Ausleihe)
+}
+
+class Bibliotheksausweis {
+  lichtbild : Bild
+}
+
+class Ausleihe {
+  ausleihdatum : Date
+  leihfrist : Date
+  verlaengern()
+  istUeberfaellig() : Boolean
+}
+
+class Reservierung {
+  datum : Date
+  stornieren()
+}
+
+class EasyLib <<system>> {
+  bestandDurchsuchen(kriterium : String) : List<Medium>
+  fremdbestandDurchsuchen(kriterium : String) : List<Medium>
+  exemplarEinpflegen(medium : Medium) : Exemplar
+  exemplarAuspflegen(exemplar : Exemplar)
+  verleihen(exemplar : Exemplar, kunde : Kunde) : Ausleihe
+  rueckgabeVerbuchen(ausleihe : Ausleihe)
+  ueberfaelligeAusleihenAuflisten() : List<Ausleihe>
+  kundendatenEinsehen(kunde : Kunde)
+}
+
+interface Verbundkatalog {
+  buchdatenAbrufen(isbn : String) : Medium
+}
+
+interface VernetzteBibliothek {
+  bestandDurchsuchen(kriterium : String) : List<Medium>
+}
+
+' --- Vererbung ---
+Medium <|-- Buch
+Medium <|-- Hoerbuch
+
+' --- Assoziationen ---
+Medium "0..*" -- "1..*" Autor : verfasst von >
+Medium "1" -- "0..*" Exemplar : hat Exemplare >
+Kunde "1" -- "1" Bibliotheksausweis : besitzt >
+Kunde "1" -- "0..*" Ausleihe : leiht >
+Exemplar "1" -- "0..*" Ausleihe : betrifft <
+Kunde "1" -- "0..*" Reservierung : reserviert >
+Medium "1" -- "0..*" Reservierung : betrifft <
+EasyLib ..> Verbundkatalog : importiert Buchdaten
+EasyLib ..> VernetzteBibliothek : durchsucht Fremdbestand
+
+' --- Constraints und Entscheidungen ---
+note right of Ausleihe
+  {Verlaengerung nur, wenn KEINE andere
+  Reservierung auf das Medium vorliegt.}
+  Annahme: Das Original-Lastenheft ist hier
+  mehrdeutig ("soweit eine andere Reservierung
+  vorliegt") - fachlich plausibel ist das Gegenteil,
+  daher bewusst gegen den Wortlaut modelliert.
+end note
+
+note left of Kunde
+  {Kontoloeschung nur moeglich, wenn
+  keine Ausleihen mehr offen sind.}
+end note
+
+note right of Reservierung
+  Ebenen-Entscheidung: Ausgeliehen wird das
+  konkrete Exemplar, reserviert das Medium (Werk) -
+  die Reservierung gilt dem naechsten frei
+  werdenden Exemplar. Je Exemplar zu jedem
+  Zeitpunkt hoechstens eine laufende Ausleihe.
+end note
+
+note bottom of EasyLib
+  Bibliothekar und Buchhalter sind Akteure des
+  Use-Case-Diagramms, keine Klassen: Das System
+  speichert keine Daten ueber sie. Ihre Funktionen
+  buendelt die Systemklasse EasyLib.
+end note
+
+note bottom of Bibliotheksausweis
+  Auf dem Ausweis sind Kunden-ID und
+  Lichtbild abgedruckt (1:1 zum Kunden).
+end note
+@enduml

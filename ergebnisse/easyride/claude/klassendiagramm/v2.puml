@@ -1,0 +1,82 @@
+@startuml
+' EasyRide - UML-Klassendiagramm
+' Version: v2 = 2. Generierungsdurchlauf mit Prompt v1 (prompts/klassendiagramm/easyride-v1.md)
+' KI: Claude - Original-Ausgabe, unveraendert abgelegt
+title EasyRide - Klassendiagramm (v2)
+skinparam classAttributeIconSize 0
+
+class Haltepunkt {
+  name : String
+  istZentrale : Boolean
+}
+
+class Verbindung {
+  durchschnittlicheFahrzeitMin : Integer
+}
+
+class Fahrzeug {
+  kennung : String
+  anzahlSitzplaetze : Integer
+}
+
+class Route {
+  fahrgastEinplanen(buchung : Buchung)
+  kapazitaetEingehalten() : Boolean
+  naechstenHaltAbfragen() : Routenhalt
+  ankunftBestaetigen(halt : Routenhalt)
+}
+
+class Routenhalt {
+  position : Integer
+}
+
+class Fahrgast {
+  name : String
+  fahrtBuchen(start : Haltepunkt, ziel : Haltepunkt) : Buchung
+}
+
+class Fahrer {
+  name : String
+}
+
+class Buchung {
+  wartezeitBerechnenMin() : Integer
+  restfahrzeitBerechnenMin() : Integer
+}
+
+' --- Assoziationen ---
+Verbindung "0..*" -- "2" Haltepunkt : verbindet
+Route "1" *-- "2..*" Routenhalt : besteht aus {ordered}
+Routenhalt "0..*" -- "1" Haltepunkt : findet statt an
+Route "0..1" -- "0..1" Routenhalt : zuletzt erreichter Halt
+Route "0..*" -- "1" Fahrzeug : wird gefahren von
+Fahrer "1" -- "1" Fahrzeug : faehrt
+Fahrgast "1" -- "0..*" Buchung : taetigt
+Buchung "0..*" -- "1" Haltepunkt : Start
+Buchung "0..*" -- "1" Haltepunkt : Ziel
+Buchung "0..*" -- "0..1" Route : eingeplant auf
+Buchung "0..*" -- "0..1" Routenhalt : Zustieg bei
+Buchung "0..*" -- "0..1" Routenhalt : Ausstieg bei
+
+' --- Fachregeln als Constraints ---
+note as NKap
+  {Kapazitaetsregel: Zu jedem Zeitpunkt ist die Zahl
+  der auf einer Route eingeplanten Fahrgaeste <=
+  anzahlSitzplaetze des zugeordneten Fahrzeugs.}
+end note
+NKap .. Route
+NKap .. Fahrzeug
+
+note as NZen
+  {Zentrale-Regel: Jede Route beginnt und endet am
+  Haltepunkt "Zentrale" (istZentrale = true);
+  an der Zentrale ist kein Zu- oder Ausstieg erlaubt.}
+end note
+NZen .. Route
+
+note bottom of Verbindung
+  Ungerichtete Kante: verbindet genau zwei
+  Haltepunkte, in beide Richtungen befahrbar
+  (keine Fahrtrichtung modelliert).
+end note
+@enduml

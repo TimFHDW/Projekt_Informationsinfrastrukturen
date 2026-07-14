@@ -886,3 +886,35 @@ jetzt auch npm 403) - lokal rendern wie bei v1. Methodik wie zuvor: laufende Ses
 Diagramme in einer Sitzung (moeglicher Struktur-Uebertrag). Commits lokal, kein Push
 (Wunsch Alex).
 
+
+## 2026-07-14 | 17:15 | Claude (im Auftrag von Lewin)
+Schritt: Zweiter Generierungsdurchlauf der Klassendiagramme der Claude-Spalte (Auftrag: die
+drei Prompts prompts/klassendiagramm/<system>-v1.md ausfuehren und die direkt erstellten
+Diagramme in den DoD-Zellen abliefern). Je Zelle v2.puml und - im selben Durchlauf, aus
+demselben Modell - das direkt gezeichnete Bild v2-direkt.png erzeugt (Python/Pillow-
+Zeichenskript der KI, Layout/Koordinaten von der KI bestimmt, keine PlantUML-Beteiligung);
+PNG-Benennung ohne Systemnamen, wie bei den Aktivitaets-Zellen (Wunsch Lewin). Zusaetzlich
+v2-plantuml.png gerendert: npm war in dieser Session wieder erreichbar -> plantuml.jar
+1.2019.06 aus node-plantuml (Team-Renderweg vom 06.07.); alle drei v2.puml kompilierten
+fehlerfrei, kein v2-korrigiert.puml. Alle drei Direktbilder visuell abgenommen (eine
+Label-Ueberlappung im easyscoot-Entwurf vor Ablage korrigiert), alle PNGs per MD5 +
+PIL-verify geprueft.
+Ergebnis: ergebnisse/{easyride,easyscoot,easylib}/claude/klassendiagramm/{v2.puml,
+v2-direkt.png, v2-plantuml.png}; Nachtraege in den sechs notizen.md/evaluation.md;
+evaluation/ergebnismatrix.md (3 Zeilen + Offene Punkte) aktualisiert.
+Beobachtung: (1) Versionierung wie beim aktivitaet-v2-Durchlauf: v2 = 2. Durchlauf mit
+Prompt v1, nicht Prompt-Iteration - als Durchlauf-Varianz lesen. Sichtbare Varianz ggue.
+v1: easyride ohne Flotte/Tablet, Zustieg/Ausstieg ueber Buchung->Routenhalt; easyscoot
+Oberklasse Nutzerkonto bewusst attributlos, ohne Flotte/Ladestation/Position; easylib neu
+mit Systemklasse EasyLib und eigener Bibliotheksausweis-Klasse. (2) Methodik wie zuvor:
+laufende Cowork-Session, drei Systeme in einer Sitzung (Struktur-Uebertrag moeglich);
+v1.puml der Zellen vor der Generierung bewusst nicht eingesehen, Journal-Kurzbeschreibungen
+waren aber im Kontext. (3) NEBENBEFUND + Reparatur: Die drei klassendiagramm-evaluation.md
+lagen mitten im Satz abgeschnitten vor - auch in HEAD (IntelliJ-Commits e69849d/3073f10
+"Evaluation" vom 14.07.); fehlende Abschnitte (K4-Rest, PlantUML vs. direkt, Was haetten
+wir anders modelliert?, Sonstige Beobachtungen) aus Commit 9ef275b wiederhergestellt,
+heutige K1/K4-PU-Ergaenzungen erhalten, veraltete "Rendering offen"-Zeile analog zur
+easylib-Fassung aktualisiert; in den drei Dateien als Hinweis-Abschnitt dokumentiert.
+Erneuter Truncation-Vorfall nach Muster vom 06.07. (22:40) - Commit-Inhalte vor dem
+Committen auf abgeschnittene Dateienden pruefen. (4) Commits macht Lewin selbst
+(ausdruecklicher Wunsch); nichts committet oder gepusht.
