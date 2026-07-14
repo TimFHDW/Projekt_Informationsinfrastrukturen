@@ -7,14 +7,13 @@
 | PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/aktivitaet/easylib-v1.md` |
-| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
-- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block, ausgeglichene Klammern und 2 `if`/2 `endif`); keine Aussage über die Kompilierbarkeit.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 3 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
+- Fehlerliste: statische Prüfung am 2026-07-13 unauffällig (vollständiger UML-Block, ausgeglichene Klammern und 2 `if`/2 `endif`); Kompilierbarkeit am 2026-07-14 bestaetigt (fehlerfrei gerendert).
 - Direktes Bild – UML-Notation korrekt?: Start- und Endknoten, Aktionen, Kontrollflüsse und zwei Entscheidungen mit beschrifteten Kanten sind erkennbar. Die alternativen Zweige werden jeweils ohne expliziten UML-Merge-Knoten zusammengeführt. Das gesamte Diagramm besitzt nur einen Aktivitätsbereich; die im Prompt verlangten drei Swimlanes fehlen, was zusätzlich unter K3 gewertet wird.
 
 ## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 4/5
@@ -35,12 +34,12 @@ Abgleich mit `lastenhefte/easylib.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 5, Befunde: gerendert; saubere 3-Swimlane-Struktur.
 - Direktes Bild — Score: 5/5, Befunde: symmetrischer, gut nachvollziehbarer Ablauf, gut lesbare Beschriftungen, keine Überlappungen oder abgeschnittenen Elemente.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: Der Code besitzt im Gegensatz zum Direktbild drei Swimlanes und trennt Suchdaten von der manuellen Vollerfassung.
+- Inhaltlich vergleichbar, mit gerendertem PlantUML-Layout (2026-07-14): Der Code besitzt im Gegensatz zum Direktbild drei Swimlanes und trennt Suchdaten von der manuellen Vollerfassung.
 
 ## Was hätten wir anders modelliert?
 

@@ -7,17 +7,16 @@
 | PlantUML-Nachbewertung | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easylib-v1.md` |
-| Rendering-Weg | offen – lokal weder PlantUML-Kommando noch PlantUML-JAR vorhanden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und
 Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokaler Renderer fehlt.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 3 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
 - Fehlerliste: statische Prüfung von `v1.puml` unauffällig (je ein `@startuml`/`@enduml`,
   ausgeglichene Klammern, fünf Akteure, 15 Use Cases und drei geschlossene Notizpaare);
-  keine Aussage über die Kompilierbarkeit. Im Direktbild laufen mehrere Assoziationslinien auf gemeinsame
+  Kompilierbarkeit am 2026-07-14 bestaetigt (fehlerfrei gerendert). Im Direktbild laufen mehrere Assoziationslinien auf gemeinsame
   Punkte neben den Akteursfiguren zu, ohne die Akteure sichtbar zu berühren. Die beiden
   Paare gleichnamiger Use Cases sind jeweils durch eine unbeschriftete Volllinie verbunden;
   eine solche Use-Case-zu-Use-Case-Beziehung ist keine gültige UML-Semantik. Im unteren
@@ -66,7 +65,7 @@ Abgleich mit `lastenhefte/easylib.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: `v1-plantuml.png` bzw. `.svg` fehlt.
+- PlantUML-Rendering — Score: 3, Befunde: gerendert; lesbar, aber viele Kreuzungen der Akteur-Kanten plus extend-Boegen.
 - Direktes Bild — Score: 3/5, Befunde: Beschriftungen und Einzelelemente sind scharf,
   kontrastreich und nicht abgeschnitten. Die dichten Linienfächer, duplizierten Ellipsen und
   die lange mehrdeutige Verbindung im unteren Bereich machen die Zuordnung unübersichtlich.

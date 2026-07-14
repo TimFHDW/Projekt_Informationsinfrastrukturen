@@ -7,14 +7,13 @@
 | PlantUML-Nachbewertung | 2026-07-13 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/klassendiagramm/easylib-v1.md` |
-| Rendering-Weg | offen – offizieller PlantUML-Renderer konnte mangels Freigabe nicht geladen werden |
+| Rendering-Weg | PlantUML am 2026-07-14 gerendert (plantuml.jar/lokal); Direktbild s. Nachtrag |
 
 Skalen und Regeln: `evaluation/kriterien.md`. Ein gültig benanntes `v1.puml` liegt vor; Kompilierung und Rendering bleiben offen.
 
-## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 5/5)
-
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; Renderer fehlt.
-- Fehlerliste: statische Prüfung von `v1.puml` am 2026-07-13 unauffällig (vollständiger UML-Block und ausgeglichene Blockklammern); keine Aussage über die Kompilierbarkeit. Die fachfremde Datei `Projekt_Informationsinfrastrukturen.puml` bleibt unberührt und wird nicht als v1 gewertet.
+## K1 – Syntaktische Korrektheit — Score: PlantUML 5 / direkt 5 (gerendert 2026-07-14, kompiliert fehlerfrei)
+- PlantUML kompiliert ohne Korrektur: ja - am 2026-07-14 fehlerfrei gerendert, keine Korrektur noetig.
+- Fehlerliste: statische Prüfung von `v1.puml` am 2026-07-13 unauffällig (vollständiger UML-Block und ausgeglichene Blockklammern); Kompilierbarkeit am 2026-07-14 bestaetigt (fehlerfrei gerendert). Die fachfremde Datei `Projekt_Informationsinfrastrukturen.puml` bleibt unberührt und wird nicht als v1 gewertet.
 - Direktes Bild – UML-Notation korrekt?: Abstrakte Oberklasse, Generalisierung, Komposition, Klassen, Multiplizitäten, Interfaces, Abhängigkeiten, Enumeration und Notizen sind formal klar erkennbar.
 
 ## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 4/5
@@ -36,12 +35,12 @@ Abgleich mit `lastenhefte/easylib.md`:
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
-- PlantUML-Rendering — Score: offen, Befunde: kein gültiges EasyLib-v1-Rendering vorhanden.
+- PlantUML-Rendering — Score: 5, Befunde: gerendert; sauber, klare Vererbung und externe Systeme.
 - Direktes Bild — Score: 5/5, Befunde: übersichtliches Querformat, klare Gruppen, gut lesbare Beschriftungen und keine Überlappungen.
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Inhaltlich vergleichbar, obwohl das PlantUML-Layout noch nicht gerendert werden konnte: `v1.puml` korrigiert die unklare Reservierungsassoziation des Direktbilds. Die fachfremde Altdatei bleibt von diesem Vergleich ausgeschlossen.
+- Inhaltlich vergleichbar, mit gerendertem PlantUML-Layout (2026-07-14): `v1.puml` korrigiert die unklare Reservierungsassoziation des Direktbilds. Die fachfremde Altdatei bleibt von diesem Vergleich ausgeschlossen.
 
 ## Was hätten wir anders modelliert?
 
