@@ -8,7 +8,8 @@
 - Vorhandenes Originalartefakt: `v1-direkt.png`
 - Bildmetadaten: PNG, 1693 × 929 Pixel, SHA-256
   `3B3844C09278AEA9D3FEB99B67D741A48C067DB890CA2C95D53314DCA96FA108`
-- PlantUML-Code: fehlt; der Auftrag umfasste die noch fehlenden Direktbilder.
+- PlantUML-Code: fehlte im damaligen Direktbild-Arbeitsschritt; am 2026-07-14 nachgetragen,
+  siehe Nachtrag unten.
 - PlantUML-Rendering und Rendering-Tooling: nicht vorhanden.
 - Generierungsverlauf: Der Inhalt von Basis- und Diagramm-Prompt wurde zu einer
   strukturierten Bildspezifikation normalisiert und in einem eigenständigen Imagegen-Aufruf
@@ -34,7 +35,7 @@
 
 ## Offene DoD-Punkte
 
-- [ ] `v1.puml`
+- [x] `v1.puml`
 - [ ] `v1-plantuml.png` oder `.svg`
 - [x] `v1-direkt.png`
 - [x] `evaluation.md` (Direktbild vollständig, PlantUML-Anteile offen)
@@ -42,3 +43,15 @@
 - [x] Journal-Eintrag
 - [x] Ergebnismatrix auf `generiert` / v1 aktualisiert
 
+## Nachtrag PlantUML am 2026-07-14
+
+- `v1.puml` nachträglich anhand von `prompts/use-case/easyride-v1.md` und
+  `lastenhefte/easyride.md` erzeugt; SHA-256:
+  `775A94D2AFFD65A0A063385C3EDFFF16612497F26ABB7187F431B468618BD628`.
+- Inhalt: zwei Akteure, fünf Use Cases, Systemgrenze `EasyRide` und fünf eindeutige
+  Assoziationen; keine `include`-/`extend`-Beziehungen.
+- Statische Strukturprüfung erfolgreich: je ein `@startuml`/`@enduml`, ausgeglichene
+  Klammern, zwei Akteure und fünf Use Cases.
+- Kompilierung und Rendering nicht geprüft: lokal weder PlantUML-Kommando noch
+  PlantUML-JAR vorhanden.
+- Methodikabweichung: Code und Direktbild stammen aus getrennten Generierungsdurchläufen.

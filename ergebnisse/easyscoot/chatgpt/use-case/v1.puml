@@ -1,0 +1,53 @@
+@startuml
+title EasyScoot – Use-Case-Diagramm
+
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+actor Kunde
+actor Flottenmanager
+actor "Service-Mitarbeiter" as Service
+actor "E-Scooter\n(Mobilfunk-Software)" as Scooter
+actor Rechnungssystem
+
+rectangle "EasyScoot" {
+  usecase "Kundenkonto erstellen" as UC_KontoErstellen
+  usecase "Verfügbare E-Scooter\nin der Nähe abfragen" as UC_ScooterAbfragen
+  usecase "E-Scooter buchen\nund freischalten" as UC_ScooterBuchen
+  usecase "Nutzung beenden" as UC_NutzungBeenden
+  usecase "Liste aller E-Scooter\neinsehen" as UC_AlleScooterEinsehen
+  usecase "Gefilterte Liste\n(Ladestand ≤ 50 %) einsehen" as UC_NiedrigerLadestand
+  usecase "Wartungsmodus starten" as UC_WartungStarten
+  usecase "Wartungsmodus beenden" as UC_WartungBeenden
+  usecase "E-Scooter in Flotte\naufnehmen" as UC_ScooterAufnehmen
+  usecase "E-Scooter ausmustern" as UC_ScooterAusmustern
+  usecase "Statusdaten übermitteln" as UC_StatusdatenUebermitteln
+}
+
+Kunde -- UC_KontoErstellen
+Kunde -- UC_ScooterAbfragen
+Kunde -- UC_ScooterBuchen
+Kunde -- UC_NutzungBeenden
+
+Flottenmanager -- UC_AlleScooterEinsehen
+
+Service -- UC_AlleScooterEinsehen
+Service -- UC_NiedrigerLadestand
+Service -- UC_WartungStarten
+Service -- UC_WartungBeenden
+Service -- UC_ScooterAufnehmen
+Service -- UC_ScooterAusmustern
+
+Scooter -- UC_StatusdatenUebermitteln
+Scooter -- UC_WartungStarten
+Scooter -- UC_WartungBeenden
+
+Rechnungssystem -- UC_NutzungBeenden
+
+note bottom of UC_NutzungBeenden
+  Fahrtzusammenfassung mit Dauer, Kilometern,
+  Wattstunden und extern berechnetem Preis
+end note
+
+@enduml

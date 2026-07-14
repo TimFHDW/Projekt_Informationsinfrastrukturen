@@ -8,7 +8,8 @@
 - Vorhandenes Originalartefakt: `v1-direkt.png`
 - Bildmetadaten: PNG, 1693 × 929 Pixel, SHA-256
   `95EBF2C2606414D2632CDF70B5CA7AFB0ECA50BB63B46E9EF0AC5EAB44529525`
-- PlantUML-Code: fehlt; der Auftrag umfasste die noch fehlenden Direktbilder.
+- PlantUML-Code: fehlte im damaligen Direktbild-Arbeitsschritt; am 2026-07-14 nachgetragen,
+  siehe Nachtrag unten.
 - PlantUML-Rendering und Rendering-Tooling: nicht vorhanden.
 - Generierungsverlauf: Der Inhalt von Basis- und Diagramm-Prompt wurde zu einer
   strukturierten Bildspezifikation normalisiert und in einem eigenständigen Imagegen-Aufruf
@@ -41,7 +42,7 @@
 
 ## Offene DoD-Punkte
 
-- [ ] `v1.puml`
+- [x] `v1.puml`
 - [ ] `v1-plantuml.png` oder `.svg`
 - [x] `v1-direkt.png`
 - [x] `evaluation.md` (Direktbild vollständig, PlantUML-Anteile offen)
@@ -49,3 +50,19 @@
 - [x] Journal-Eintrag
 - [x] Ergebnismatrix auf `generiert` / v1 aktualisiert
 
+## Nachtrag PlantUML am 2026-07-14
+
+- `v1.puml` nachträglich anhand von `prompts/use-case/easylib-v1.md` und
+  `lastenhefte/easylib.md` erzeugt; SHA-256:
+  `E3E479C88BC42CA214B430B6D965333E21DD3D3A58FF6BA9FF48AE92EAD0541B`.
+- Inhalt: fünf Akteure und 15 unterschiedliche Use Cases. Bestandssuche und Statuseinsicht
+  sind jeweils gemeinsame Use Cases für Bibliothekar und Kunde; beide externen Systeme sind
+  fachlich korrekt zugeordnet.
+- „Buchdaten aus Verbundkatalog importieren“ erweitert „Exemplar einpflegen“ optional über
+  `<<extend>>`. Die Annahme zur mehrdeutigen Leihfristverlängerung, die Bedingung der
+  Kontolöschung und der Kundendatenschutz sind als Notizen dokumentiert.
+- Statische Strukturprüfung erfolgreich: je ein `@startuml`/`@enduml`, ausgeglichene
+  Klammern, fünf Akteure, 15 Use Cases und drei geschlossene Notizpaare.
+- Kompilierung und Rendering nicht geprüft: lokal weder PlantUML-Kommando noch
+  PlantUML-JAR vorhanden.
+- Methodikabweichung: Code und Direktbild stammen aus getrennten Generierungsdurchläufen.

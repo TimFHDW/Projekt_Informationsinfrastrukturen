@@ -4,17 +4,20 @@
 |---|---|
 | Bewertet von | Codex (Sichtprüfung) |
 | Datum | 2026-07-14 |
+| PlantUML-Nachbewertung | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyscoot-v1.md` |
-| Rendering-Weg | nicht vorhanden – in diesem Arbeitsschritt wurde nur das Direktbild erzeugt |
+| Rendering-Weg | offen – lokal weder PlantUML-Kommando noch PlantUML-JAR vorhanden |
 
-Skalen und Regeln: `evaluation/kriterien.md`. PlantUML-Code und -Rendering fehlen; die
-PlantUML-Anteile bleiben deshalb offen.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und
+Rendering bleiben offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: PlantUML nicht vorhanden. Mehrere Assoziationslinien laufen auf gemeinsame
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokaler Renderer fehlt.
+- Fehlerliste: statische Prüfung von `v1.puml` unauffällig (je ein `@startuml`/`@enduml`,
+  ausgeglichene Klammern, fünf Akteure, elf Use Cases und ein geschlossenes Notizpaar);
+  keine Aussage über die Kompilierbarkeit. Im Direktbild laufen mehrere Assoziationslinien auf gemeinsame
   Punkte neben den Akteursfiguren zu, ohne die Akteure sichtbar zu berühren. Rechts führen
   Linien an Akteuren vorbei oder enden an einem nicht als UML-Element definierten
   Linienknoten. Dadurch sind mehrere Assoziationen syntaktisch nicht eindeutig.
@@ -22,7 +25,7 @@ PlantUML-Anteile bleiben deshalb offen.
   Use-Case-Ellipsen entsprechen grundsätzlich der UML-Notation. Die mehrfach fehlerhaften
   beziehungsweise mehrdeutigen Anschlüsse verhindern eine höhere Bewertung.
 
-## K2 – Inhaltliche Korrektheit — Score: offen (Direktbild: 3/5)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 3/5
 
 Abgleich mit `lastenhefte/easyscoot.md`:
 
@@ -37,8 +40,12 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 - Die Verbindung von „Wartungsmodus starten“ zur E-Scooter-Software endet in einer
   mehrdeutigen Linienstruktur und ist nicht verlässlich ablesbar.
 - Keine erfundene Bezahlfunktion oder sonstige fachfremde Funktion festgestellt.
+- PlantUML-Code: Kunde, Flottenmanager und Service-Mitarbeiter sind vollständig ihren
+  Funktionen zugeordnet. Die E-Scooter-Software übermittelt Statusdaten und wirkt bei Start
+  und Ende des Wartungsmodus mit; das Rechnungssystem ist korrekt an „Nutzung beenden“
+  beteiligt. Der Preis ist ausdrücklich als extern berechnet gekennzeichnet.
 
-## K3 – Vollständigkeit — Score: offen (Direktbild: 3/5)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 3/5
 
 - Mindestanforderung erfüllt (Use Cases ≥ 5): ja; elf Use Cases sind dargestellt.
 - Alle im Diagramm-Prompt beispielhaft aufgeführten Use Cases sowie die fachlich abgeleitete
@@ -46,6 +53,8 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 - Zentrale Lücken: Die Beteiligung des Rechnungssystems an „Nutzung beenden“ sowie die
   Beteiligung der E-Scooter-Software an Start und Ende des Wartungsmodus sind wegen falscher
   oder mehrdeutiger Assoziationen nicht vollständig abgebildet.
+- PlantUML-Code: Mindestanforderung mit elf Use Cases erfüllt; alle drei Nutzerrollen, beide
+  externen Systeme und sämtliche zentralen Leistungen des Lastenhefts sind enthalten.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -56,7 +65,10 @@ Abgleich mit `lastenhefte/easyscoot.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Nicht bewertbar, da PlantUML-Code und -Rendering noch nicht vorliegen.
+- Der Code korrigiert die falschen beziehungsweise mehrdeutigen Sekundärakteur-Zuordnungen
+  des Direktbilds: Das Rechnungssystem ist mit „Nutzung beenden“ verbunden, die
+  E-Scooter-Software mit Statusübermittlung und beiden Wartungsmodus-Use-Cases. Ein
+  Layoutvergleich bleibt bis zum Rendering offen.
 
 ## Was hätten wir anders modelliert?
 
@@ -72,4 +84,5 @@ Abgleich mit `lastenhefte/easyscoot.md`:
   unverändert als `v1-direkt.png` abgelegt.
 - Die zwei Prompt-Schritte wurden für die Bildgenerierung zu einer strukturierten
   Spezifikation zusammengeführt; ein separater Verständnis-Check fand nicht statt.
-
+- `v1.puml` wurde nachträglich und getrennt vom Direktbild erzeugt; beide Artefakte stammen
+  daher nicht aus demselben ChatGPT-Generierungsdurchlauf.

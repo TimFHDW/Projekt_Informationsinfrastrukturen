@@ -1,0 +1,70 @@
+@startuml
+title EasyLib – Use-Case-Diagramm
+
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+actor Bibliothekar
+actor Kunde
+actor Buchhalter
+actor Verbundkatalog
+actor "Vernetzte Bibliotheken" as VernetzteBibliotheken
+
+rectangle "EasyLib" {
+  usecase "Exemplar einpflegen" as UC_ExemplarEinpflegen
+  usecase "Buchdaten aus Verbundkatalog\nimportieren" as UC_BuchdatenImportieren
+  usecase "Exemplar auspflegen" as UC_ExemplarAuspflegen
+  usecase "Exemplar verleihen" as UC_ExemplarVerleihen
+  usecase "Rückgabe entgegennehmen" as UC_RueckgabeEntgegennehmen
+  usecase "Bestand durchsuchen" as UC_BestandDurchsuchen
+  usecase "Standort sowie Ausleih- und\nReservierungsstatus einsehen" as UC_StatusEinsehen
+  usecase "Bestand vernetzter Bibliotheken\ndurchsuchen" as UC_VernetztenBestandDurchsuchen
+  usecase "Kundendaten samt Ausleihen und\nReservierungen einsehen" as UC_KundendatenEinsehen
+  usecase "Kundenkonto anlegen" as UC_KontoAnlegen
+  usecase "Kundenkonto löschen" as UC_KontoLoeschen
+  usecase "Buch reservieren" as UC_BuchReservieren
+  usecase "Reservierung stornieren" as UC_ReservierungStornieren
+  usecase "Leihfrist verlängern" as UC_LeihfristVerlaengern
+  usecase "Überfällige Ausleihen\neinsehen" as UC_UeberfaelligeAusleihen
+}
+
+Bibliothekar -- UC_ExemplarEinpflegen
+Bibliothekar -- UC_ExemplarAuspflegen
+Bibliothekar -- UC_ExemplarVerleihen
+Bibliothekar -- UC_RueckgabeEntgegennehmen
+Bibliothekar -- UC_BestandDurchsuchen
+Bibliothekar -- UC_StatusEinsehen
+Bibliothekar -- UC_VernetztenBestandDurchsuchen
+Bibliothekar -- UC_KundendatenEinsehen
+
+Kunde -- UC_KontoAnlegen
+Kunde -- UC_KontoLoeschen
+Kunde -- UC_BestandDurchsuchen
+Kunde -- UC_StatusEinsehen
+Kunde -- UC_BuchReservieren
+Kunde -- UC_ReservierungStornieren
+Kunde -- UC_LeihfristVerlaengern
+
+Buchhalter -- UC_UeberfaelligeAusleihen
+
+Verbundkatalog -- UC_BuchdatenImportieren
+VernetzteBibliotheken -- UC_VernetztenBestandDurchsuchen
+
+UC_BuchdatenImportieren ..> UC_ExemplarEinpflegen : <<extend>>
+
+note right of UC_KontoLoeschen
+  Nur, wenn keine Ausleihen mehr offen sind.
+end note
+
+note right of UC_LeihfristVerlaengern
+  Annahme zur Mehrdeutigkeit im Lastenheft:
+  Verlängerung nur, wenn keine andere
+  Reservierung vorliegt.
+end note
+
+note bottom of UC_StatusEinsehen
+  Kunde sieht keine Daten anderer Kunden.
+end note
+
+@enduml

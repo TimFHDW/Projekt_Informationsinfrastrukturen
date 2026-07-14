@@ -4,24 +4,27 @@
 |---|---|
 | Bewertet von | Codex (Sichtprüfung) |
 | Datum | 2026-07-14 |
+| PlantUML-Nachbewertung | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easyride-v1.md` |
-| Rendering-Weg | nicht vorhanden – in diesem Arbeitsschritt wurde nur das Direktbild erzeugt |
+| Rendering-Weg | offen – lokal weder PlantUML-Kommando noch PlantUML-JAR vorhanden |
 
-Skalen und Regeln: `evaluation/kriterien.md`. PlantUML-Code und -Rendering fehlen; die
-PlantUML-Anteile bleiben deshalb offen.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und
+Rendering bleiben offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 4/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: PlantUML nicht vorhanden. Im Direktbild enden die Assoziationslinien jeweils
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokaler Renderer fehlt.
+- Fehlerliste: statische Prüfung von `v1.puml` unauffällig (je ein `@startuml`/`@enduml`,
+  ausgeglichene Klammern, zwei Akteure und fünf Use Cases); keine Aussage über die
+  Kompilierbarkeit. Im Direktbild enden die Assoziationslinien jeweils
   mit einem kleinen sichtbaren Abstand vor den Akteursfiguren, statt diese eindeutig zu
   berühren. Der Mangel ist lokal und ändert die erkennbare Zuordnung nicht.
 - Direktes Bild – UML-Notation korrekt?: Systemgrenze, zwei Akteure, fünf
   Use-Case-Ellipsen und einfache Assoziationen sind korrekt gewählt; abgesehen von den
   kleinen Anschlusslücken wurde kein weiterer Notationsfehler festgestellt.
 
-## K2 – Inhaltliche Korrektheit — Score: offen (Direktbild: 5/5)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 5/5
 
 Abgleich mit `lastenhefte/easyride.md`:
 
@@ -32,14 +35,19 @@ Abgleich mit `lastenhefte/easyride.md`:
 - Damit entsprechen Akteure, Leistungen und Zuordnungen vollständig den beiden
   abschließenden Leistungslisten des Lastenhefts; erfundene Funktionen wurden nicht
   festgestellt.
+- PlantUML-Code: dieselben zwei Akteure und fünf akteursbezogenen Leistungen sind korrekt
+  zugeordnet; interne Routenplanung und sonstige nicht geforderte Funktionen fehlen.
 
-## K3 – Vollständigkeit — Score: offen (Direktbild: 5/5)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 5/5
 
 - Mindestanforderung erfüllt (Use Cases ≥ 5): ja; genau fünf Use Cases sind dargestellt.
 - Fehlende zentrale Elemente: keine für ein Use-Case-Diagramm auf Basis der im Lastenheft
   abschließend genannten Leistungen.
 - Die im Prompt nur zur Diskussion gestellte interne Routenplanung wurde folgerichtig nicht
   als zusätzlicher, akteursbezogener Use Case aufgenommen.
+- PlantUML-Code: Mindestanforderung mit genau fünf Use Cases erfüllt; beide Akteure, die
+  Systemgrenze und sämtliche abschließend genannten Kunden- und Fahrerleistungen sind
+  enthalten.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -50,7 +58,9 @@ Abgleich mit `lastenhefte/easyride.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Nicht bewertbar, da PlantUML-Code und -Rendering noch nicht vorliegen.
+- Inhaltlich stimmen beide Formen überein. Im Code sind alle fünf Assoziationen eindeutig
+  definiert; das Direktbild zeigt dagegen kleine sichtbare Anschlusslücken an den Akteuren.
+  Ein Layoutvergleich bleibt bis zum Rendering offen.
 
 ## Was hätten wir anders modelliert?
 
@@ -63,4 +73,5 @@ Abgleich mit `lastenhefte/easyride.md`:
   unverändert als `v1-direkt.png` abgelegt.
 - Die zwei Prompt-Schritte wurden für die Bildgenerierung zu einer strukturierten
   Spezifikation zusammengeführt; ein separater Verständnis-Check fand nicht statt.
-
+- `v1.puml` wurde nachträglich und getrennt vom Direktbild erzeugt; beide Artefakte stammen
+  daher nicht aus demselben ChatGPT-Generierungsdurchlauf.

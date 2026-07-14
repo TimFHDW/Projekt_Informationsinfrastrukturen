@@ -730,3 +730,93 @@ Ergebnis: `dokumentation/vorgehen.md` enthaelt wieder beide Arbeitsstraenge.
 Beobachtung: Beim konfliktbehafteten Merge war nur der gemeinsame Stand bis 13.07.2026
 uebernommen worden. Die Ergebnisartefakte selbst waren nicht verloren. Es wurde weder die
 Git-Historie umgeschrieben noch ein Push ausgefuehrt.
+
+## 2026-07-14 | 12:12 | Codex (im Auftrag von Lewin)
+Schritt: `AGENTS.md` sowie die Root- und Bereichs-READMEs gelesen und den Ist-Stand der drei
+ChatGPT/Use-Case-Zellen geprueft.
+Ergebnis: In easyride, easyscoot und easylib liegen Direktbild, `evaluation.md` und
+`notizen.md` vor; `v1.puml` und PlantUML-Rendering fehlen jeweils noch.
+Beobachtung: Fuer diesen Auftrag werden ausschliesslich die drei originalen PlantUML-Codes
+nach Prompt v1 erzeugt und die betroffenen Begleitdateien aktualisiert. Auf ausdruecklichen
+Wunsch von Lewin erfolgen weder Commit noch Push.
+
+## 2026-07-14 | 12:13 | Codex (im Auftrag von Lewin)
+Schritt: PlantUML-Code fuer das ChatGPT-Use-Case-Diagramm EasyRide anhand von
+`prompts/use-case/easyride-v1.md` und `lastenhefte/easyride.md` erzeugt und unveraendert als
+v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyride/chatgpt/use-case/v1.puml`.
+Beobachtung: Der Code enthaelt genau die zwei geforderten Akteure, die Systemgrenze
+`EasyRide` und die fuenf abschliessend genannten Use Cases. Auf unbegruendete
+`include`-/`extend`-Beziehungen und interne Routenplanung wurde verzichtet.
+
+## 2026-07-14 | 12:14 | Codex (im Auftrag von Lewin)
+Schritt: PlantUML-Code fuer das ChatGPT-Use-Case-Diagramm EasyScoot anhand von
+`prompts/use-case/easyscoot-v1.md` und `lastenhefte/easyscoot.md` erzeugt und unveraendert
+als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyscoot/chatgpt/use-case/v1.puml`.
+Beobachtung: Der Code enthaelt die drei Nutzerrollen, beide externen Systeme und elf direkt
+aus dem Lastenheft abgeleitete Use Cases. Das Rechnungssystem ist korrekt an `Nutzung
+beenden` beteiligt; die E-Scooter-Software uebermittelt Statusdaten und wirkt beim Starten
+und Beenden des Wartungsmodus mit. Unbegruendete `include`-/`extend`-Beziehungen fehlen.
+
+## 2026-07-14 | 12:14 | Codex (im Auftrag von Lewin)
+Schritt: PlantUML-Code fuer das ChatGPT-Use-Case-Diagramm EasyLib anhand von
+`prompts/use-case/easylib-v1.md` und `lastenhefte/easylib.md` erzeugt und unveraendert als
+v1-Original abgelegt.
+Ergebnis: `ergebnisse/easylib/chatgpt/use-case/v1.puml`.
+Beobachtung: Der Code enthaelt alle drei Nutzerrollen, beide externen Systeme und 15
+unterschiedliche Use Cases. `Bestand durchsuchen` und die Statuseinsicht werden jeweils von
+Bibliothekar und Kunde gemeinsam genutzt. Der optionale Katalogimport ist als
+`<<extend>>` modelliert; die begruendete Annahme zur mehrdeutigen Leihfristverlaengerung ist
+als Notiz festgehalten.
+
+## 2026-07-14 | 12:16 | Codex (im Auftrag von Lewin)
+Schritt: Die drei neuen Use-Case-PlantUML-Codes statisch auf UML-Block, Akteurs- und
+Use-Case-Anzahl, Klammern sowie Note-/End-Note-Paare geprueft und SHA-256-Pruefsummen
+gebildet. Zusaetzlich wurde lokales PlantUML-Tooling gesucht.
+Ergebnis: Alle drei Dateien besitzen genau einen `@startuml`-/`@enduml`-Block und
+ausgeglichene Klammern. EasyRide enthaelt 2 Akteure und 5 Use Cases, EasyScoot 5 Akteure
+und 11 Use Cases, EasyLib 5 Akteure und 15 Use Cases; alle Notizbloecke sind geschlossen.
+Beobachtung: Weder PlantUML-Kommando noch PlantUML-JAR sind lokal vorhanden. Eine
+Kompilierung und ein Rendering wurden deshalb nicht behauptet; K1 und K4 PlantUML bleiben
+offen. Die Originalcodes wurden nach ihrer Ablage nicht veraendert.
+
+## 2026-07-14 | 12:16 | Codex (im Auftrag von Lewin)
+Schritt: EasyRide-`v1.puml` inhaltlich gegen Prompt und Lastenheft bewertet sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix um die belegbaren PlantUML-Befunde
+ergaenzt.
+Ergebnis: K2 PlantUML 5/5 und K3 PlantUML 5/5; Pruefsumme und getrennte Generierung in
+`notizen.md` dokumentiert. Matrixzeile easyride/chatgpt/use-case aktualisiert.
+Beobachtung: Code und Direktbild sind inhaltlich deckungsgleich. K1 und K4 PlantUML bleiben
+bis zu Kompilierung und Rendering offen; der Zellstatus bleibt deshalb `generiert`.
+
+## 2026-07-14 | 12:17 | Codex (im Auftrag von Lewin)
+Schritt: EasyScoot-`v1.puml` inhaltlich gegen Prompt und Lastenheft bewertet sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix um die belegbaren PlantUML-Befunde
+ergaenzt.
+Ergebnis: K2 PlantUML 5/5 und K3 PlantUML 5/5; Pruefsumme und getrennte Generierung in
+`notizen.md` dokumentiert. Matrixzeile easyscoot/chatgpt/use-case aktualisiert.
+Beobachtung: Der Code korrigiert die fehlerhaften beziehungsweise mehrdeutigen
+Sekundaerakteur-Zuordnungen des Direktbilds. K1 und K4 PlantUML bleiben bis zu Kompilierung
+und Rendering offen; der Zellstatus bleibt `generiert`.
+
+## 2026-07-14 | 12:18 | Codex (im Auftrag von Lewin)
+Schritt: EasyLib-`v1.puml` inhaltlich gegen Prompt und Lastenheft bewertet sowie
+`evaluation.md`, `notizen.md` und Ergebnismatrix um die belegbaren PlantUML-Befunde
+ergaenzt.
+Ergebnis: K2 PlantUML 5/5 und K3 PlantUML 5/5; Pruefsumme, Annahmen und getrennte
+Generierung in `notizen.md` dokumentiert. Matrixzeile easylib/chatgpt/use-case aktualisiert.
+Beobachtung: Der Code behebt die duplizierten gemeinsamen Use Cases sowie die falschen und
+fehlenden Akteurszuordnungen des Direktbilds. K1 und K4 PlantUML bleiben bis zu
+Kompilierung und Rendering offen; der Zellstatus bleibt `generiert`.
+
+## 2026-07-14 | 12:20 | Codex (im Auftrag von Lewin)
+Schritt: Abschliessende Konsistenzpruefung der drei neuen Use-Case-PlantUML-Codes,
+Pruefsummen, eindeutigen Use-Case-Aliase, DoD-Haekchen, Matrixzeilen, Whitespace und des
+Git-Index durchgefuehrt.
+Ergebnis: Alle drei Pruefsummen stimmen mit `notizen.md` ueberein. EasyRide enthaelt 5,
+EasyScoot 11 und EasyLib 15 eindeutige Use Cases; nur EasyLib besitzt die eine begruendete
+`<<extend>>`-Beziehung. `git diff --check` meldet keine Whitespace-Fehler.
+Beobachtung: Saemtliche Aenderungen sind bewusst ungestagt und uncommitted; der Git-Index
+ist leer. Auf ausdruecklichen Wunsch von Lewin wurden weder Commit noch Push ausgefuehrt.
+PlantUML-Rendering und damit K1/K4 PlantUML bleiben offen.

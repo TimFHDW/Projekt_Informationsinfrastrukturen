@@ -4,17 +4,20 @@
 |---|---|
 | Bewertet von | Codex (Sichtprüfung) |
 | Datum | 2026-07-14 |
+| PlantUML-Nachbewertung | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/use-case/easylib-v1.md` |
-| Rendering-Weg | nicht vorhanden – in diesem Arbeitsschritt wurde nur das Direktbild erzeugt |
+| Rendering-Weg | offen – lokal weder PlantUML-Kommando noch PlantUML-JAR vorhanden |
 
-Skalen und Regeln: `evaluation/kriterien.md`. PlantUML-Code und -Rendering fehlen; die
-PlantUML-Anteile bleiben deshalb offen.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor; Kompilierung und
+Rendering bleiben offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 3/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: PlantUML nicht vorhanden. Mehrere Assoziationslinien laufen auf gemeinsame
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokaler Renderer fehlt.
+- Fehlerliste: statische Prüfung von `v1.puml` unauffällig (je ein `@startuml`/`@enduml`,
+  ausgeglichene Klammern, fünf Akteure, 15 Use Cases und drei geschlossene Notizpaare);
+  keine Aussage über die Kompilierbarkeit. Im Direktbild laufen mehrere Assoziationslinien auf gemeinsame
   Punkte neben den Akteursfiguren zu, ohne die Akteure sichtbar zu berühren. Die beiden
   Paare gleichnamiger Use Cases sind jeweils durch eine unbeschriftete Volllinie verbunden;
   eine solche Use-Case-zu-Use-Case-Beziehung ist keine gültige UML-Semantik. Im unteren
@@ -24,7 +27,7 @@ PlantUML-Anteile bleiben deshalb offen.
   optionalen Import auf „Exemplar einpflegen“. Die mehrfachen ungültigen oder
   mehrdeutigen Volllinien verhindern eine höhere Bewertung.
 
-## K2 – Inhaltliche Korrektheit — Score: offen (Direktbild: 3/5)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 3/5
 
 Abgleich mit `lastenhefte/easylib.md`:
 
@@ -41,8 +44,13 @@ Abgleich mit `lastenhefte/easylib.md`:
 - Fehler: „Kundendaten einsehen“ besitzt keine erkennbare Assoziation zum Bibliothekar.
 - Keine E-Books, Gebührenzahlung, Empfehlungen oder sonstige fachfremde Funktionen
   festgestellt.
+- PlantUML-Code: Alle Nutzerrollen und externen Systeme sind korrekt zugeordnet. Die beiden
+  gemeinsamen Funktionen werden jeweils nur einmal modelliert, der Verbundkatalog ist am
+  optionalen Import beteiligt und die vernetzten Bibliotheken an ihrer Bestandssuche.
+- Die Bedingungen für Kontolöschung und Kundendatenschutz sowie die begründete Annahme zur
+  mehrdeutigen Leihfristverlängerung sind als Notizen festgehalten.
 
-## K3 – Vollständigkeit — Score: offen (Direktbild: 3/5)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 3/5
 
 - Mindestanforderung erfüllt (Use Cases ≥ 5): ja; dargestellt sind 17 Ellipsen.
 - Alle im Diagramm-Prompt aufgeführten Funktionsbezeichnungen sowie „Standort und Status
@@ -52,6 +60,9 @@ Abgleich mit `lastenhefte/easylib.md`:
   für „Kundendaten einsehen“ fehlt.
 - Die geforderten genau 15 unterschiedlichen Use Cases wurden wegen der beiden Duplikate
   nicht eingehalten.
+- PlantUML-Code: Mindestanforderung mit 15 unterschiedlichen Use Cases erfüllt; sämtliche
+  zentralen Bibliothekar-, Kunden- und Buchhalterfunktionen, beide externen Systeme und die
+  Systemgrenze sind enthalten.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -62,7 +73,10 @@ Abgleich mit `lastenhefte/easylib.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Nicht bewertbar, da PlantUML-Code und -Rendering noch nicht vorliegen.
+- Der Code verwendet je nur einen gemeinsamen Use Case für Bestandssuche und Statuseinsicht,
+  ordnet die vernetzten Bibliotheken korrekt ihrer Bestandssuche zu und verbindet den
+  Bibliothekar mit der Kundendateneinsicht. Damit behebt er die dokumentierten Inhalts- und
+  Strukturfehler des Direktbilds. Ein Layoutvergleich bleibt bis zum Rendering offen.
 
 ## Was hätten wir anders modelliert?
 
@@ -80,4 +94,6 @@ Abgleich mit `lastenhefte/easylib.md`:
   Spezifikation zusammengeführt; ein separater Verständnis-Check fand nicht statt.
 - Die Mehrdeutigkeit der Leihfristverlängerung ist im Use-Case-Diagramm nicht als
   Bedingungslogik dargestellt; sie wird dadurch weder aufgelöst noch zusätzlich verfälscht.
-
+- `v1.puml` wurde nachträglich und getrennt vom Direktbild erzeugt; beide Artefakte stammen
+  daher nicht aus demselben ChatGPT-Generierungsdurchlauf. Der Code dokumentiert die
+  Annahme zur Leihfristverlängerung ausdrücklich als Notiz.

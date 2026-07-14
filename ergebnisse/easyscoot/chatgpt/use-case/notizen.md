@@ -8,7 +8,8 @@
 - Vorhandenes Originalartefakt: `v1-direkt.png`
 - Bildmetadaten: PNG, 1693 × 929 Pixel, SHA-256
   `73E1CCF02095A1505704194D0305CD2F3E437FB4071DC5AD6967F7B8D12CD3CC`
-- PlantUML-Code: fehlt; der Auftrag umfasste die noch fehlenden Direktbilder.
+- PlantUML-Code: fehlte im damaligen Direktbild-Arbeitsschritt; am 2026-07-14 nachgetragen,
+  siehe Nachtrag unten.
 - PlantUML-Rendering und Rendering-Tooling: nicht vorhanden.
 - Generierungsverlauf: Der Inhalt von Basis- und Diagramm-Prompt wurde zu einer
   strukturierten Bildspezifikation normalisiert und in einem eigenständigen Imagegen-Aufruf
@@ -39,7 +40,7 @@
 
 ## Offene DoD-Punkte
 
-- [ ] `v1.puml`
+- [x] `v1.puml`
 - [ ] `v1-plantuml.png` oder `.svg`
 - [x] `v1-direkt.png`
 - [x] `evaluation.md` (Direktbild vollständig, PlantUML-Anteile offen)
@@ -47,3 +48,15 @@
 - [x] Journal-Eintrag
 - [x] Ergebnismatrix auf `generiert` / v1 aktualisiert
 
+## Nachtrag PlantUML am 2026-07-14
+
+- `v1.puml` nachträglich anhand von `prompts/use-case/easyscoot-v1.md` und
+  `lastenhefte/easyscoot.md` erzeugt; SHA-256:
+  `869C7D168B0C8B0ADF6C6E07EDA100118DE6CAC15E35685D92B6D0453B75428F`.
+- Inhalt: fünf Akteure, elf Use Cases und eindeutige Assoziationen. Rechnungssystem und
+  E-Scooter-Software sind fachlich korrekt beteiligt; keine `include`-/`extend`-Beziehungen.
+- Statische Strukturprüfung erfolgreich: je ein `@startuml`/`@enduml`, ausgeglichene
+  Klammern, fünf Akteure, elf Use Cases und ein geschlossenes Notizpaar.
+- Kompilierung und Rendering nicht geprüft: lokal weder PlantUML-Kommando noch
+  PlantUML-JAR vorhanden.
+- Methodikabweichung: Code und Direktbild stammen aus getrennten Generierungsdurchläufen.
