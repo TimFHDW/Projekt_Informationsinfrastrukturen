@@ -461,3 +461,13 @@ Beobachtung: Lokal waren Java 17, aber weder PlantUML-Kommando noch JAR vorhande
 Download des offiziellen JAR wurde nicht freigegeben; daher keine Kompilierung, kein
 Rendering und keine erfundenen K1-/K4-PlantUML-Scores. Die Originalcodes wurden nach der
 Ablage nicht veraendert; es war keine `v1-korrigiert.puml` erforderlich bzw. belegbar.
+
+## 2026-07-14 | 10:43 | Codex (im Auftrag von Tim)
+Schritt: Root- und Bereichs-READMEs, die drei freigegebenen Use-Case-Prompts v1,
+Evaluationskriterien, Vorlage, Ergebnismatrix und den Ist-Stand der drei
+ChatGPT/Use-Case-Zellen geprueft.
+Ergebnis: `prompts/use-case/easyride-v1.md`, `easyscoot-v1.md` und `easylib-v1.md` als
+Grundlage bestaetigt; alle drei Zielzellen enthalten bislang nur `.gitkeep` und stehen in
+`evaluation/ergebnismatrix.md` auf `offen`.
+Beobachtung: Der Auftrag betrifft die noch fehlenden direkt generierten Diagrammbilder.
+PlantUML-Code und -Rendering sind damit weiterhin offene Bestandteile der vollstaendigen DoD.
