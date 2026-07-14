@@ -6,20 +6,22 @@
 | Datum | 2026-07-14 |
 | Artefakt-Version | v1 |
 | Verwendeter Prompt | `prompts/sequenz/easyride-v1.md` |
-| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML-Rendering offen |
+| Rendering-Weg | Direktbild: Built-in Imagegen; PlantUML: statische Prüfung, Rendering mangels lokalem Tool offen |
 
-Skalen und Regeln: `evaluation/kriterien.md`. In dieser Zelle liegt bislang nur das
-Direktbild vor; PlantUML-Code und -Rendering bleiben offen und werden nicht bewertet.
+Skalen und Regeln: `evaluation/kriterien.md`. `v1.puml` liegt vor und wurde statisch geprüft;
+Kompilierung und Rendering bleiben mangels lokalem PlantUML-Tool offen.
 
 ## K1 – Syntaktische Korrektheit — Score: offen (Direktbild: 5/5)
 
-- PlantUML kompiliert ohne Korrektur: nicht prüfbar; `v1.puml` fehlt.
-- Fehlerliste: für PlantUML offen.
+- PlantUML kompiliert ohne Korrektur: nicht prüfbar; lokales PlantUML-Kommando bzw. JAR fehlt.
+- Fehlerliste: statische Prüfung unauffällig: je ein `@startuml`/`@enduml`, fünf synchrone
+  Aufrufe und fünf Antworten, fünf `activate`/`deactivate`-Paare, geschlossener Loop und
+  ausgeglichene Klammern. Dies belegt nicht die Kompilierbarkeit.
 - Direktes Bild – UML-Notation korrekt?: ja. Akteur, Objekt-Lebenslinien,
   Aktivierungsbalken, durchgezogene synchrone Aufrufe und gestrichelte Antwortpfeile sind
   eindeutig und konsistent notiert. Jeder der fünf Aufrufe besitzt eine Antwort.
 
-## K2 – Inhaltliche Korrektheit — Score: offen (Direktbild: 4/5)
+## K2 – Inhaltliche Korrektheit — Score: PlantUML 5/5 · Direktbild 4/5
 
 Abgleich mit `lastenhefte/easyride.md`:
 
@@ -34,8 +36,12 @@ Abgleich mit `lastenhefte/easyride.md`:
   auf den nächsten Haltepunkt bezogen. Die zusätzliche Lebenslinie `Betroffene Fahrgäste`
   bleibt ungenutzt; die zugehörige Aktualisierung erfolgt ausschließlich an
   `Buchung/Fahrt`.
+- PlantUML-Code: Der nächste Routenhalt wird vor dessen Fahrgastwechsel ermittelt; danach
+  werden die Restfahrzeiten der betroffenen Fahrten neu berechnet und Haltepunkt sowie
+  Fahrgastnamen an den Fahrer zurückgegeben. Die drei Fachinvarianten sind als Notiz
+  enthalten; keine inhaltlichen Fehler festgestellt.
 
-## K3 – Vollständigkeit — Score: offen (Direktbild: 5/5)
+## K3 – Vollständigkeit — Score: PlantUML 5/5 · Direktbild 5/5
 
 - Mindestanforderung erfüllt (Aufrufe ≥ 5): ja; fünf synchrone Methodenaufrufe und fünf
   Antwortpfeile sind vorhanden.
@@ -44,6 +50,8 @@ Abgleich mit `lastenhefte/easyride.md`:
   betroffenen Fahrten aktualisieren und nächsten Haltepunkt mit Fahrgastnamen zurückgeben.
 - Fehlende zentrale Elemente im Direktbild: keine. Die ungenutzte zusätzliche Lebenslinie
   ist eine Modellierungsunschärfe, keine fachliche Lücke.
+- PlantUML-Code: fünf synchrone Aufrufe mit fünf Antworten, Fahrer, System, Route,
+  Routenhalt und Fahrt sowie sämtliche geforderten Ablaufstationen vorhanden.
 
 ## K4 – Lesbarkeit / Zeichenqualität
 
@@ -53,7 +61,11 @@ Abgleich mit `lastenhefte/easyride.md`:
 
 ## PlantUML vs. direkt – Unterschiede
 
-- Noch nicht bewertbar, da PlantUML-Code und -Rendering fehlen.
+- Ein Layoutvergleich bleibt ohne Rendering offen. Inhaltlich bestimmt der PlantUML-Code
+  zuerst den nächsten Routenhalt und ermittelt dann dessen Fahrgastwechsel; damit vermeidet
+  er die Reihenfolgeunschärfe des Direktbilds. Anders als dort enthält er keine ungenutzte
+  Lebenslinie `Betroffene Fahrgäste`, sondern aktualisiert die betroffenen `Fahrt`-Objekte
+  in einem Loop.
 
 ## Was hätten wir anders modelliert?
 
@@ -67,3 +79,6 @@ Abgleich mit `lastenhefte/easyride.md`:
   Bildreferenz erzeugt und unverändert gespeichert.
 - Die zwei Prompt-Schritte wurden technisch zu einer strukturierten Bildspezifikation
   zusammengeführt; ein separater Verständnis-Check fand nicht statt.
+- Der PlantUML-Code wurde nachträglich und damit nicht im selben Generierungsdurchlauf wie
+  das Direktbild erzeugt. Fehlende Operationen sind entsprechend der Promptvorgabe als
+  gedankliche Ergänzungen zum Klassendiagramm im Code ausgewiesen.

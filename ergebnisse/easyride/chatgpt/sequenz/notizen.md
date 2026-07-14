@@ -29,10 +29,28 @@
 
 ## Offene DoD-Punkte
 
-- [ ] `v1.puml`
+- [x] `v1.puml`
 - [ ] `v1-plantuml.png` oder `.svg`
 - [x] `v1-direkt.png`
 - [x] `evaluation.md` (Direktbild vollständig, PlantUML-Anteile offen)
 - [x] `notizen.md`
 - [x] Journal-Eintrag
 - [x] Ergebnismatrix auf `generiert` / v1 aktualisiert
+
+## Nachtrag PlantUML am 2026-07-14
+
+- `v1.puml` nachträglich anhand von `prompts/sequenz/easyride-v1.md`, dem Lastenheft und
+  dem vorhandenen ChatGPT-Klassendiagramm erzeugt; SHA-256:
+  `E8701E8CEE519DFDB4D79DF2548B06EA08051C0523BA162962BFA9AED01CE950`.
+- Methodikabweichung: PlantUML-Code und Direktbild stammen nicht aus demselben
+  Generierungsdurchlauf; für jedes System wird der Code dennoch separat ohne Bildreferenz
+  erstellt.
+- Namenskonsistenz: `Fahrer`, `Route`, `Routenhalt`, `Fahrt` und
+  `restfahrzeitBerechnen` aus dem Klassendiagramm übernommen. Fehlende System-, Route- und
+  Routenhaltmethoden sowie der zusätzliche Parameter der Restfahrzeitmethode sind im Code
+  als gedankliche Ergänzungen vermerkt.
+- Statische Strukturprüfung erfolgreich: ein `@startuml`/`@enduml`, fünf synchrone Aufrufe,
+  fünf Antworten, fünf passende Aktivierungs-/Deaktivierungspaare, geschlossener Loop und
+  ausgeglichene Klammern.
+- Kompilierung und Rendering nicht geprüft: Java 17 ist vorhanden, aber lokal fehlen
+  PlantUML-Kommando und PlantUML-JAR. `v1-plantuml.png` bleibt offen.

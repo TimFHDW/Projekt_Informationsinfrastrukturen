@@ -565,3 +565,24 @@ aber weder ein PlantUML-Kommando noch eine PlantUML-JAR ist lokal verfuegbar.
 Beobachtung: Die Codes werden je System separat aus dem jeweiligen Prompt, Lastenheft und
 ChatGPT-Klassendiagramm abgeleitet und unveraendert als Originalausgabe gespeichert. Eine
 Kompilierung oder ein Rendering ist ohne PlantUML-Tooling nicht belegbar und bleibt offen.
+
+## 2026-07-14 | 11:21 | Codex (im Auftrag von Linus)
+Schritt: PlantUML-Code fuer das ChatGPT-Sequenzdiagramm EasyRide anhand von
+`prompts/sequenz/easyride-v1.md`, `lastenhefte/easyride.md` und dem vorhandenen
+ChatGPT-Klassendiagramm erzeugt und unveraendert als v1-Original abgelegt.
+Ergebnis: `ergebnisse/easyride/chatgpt/sequenz/v1.puml`; SHA-256
+`E8701E8CEE519DFDB4D79DF2548B06EA08051C0523BA162962BFA9AED01CE950`.
+Beobachtung: Der Code enthaelt fuenf synchrone Aufrufe samt Antworten, die geforderten
+Lebenslinien und die drei EasyRide-Fachinvarianten als Notiz. Neue System-, Route- und
+Routenhaltoperationen sowie der zusaetzliche Parameter von `restfahrzeitBerechnen` sind im
+Diagramm als gedankliche Klassendiagramm-Ergaenzungen ausgewiesen.
+
+## 2026-07-14 | 11:22 | Codex (im Auftrag von Linus)
+Schritt: EasyRide-`v1.puml` statisch auf Blockstruktur, Aufruf-/Antwortanzahl,
+Aktivierungspaare, Loop und Klammern geprueft; anschließend `evaluation.md`, `notizen.md`
+und Ergebnismatrix um die belegbaren PlantUML-Befunde ergaenzt.
+Ergebnis: Statische Strukturpruefung ohne Auffaelligkeit; Matrixwerte K2 PlantUML 5 und K3
+PlantUML 5. K1 und K4 PlantUML bleiben offen, da Kompilierung und Rendering fehlen.
+Beobachtung: Inhaltlich behebt der Code die Reihenfolgeunschärfe des Direktbilds, indem er
+zuerst den naechsten Routenhalt und danach dessen Fahrgastwechsel ermittelt. Ein
+Layoutvergleich ist erst nach einem PlantUML-Rendering moeglich.
