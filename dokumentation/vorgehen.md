@@ -868,3 +868,21 @@ Beobachtung: Keine Render-/Kompilierfehler mehr; K1 ist damit fuer beide KIs ueb
 Diagrammtypen vollstaendig bestaetigt. Verbleibend offen: Gemini (keine Artefakte) sowie die
 Propagierung der K1/K4-PU-Scores aus der Matrix in die einzelnen evaluation.md. Zeit frisch
 gelesen (2026-07-14 14:45).
+
+## 2026-07-14 | 15:50 | Claude (im Auftrag von Alex)
+Schritt: Zweiter Generierungsdurchlauf der Aktivitaetsdiagramme der Claude-Spalte: Prompts
+prompts/aktivitaet/<system>-v1.md unveraendert erneut ausgefuehrt; je Zelle v2.puml und -
+erstmals im selben Durchlauf - das direkt gezeichnete Bild v2-direkt.png erzeugt
+(Python/Pillow-Zeichenskript der KI, keine PlantUML-Beteiligung). Entwuerfe (Code + Bilder)
+vor Ablage von Alex freigegeben, KI-Ausgabe dabei unveraendert.
+Ergebnis: ergebnisse/{easylib,easyride,easyscoot}/claude/aktivitaet/{v2.puml, v2-direkt.png};
+Nachtraege in den sechs notizen.md/evaluation.md; evaluation/ergebnismatrix.md ergaenzt.
+Beobachtung: Versionierungs-Abweichung dokumentiert: v2 = 2. Durchlauf mit Prompt v1 (Wunsch
+Alex), nicht Prompt-Iteration ("N = Prompt-Version", ergebnisse/README.md) - als
+Durchlauf-Varianz-Befund nutzbar; inhaltlich weicht v2 sichtbar von v1 ab (z. B. easyride
+mit explizitem Ablehnungspfad, easylib mit getrennten Exemplar-Aktionen je Zweig). Kein
+v2-plantuml.png: Rendering in der Cowork-Umgebung weiterhin blockiert (jar-Download 403,
+jetzt auch npm 403) - lokal rendern wie bei v1. Methodik wie zuvor: laufende Session, drei
+Diagramme in einer Sitzung (moeglicher Struktur-Uebertrag). Commits lokal, kein Push
+(Wunsch Alex).
+
