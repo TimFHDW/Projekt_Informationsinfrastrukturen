@@ -471,3 +471,22 @@ Grundlage bestaetigt; alle drei Zielzellen enthalten bislang nur `.gitkeep` und 
 `evaluation/ergebnismatrix.md` auf `offen`.
 Beobachtung: Der Auftrag betrifft die noch fehlenden direkt generierten Diagrammbilder.
 PlantUML-Code und -Rendering sind damit weiterhin offene Bestandteile der vollstaendigen DoD.
+
+## 2026-07-14 | 10:48 | Codex (im Auftrag von Tim)
+Schritt: `prompts/use-case/easyride-v1.md` als strukturierte Bildspezifikation in einem
+eigenstaendigen Built-in-Imagegen-Durchlauf ausgefuehrt, das unveraenderte Ergebnis in die
+Zielzelle kopiert und visuell geprueft.
+Ergebnis: `ergebnisse/easyride/chatgpt/use-case/v1-direkt.png`.
+Beobachtung: Das Diagramm enthaelt genau die geforderten zwei Akteure und fuenf Use Cases
+innerhalb der Systemgrenze. Die Assoziationslinien enden mit kleinen sichtbaren Abstaenden
+vor den Akteursfiguren; dieser Notationsmangel wird in der Evaluation festgehalten.
+
+## 2026-07-14 | 10:46 | Codex (im Auftrag von Tim)
+Schritt: Das EasyRide-Direktbild gegen `lastenhefte/easyride.md` und
+`evaluation/kriterien.md` bewertet, Rohbeobachtungen dokumentiert und die Ergebnismatrix
+aktualisiert.
+Ergebnis: `ergebnisse/easyride/chatgpt/use-case/evaluation.md` und `notizen.md` neu;
+`evaluation/ergebnismatrix.md` fuer easyride/chatgpt/use-case auf `generiert` (v1) gesetzt.
+Beobachtung: K1 direkt 4/5, K2 direkt 5/5, K3 direkt 5/5, K4 direkt 5/5. PlantUML-Code
+und -Rendering bleiben offen. Der Zeitstempel 10:48 im unmittelbar vorherigen Eintrag war
+ein Erfassungsfehler; gemaess Append-only-Regel wurde der Eintrag nicht nachtraeglich geaendert.
