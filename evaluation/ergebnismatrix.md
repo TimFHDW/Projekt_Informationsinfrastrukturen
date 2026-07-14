@@ -14,7 +14,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyride | chatgpt | klassendiagramm | generiert | v1 | PU offen / direkt 5 | PU 5 / direkt 2 | PU 5 / direkt 3 | PU offen / direkt 5 |
 | easyride | chatgpt | use-case | generiert | v1 | PU offen / direkt 4 | PU offen / direkt 5 | PU offen / direkt 5 | PU offen / direkt 5 |
 | easyride | chatgpt | aktivitaet | generiert | v1 | PU offen / direkt 3 | PU 5 / direkt 5 | PU 5 / direkt 4 | PU offen / direkt 5 |
-| easyride | chatgpt | sequenz | offen | – | – | – | – | – |
+| easyride | chatgpt | sequenz | generiert | v1 | PU offen / direkt 5 | PU offen / direkt 4 | PU offen / direkt 5 | PU offen / direkt 5 |
 | easyride | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easyride | gemini | use-case | offen | – | – | – | – | – |
 | easyride | gemini | aktivitaet | offen | – | – | – | – | – |
@@ -26,7 +26,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easyscoot | chatgpt | klassendiagramm | generiert | v1 | PU offen / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU offen / direkt 5 |
 | easyscoot | chatgpt | use-case | generiert | v1 | PU offen / direkt 3 | PU offen / direkt 3 | PU offen / direkt 3 | PU offen / direkt 3 |
 | easyscoot | chatgpt | aktivitaet | generiert | v1 | PU offen / direkt 3 | PU 5 / direkt 3 | PU 5 / direkt 3 | PU offen / direkt 5 |
-| easyscoot | chatgpt | sequenz | offen | – | – | – | – | – |
+| easyscoot | chatgpt | sequenz | generiert | v1 | PU offen / direkt 4 | PU offen / direkt 4 | PU offen / direkt 5 | PU offen / direkt 5 |
 | easyscoot | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easyscoot | gemini | use-case | offen | – | – | – | – | – |
 | easyscoot | gemini | aktivitaet | offen | – | – | – | – | – |
@@ -38,7 +38,7 @@ Status-Werte: `offen` -> `generiert` -> `evaluiert` -> ggf. `iteration` (neue Pr
 | easylib | chatgpt | klassendiagramm | generiert | v1 | PU offen / direkt 5 | PU 5 / direkt 4 | PU 5 / direkt 4 | PU offen / direkt 5 |
 | easylib | chatgpt | use-case | generiert | v1 | PU offen / direkt 3 | PU offen / direkt 3 | PU offen / direkt 3 | PU offen / direkt 3 |
 | easylib | chatgpt | aktivitaet | generiert | v1 | PU offen / direkt 3 | PU 5 / direkt 4 | PU 5 / direkt 3 | PU offen / direkt 5 |
-| easylib | chatgpt | sequenz | offen | – | – | – | – | – |
+| easylib | chatgpt | sequenz | generiert | v1 | PU offen / direkt 4 | PU offen / direkt 5 | PU offen / direkt 5 | PU offen / direkt 5 |
 | easylib | gemini | klassendiagramm | offen | – | – | – | – | – |
 | easylib | gemini | use-case | offen | – | – | – | – | – |
 | easylib | gemini | aktivitaet | offen | – | – | – | – | – |
