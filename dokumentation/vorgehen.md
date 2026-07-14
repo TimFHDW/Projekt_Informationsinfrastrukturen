@@ -907,3 +907,18 @@ umgebrochen (nur Layout, keine inhaltliche Aenderung). Kein v2-plantuml.png: Ren
 der Cowork-Umgebung weiterhin blockiert (npm 403, kein jar) - lokal rendern wie bei v1.
 Methodik wie zuvor: laufende Session, drei Diagramme in einer Sitzung (moeglicher
 Struktur-Uebertrag). Commits lokal, kein Push.
+
+## 2026-07-14 | 16:49 | Claude (im Auftrag von Linus)
+Schritt: Git-Zwischenfall bei den sequenz-v2-Commits dokumentiert und repariert. Die
+Cowork-Sandbox darf im Projektordner keine Dateien loeschen (unlink blockiert); dadurch
+blieben nach dem ersten Commit stale Lockdateien (.git/index.lock, .git/HEAD.lock) liegen
+und .git/index wurde durch die Sync-Schicht genullt ("bad signature 0x00000000").
+Ergebnis: Index aus HEAD neu aufgebaut (read-tree in externen Index, per Kopie
+zurueckgeschrieben - kein Loeschen noetig); stale Locks und tmp_obj-Reste per Umbenennen
+nach .git/stale-locks-20260714/ verschoben (bitte lokal manuell loeschen, aus der Sandbox
+nicht moeglich); restliche Commits ueber externen Index (GIT_INDEX_FILE) ausgefuehrt.
+Alle 5 sequenz-v2-Commits liegen vor; git fsck: Objektstore in Ordnung (nur dangling
+trees der Fehlversuche).
+Beobachtung: Fuer kuenftige Cowork-Sessions in diesem Repo Commits besser direkt lokal
+ausfuehren oder Loesch-Freigabe erteilen; die Zeichenskript-Datei wurde von derselben
+Sync-Schicht einmal am Dateiende abgeschnitten (repariert, Ergebnis unbeeinflusst).
