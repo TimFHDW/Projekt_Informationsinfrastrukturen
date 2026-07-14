@@ -838,3 +838,16 @@ K2/K3); nur Status/Matrix konsolidiert, Inhalte unveraendert. (3) claude-Scores 
 Selbstbewertungen (dieselbe KI hat generiert) – unabhaengige Gegenpruefung empfohlen; bei
 claude sind PlantUML und Direktbild dasselbe Modell (Bild aus v1.puml abgeleitet). (4) Zeit vor
 dem Eintrag frisch aus der Uhr gelesen (2026-07-14 13:37).
+
+## 2026-07-14 | 14:52 | Codex
+Schritt: Offizielle Projektaufgabe aus der bereitgestellten PDF textlich extrahiert und alle
+15 Seiten visuell kontrolliert; die fuer das UML-Projekt massgeblichen Folien 8 und 9 sowie
+die allgemeinen Abgabe- und Praesentationsanforderungen abgeglichen.
+Ergebnis: Aufgabenbasis fuer das Repo-Audit festgehalten: drei Systeme, zwei frei waehlbare
+KIs, vier UML-Diagrammtypen, jeweils Direktdiagramm und PlantUML-Code samt Rendering;
+Mindestumfaenge von je 5 Use Cases, Aktivitaeten bzw. Methodenaufrufen sowie Evaluation von
+Syntax, Inhalt, Vollstaendigkeit, Systemunterschieden, Prompt-Verbesserungen und
+Modellierungsalternativen. Zusaetzlich gelten Vorgehensdokumentation, Reflexion, echte
+Git-Versionierung und ein 20-minuetiger Vortrag mit 5 Minuten Fragen.
+Beobachtung: Die PDF nennt zwei KIs als Pflicht; eine dritte KI ist eine freiwillige
+Erweiterung des Repos und darf nicht von der Fertigstellung der 24 Pflichtzellen ablenken.
